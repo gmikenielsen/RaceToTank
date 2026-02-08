@@ -161,6 +161,7 @@
       }
 
       .team {
+        --team-indent: 2.8rem;
         font-weight: 700;
         width: 35%;
         overflow: hidden;
@@ -168,8 +169,8 @@
 
       .team-main {
         display: grid;
-        grid-template-columns: 2.3ch minmax(0, 1fr);
-        column-gap: 0.24rem;
+        grid-template-columns: var(--team-indent) minmax(0, 1fr);
+        column-gap: 0;
         align-items: baseline;
         min-width: 0;
       }
@@ -177,6 +178,7 @@
       .team-rank {
         text-align: right;
         white-space: nowrap;
+        padding-right: 0.32rem;
       }
 
       .team-name {
@@ -188,7 +190,8 @@
 
       .team-record {
         margin-top: 4px;
-        margin-left: calc(2.3ch + 0.24rem);
+        margin-left: 0;
+        padding-left: var(--team-indent);
         color: #cddcf7;
         font-size: 0.86rem;
         font-weight: 600;
