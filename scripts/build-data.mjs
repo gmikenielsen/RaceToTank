@@ -106,6 +106,9 @@ function normalizeStandings(standingsJson) {
     const teamName = normalizeTeamName(c) || normalizeTeamName(c.teamSitesOnly) || c.teamTricode || c.team?.teamTricode;
     if (!teamName || winPct === null) continue;
 
+    const streak = deriveStreakFromCandidate(c);
+    const last10 = deriveLastTenFromCandidate(c);
+
     const existing = byId.get(teamId);
     const gamesPlayed = (wins ?? 0) + (losses ?? 0);
     const existingGames = existing ? (existing.wins ?? 0) + (existing.losses ?? 0) : -1;
@@ -118,6 +121,8 @@ function normalizeStandings(standingsJson) {
         wins,
         losses,
         winPct,
+        streak,
+        last10,
       });
     }
   }
@@ -195,13 +200,89 @@ function readStat(stats, ...names) {
   for (const stat of stats) {
     const key = String(stat?.name || '').trim().toLowerCase();
     if (!key) continue;
-    statMap.set(key, toNumber(stat?.value));
+    statMap.set(key, stat);
+    const abbrKey = String(stat?.abbreviation || '').trim().toLowerCase();
+    if (abbrKey) statMap.set(abbrKey, stat);
   }
 
   for (const name of names) {
-    const value = statMap.get(String(name).toLowerCase());
+    const stat = statMap.get(String(name).toLowerCase());
+    const value = toNumber(stat?.value ?? stat?.displayValue);
     if (value !== null && value !== undefined) return value;
   }
+
+  return null;
+}
+
+function readStatDisplay(stats, ...names) {
+  if (!Array.isArray(stats)) return null;
+
+  const statMap = new Map();
+  for (const stat of stats) {
+    const key = String(stat?.name || '').trim().toLowerCase();
+    if (!key) continue;
+    statMap.set(key, stat);
+    const abbrKey = String(stat?.abbreviation || '').trim().toLowerCase();
+    if (abbrKey) statMap.set(abbrKey, stat);
+  }
+
+  for (const name of names) {
+    const stat = statMap.get(String(name).toLowerCase());
+    const text = String(stat?.displayValue ?? stat?.value ?? '').trim();
+    if (text) return text;
+  }
+
+  return null;
+}
+
+function normalizeStreak(value) {
+  const raw = String(value || '').trim().toUpperCase();
+  if (!raw) return null;
+  const compact = raw.replaceAll(' ', '');
+  if (/^[WL]\d+$/.test(compact)) return compact;
+  return null;
+}
+
+function normalizeLastTen(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return null;
+  const match = raw.match(/(\d+)\s*-\s*(\d+)/);
+  if (!match) return null;
+  return `${match[1]}-${match[2]}`;
+}
+
+function deriveStreakFromCandidate(candidate) {
+  const direct = normalizeStreak(
+    candidate?.streak ||
+      candidate?.currentStreak ||
+      candidate?.teamStreak ||
+      candidate?.team?.streak ||
+      candidate?.teamSitesOnly?.streak
+  );
+  if (direct) return direct;
+
+  const winStreak = toNumber(candidate?.winStreak ?? candidate?.team?.winStreak);
+  if (winStreak !== null && winStreak > 0) return `W${winStreak}`;
+
+  const lossStreak = toNumber(candidate?.lossStreak ?? candidate?.team?.lossStreak);
+  if (lossStreak !== null && lossStreak > 0) return `L${lossStreak}`;
+
+  return null;
+}
+
+function deriveLastTenFromCandidate(candidate) {
+  const direct = normalizeLastTen(
+    candidate?.lastTen ||
+      candidate?.lastTenRecord ||
+      candidate?.l10 ||
+      candidate?.team?.lastTen ||
+      candidate?.teamSitesOnly?.lastTen
+  );
+  if (direct) return direct;
+
+  const wins = toNumber(candidate?.lastTenWins ?? candidate?.last10Wins);
+  const losses = toNumber(candidate?.lastTenLosses ?? candidate?.last10Losses);
+  if (wins !== null && losses !== null) return `${wins}-${losses}`;
 
   return null;
 }
@@ -228,6 +309,9 @@ function normalizeEspnStandings(standingsJson) {
     }
     if (winPct === null) continue;
 
+    const streak = normalizeStreak(readStatDisplay(entry?.stats, 'streak', 'strk'));
+    const last10 = normalizeLastTen(readStatDisplay(entry?.stats, 'last ten games', 'l10', 'last10'));
+
     const existing = byId.get(teamId);
     const gamesPlayed = (wins ?? 0) + (losses ?? 0);
     const existingGames = existing ? (existing.wins ?? 0) + (existing.losses ?? 0) : -1;
@@ -239,6 +323,8 @@ function normalizeEspnStandings(standingsJson) {
         wins,
         losses,
         winPct,
+        streak,
+        last10,
       });
     }
   }
@@ -349,6 +435,8 @@ function buildRows(bottomTeams, games) {
       teamDisplay: `${team.teamName} (${total})`,
       winPct: team.winPct,
       record: team.wins !== null && team.losses !== null ? `${team.wins}-${team.losses}` : null,
+      streak: team.streak || null,
+      last10: team.last10 || null,
       totalRemainingVsBottom12: total,
       opponents: remainingOnly,
       opponentsText: remainingOnly.map((x) => `${x.opponentTeam} (${x.gamesRemaining})`).join(', '),

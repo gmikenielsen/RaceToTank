@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-08T13:53:28.019Z",
+  "generatedAt": "2026-02-08T14:14:20.842Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-08T13:53:28.019Z"
+    "attemptedAt": "2026-02-08T14:14:20.842Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -51,6 +51,8 @@
       "teamDisplay": "Sacramento Kings (17)",
       "winPct": 0.22222222,
       "record": "12-42",
+      "streak": "L12",
+      "last10": "0-10",
       "totalRemainingVsBottom12": 17,
       "opponents": [
         {
@@ -118,6 +120,8 @@
       "teamDisplay": "Indiana Pacers (15)",
       "winPct": 0.25,
       "record": "13-39",
+      "streak": "L3",
+      "last10": "3-7",
       "totalRemainingVsBottom12": 15,
       "opponents": [
         {
@@ -180,6 +184,8 @@
       "teamDisplay": "New Orleans Pelicans (13)",
       "winPct": 0.25925925,
       "record": "14-40",
+      "streak": "W1",
+      "last10": "4-6",
       "totalRemainingVsBottom12": 13,
       "opponents": [
         {
@@ -227,6 +233,8 @@
       "teamDisplay": "Brooklyn Nets (16)",
       "winPct": 0.27450982,
       "record": "14-37",
+      "streak": "W1",
+      "last10": "2-8",
       "totalRemainingVsBottom12": 16,
       "opponents": [
         {
@@ -289,6 +297,8 @@
       "teamDisplay": "Washington Wizards (12)",
       "winPct": 0.27450982,
       "record": "14-37",
+      "streak": "L1",
+      "last10": "4-6",
       "totalRemainingVsBottom12": 12,
       "opponents": [
         {
@@ -341,6 +351,8 @@
       "teamDisplay": "Utah Jazz (13)",
       "winPct": 0.3018868,
       "record": "16-37",
+      "streak": "L2",
+      "last10": "2-8",
       "totalRemainingVsBottom12": 13,
       "opponents": [
         {
@@ -383,6 +395,8 @@
       "teamDisplay": "Dallas Mavericks (14)",
       "winPct": 0.3653846,
       "record": "19-33",
+      "streak": "L7",
+      "last10": "3-7",
       "totalRemainingVsBottom12": 14,
       "opponents": [
         {
@@ -450,6 +464,8 @@
       "teamDisplay": "Memphis Grizzlies (14)",
       "winPct": 0.39215687,
       "record": "20-31",
+      "streak": "L2",
+      "last10": "2-8",
       "totalRemainingVsBottom12": 14,
       "opponents": [
         {
@@ -517,6 +533,8 @@
       "teamDisplay": "Milwaukee Bucks (14)",
       "winPct": 0.42,
       "record": "21-29",
+      "streak": "W3",
+      "last10": "4-6",
       "totalRemainingVsBottom12": 14,
       "opponents": [
         {
@@ -579,6 +597,8 @@
       "teamDisplay": "Chicago Bulls (12)",
       "winPct": 0.4528302,
       "record": "24-29",
+      "streak": "L4",
+      "last10": "3-7",
       "totalRemainingVsBottom12": 12,
       "opponents": [
         {
@@ -641,6 +661,8 @@
       "teamDisplay": "LA Clippers (15)",
       "winPct": 0.47058824,
       "record": "24-27",
+      "streak": "W1",
+      "last10": "6-4",
       "totalRemainingVsBottom12": 15,
       "opponents": [
         {
@@ -693,6 +715,8 @@
       "teamDisplay": "Charlotte Hornets (12)",
       "winPct": 0.4716981,
       "record": "25-28",
+      "streak": "W9",
+      "last10": "9-1",
       "totalRemainingVsBottom12": 12,
       "opponents": [
         {
@@ -750,6 +774,8 @@
       "teamDisplay": "Portland Trail Blazers (18)",
       "winPct": 0.4716981,
       "record": "25-28",
+      "streak": "W2",
+      "last10": "4-6",
       "totalRemainingVsBottom12": 18,
       "opponents": [
         {
@@ -827,6 +853,8 @@
       "teamDisplay": "Atlanta Hawks (13)",
       "winPct": 0.4814815,
       "record": "26-28",
+      "streak": "L1",
+      "last10": "6-4",
       "totalRemainingVsBottom12": 13,
       "opponents": [
         {

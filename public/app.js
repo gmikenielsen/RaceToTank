@@ -87,6 +87,27 @@ function resolveRecordText(row) {
   return record || '--';
 }
 
+function resolveStreakText(row) {
+  const raw = String(row?.streak || '').trim().toUpperCase().replaceAll(' ', '');
+  return /^[WL]\d+$/.test(raw) ? raw : null;
+}
+
+function resolveLast10Text(row) {
+  const raw = String(row?.last10 || row?.lastTen || '').trim();
+  const match = raw.match(/(\d+)\s*-\s*(\d+)/);
+  if (!match) return null;
+  return `${match[1]}-${match[2]}`;
+}
+
+function resolveRecordLine(row) {
+  const parts = [`Record: ${resolveRecordText(row)}`];
+  const streak = resolveStreakText(row);
+  const last10 = resolveLast10Text(row);
+  if (streak) parts.push(streak);
+  if (last10) parts.push(`L10 (${last10})`);
+  return parts.join('   ');
+}
+
 function formatLoadStatus(rowsCount, generatedAt, refreshStatus) {
   let message = `Last updated: ${formatTimestamp(generatedAt)}.`;
 
@@ -155,9 +176,9 @@ function renderRows(rows, payload) {
     .map((row, index) => {
       const rank = escapeHtml(String(index + 1));
       const teamName = escapeHtml(resolveTeamDisplay(row));
-      const record = escapeHtml(resolveRecordText(row));
+      const recordLine = escapeHtml(resolveRecordLine(row));
       const opponents = escapeHtml(row.opponentsText || 'None');
-      return `<tr><td class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">Record: ${record}</div></td><td class="opponents">${opponents}</td></tr>`;
+      return `<tr><td class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">${recordLine}</div></td><td class="opponents">${opponents}</td></tr>`;
     })
     .join('');
 
@@ -165,9 +186,9 @@ function renderRows(rows, payload) {
     .map((row, index) => {
       const rank = escapeHtml(String(index + 1));
       const teamName = escapeHtml(resolveTeamDisplay(row));
-      const record = escapeHtml(resolveRecordText(row));
+      const recordLine = escapeHtml(resolveRecordLine(row));
       const opponents = escapeHtml(row.opponentsText || 'None');
-      return `<article class="card"><div class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">Record: ${record}</div></div><div class="opponents">${opponents}</div></article>`;
+      return `<article class="card"><div class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">${recordLine}</div></div><div class="opponents">${opponents}</div></article>`;
     })
     .join('');
 
@@ -201,7 +222,7 @@ async function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
 
   try {
-    await navigator.serviceWorker.register('./sw.js?v=6', { scope: './' });
+    await navigator.serviceWorker.register('./sw.js?v=7', { scope: './' });
   } catch (error) {
     console.warn('Service worker registration failed', error);
   }
