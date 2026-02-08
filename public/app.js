@@ -111,7 +111,7 @@ function renderTodaySchedule(todaySchedule) {
   todaySubEl.textContent = formatScheduleDate(dateEt, timeZone);
 
   if (!games.length) {
-    todayListEl.innerHTML = '<li>No games today for these 12 teams.</li>';
+    todayListEl.innerHTML = '<li>No games today for these 14 teams.</li>';
     return;
   }
 

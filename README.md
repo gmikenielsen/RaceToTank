@@ -1,11 +1,11 @@
 # Race to the Tank
 
-`Race to the Tank` is a free-to-host static site that tracks the current bottom 12 NBA teams and shows a mobile-friendly two-column view:
+`Race to the Tank` is a free-to-host static site that tracks the current bottom 14 NBA teams and shows a mobile-friendly two-column view:
 
-1. Teams 1-12
+1. Teams 1-14
 2. Remaining opponents as a comma-delimited list with game counts in parentheses
 
-It also shows the current day schedule (Eastern Time) for any of those 12 teams directly under the page title.
+It also shows the current day schedule (Eastern Time) for any of those 14 teams directly under the page title.
 
 ## Stack
 
@@ -32,8 +32,8 @@ This updates `public/data/latest.json`.
 
 ## Notes
 
-- Data sources are NBA CDN feeds referenced in `scripts/build-data.mjs`.
+- Data sources are ESPN API feeds with NBA CDN fallback, referenced in `scripts/build-data.mjs`.
 - The UI always renders the two-column format for desktop and mobile.
-- The title area includes a basketball/tank illustration at `public/assets/tank-ball.svg`.
+- The title area includes a basketball/tank illustration at `public/assets/tank-watch-hero.jpg`.
 - If a data refresh fails, the previously generated `latest.json` remains in place.
 # race-to-the-tank
