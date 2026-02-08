@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-08T06:34:54.284Z",
+  "generatedAt": "2026-02-08T06:35:38.220Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-08T06:34:54.284Z"
+    "attemptedAt": "2026-02-08T06:35:38.220Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
