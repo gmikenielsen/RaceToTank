@@ -36,3 +36,4 @@ This updates `public/data/latest.json`.
 - The UI always renders the two-column format for desktop and mobile.
 - The title area includes a basketball/tank illustration at `public/assets/tank-ball.svg`.
 - If a data refresh fails, the previously generated `latest.json` remains in place.
+# race-to-the-tank
