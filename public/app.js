@@ -25,6 +25,37 @@ function formatTimestamp(iso) {
   return date.toLocaleString();
 }
 
+function ordinalSuffix(day) {
+  if (day % 100 >= 11 && day % 100 <= 13) return 'th';
+  if (day % 10 === 1) return 'st';
+  if (day % 10 === 2) return 'nd';
+  if (day % 10 === 3) return 'rd';
+  return 'th';
+}
+
+function formatScheduleDate(dateEt, timeZone) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateEt || '').trim());
+  if (!match) return dateEt || 'Unknown date';
+
+  const year = Number(match[1]);
+  const monthIndex = Number(match[2]) - 1;
+  const day = Number(match[3]);
+  const date = new Date(Date.UTC(year, monthIndex, day, 12, 0, 0));
+
+  if (Number.isNaN(date.getTime())) return dateEt || 'Unknown date';
+
+  const weekday = new Intl.DateTimeFormat('en-US', {
+    weekday: 'short',
+    timeZone,
+  }).format(date);
+  const month = new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    timeZone,
+  }).format(date);
+
+  return `${weekday}, ${month} ${day}${ordinalSuffix(day)}`;
+}
+
 function showStatus(message, isError = false) {
   statusEl.textContent = message;
   statusEl.className = isError ? 'status error' : 'status';
@@ -77,7 +108,7 @@ function renderTodaySchedule(todaySchedule) {
   const dateEt = schedule.dateEt || 'Unknown date';
   const timeZone = schedule.timeZone || 'America/New_York';
 
-  todaySubEl.textContent = `${dateEt} (${timeZone})`;
+  todaySubEl.textContent = formatScheduleDate(dateEt, timeZone);
 
   if (!games.length) {
     todayListEl.innerHTML = '<li>No games today for these 12 teams.</li>';
@@ -93,11 +124,8 @@ function renderTodaySchedule(todaySchedule) {
   todayListEl.innerHTML = games
     .map((game) => {
       const matchup = escapeHtml(game.matchup || 'Unknown matchup');
-      const tracked = Array.isArray(game.trackedTeams) ? game.trackedTeams.join(', ') : '';
-      const trackedText = tracked ? ` [Tracked: ${escapeHtml(tracked)}]` : '';
       const tipoff = game.tipoffUtc ? formatter.format(new Date(game.tipoffUtc)) : 'TBD';
-      const status = game.status ? ` (${escapeHtml(game.status)})` : '';
-      return `<li><strong>${tipoff}</strong> - ${matchup}${status}${trackedText}</li>`;
+      return `<li><strong>${tipoff}</strong> - ${matchup}</li>`;
     })
     .join('');
 }
