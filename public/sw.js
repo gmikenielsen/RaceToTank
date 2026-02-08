@@ -1,4 +1,4 @@
-const CACHE_NAME = 'race-to-tank-v5';
+const CACHE_NAME = 'race-to-tank-v6';
 const STATIC_ASSETS = [
   './',
   './index.html',
