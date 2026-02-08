@@ -3,9 +3,12 @@ import path from 'node:path';
 
 const STANDINGS_URL = 'https://cdn.nba.com/static/json/liveData/standings/standings.json';
 const SCHEDULE_URL = 'https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json';
+const ESPN_STANDINGS_URL = 'https://site.api.espn.com/apis/v2/sports/basketball/nba/standings';
+const ESPN_TEAM_SCHEDULE_BASE = 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams';
 const BOTTOM_TEAM_COUNT = 12;
 const FETCH_TIMEOUT_MS = 25000;
 const FETCH_ATTEMPTS = 4;
+const ESPN_FETCH_ATTEMPTS = 2;
 
 const OUTPUT_PATH = path.join(process.cwd(), 'public', 'data', 'latest.json');
 
@@ -180,6 +183,122 @@ function normalizeSchedule(scheduleJson) {
     const game = normalizeGame(g);
     if (!game) continue;
     if (!unique.has(game.gameId)) unique.set(game.gameId, game);
+  }
+
+  return [...unique.values()];
+}
+
+function readStat(stats, ...names) {
+  if (!Array.isArray(stats)) return null;
+
+  const statMap = new Map();
+  for (const stat of stats) {
+    const key = String(stat?.name || '').trim().toLowerCase();
+    if (!key) continue;
+    statMap.set(key, toNumber(stat?.value));
+  }
+
+  for (const name of names) {
+    const value = statMap.get(String(name).toLowerCase());
+    if (value !== null && value !== undefined) return value;
+  }
+
+  return null;
+}
+
+function normalizeEspnStandings(standingsJson) {
+  const entries = [];
+  for (const child of standingsJson?.children ?? []) {
+    if (Array.isArray(child?.standings?.entries)) {
+      entries.push(...child.standings.entries);
+    }
+  }
+
+  const byId = new Map();
+  for (const entry of entries) {
+    const teamId = String(entry?.team?.id || '').trim();
+    const teamName = String(entry?.team?.displayName || entry?.team?.name || '').trim();
+    if (!teamId || !teamName) continue;
+
+    const wins = readStat(entry?.stats, 'wins');
+    const losses = readStat(entry?.stats, 'losses');
+    let winPct = readStat(entry?.stats, 'winpercent', 'leaguewinpercent');
+    if (winPct === null && wins !== null && losses !== null && wins + losses > 0) {
+      winPct = wins / (wins + losses);
+    }
+    if (winPct === null) continue;
+
+    const existing = byId.get(teamId);
+    const gamesPlayed = (wins ?? 0) + (losses ?? 0);
+    const existingGames = existing ? (existing.wins ?? 0) + (existing.losses ?? 0) : -1;
+
+    if (!existing || gamesPlayed >= existingGames) {
+      byId.set(teamId, {
+        teamId,
+        teamName,
+        wins,
+        losses,
+        winPct,
+      });
+    }
+  }
+
+  return [...byId.values()].sort((a, b) => {
+    if (a.winPct !== b.winPct) return a.winPct - b.winPct;
+    const aGp = (a.wins ?? 0) + (a.losses ?? 0);
+    const bGp = (b.wins ?? 0) + (b.losses ?? 0);
+    if (aGp !== bGp) return bGp - aGp;
+    return a.teamName.localeCompare(b.teamName);
+  });
+}
+
+function normalizeEspnGame(eventLike) {
+  if (!eventLike || typeof eventLike !== 'object') return null;
+  const competition = eventLike?.competitions?.[0];
+  const competitors = Array.isArray(competition?.competitors) ? competition.competitors : [];
+  if (competitors.length < 2) return null;
+
+  const home = competitors.find((c) => c?.homeAway === 'home') || competitors[0];
+  const away = competitors.find((c) => c?.homeAway === 'away') || competitors[1];
+
+  const homeTeamId = String(home?.team?.id || '').trim();
+  const awayTeamId = String(away?.team?.id || '').trim();
+  if (!homeTeamId || !awayTeamId) return null;
+
+  const statusName = String(competition?.status?.type?.name || '').trim();
+  const statusDetail = String(
+    competition?.status?.type?.detail ||
+      competition?.status?.type?.shortDetail ||
+      competition?.status?.type?.description ||
+      ''
+  ).trim();
+  const statusText = statusDetail || statusName || null;
+
+  const completed = Boolean(competition?.status?.type?.completed);
+  const isFinal = completed || statusName.toLowerCase().includes('final');
+
+  return {
+    gameId: String(eventLike?.id || competition?.id || `${awayTeamId}_${homeTeamId}_${eventLike?.date || ''}`),
+    homeTeamId,
+    awayTeamId,
+    homeTeamName: String(home?.team?.displayName || home?.team?.name || home?.team?.abbreviation || homeTeamId),
+    awayTeamName: String(away?.team?.displayName || away?.team?.name || away?.team?.abbreviation || awayTeamId),
+    date: parseDate(eventLike?.date || competition?.date),
+    isFinal,
+    statusText,
+  };
+}
+
+function normalizeEspnSchedule(schedulePayloads) {
+  const unique = new Map();
+
+  for (const payload of schedulePayloads) {
+    const events = Array.isArray(payload?.events) ? payload.events : [];
+    for (const eventLike of events) {
+      const game = normalizeEspnGame(eventLike);
+      if (!game) continue;
+      if (!unique.has(game.gameId)) unique.set(game.gameId, game);
+    }
   }
 
   return [...unique.values()];
@@ -361,46 +480,106 @@ async function writePayload(payload) {
   await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 }
 
+function buildLivePayload({ rows, todaySchedule, provider, dataSources }) {
+  const generatedAt = new Date().toISOString();
+  return {
+    app: 'Race to the Tank',
+    generatedAt,
+    dataSources,
+    refreshStatus: {
+      source: 'live',
+      provider,
+      attemptedAt: generatedAt,
+    },
+    todaySchedule,
+    rows,
+  };
+}
+
+async function loadFromEspn() {
+  const standingsJson = await fetchJson(ESPN_STANDINGS_URL, ESPN_FETCH_ATTEMPTS);
+  const standings = normalizeEspnStandings(standingsJson);
+  if (standings.length < BOTTOM_TEAM_COUNT) {
+    throw new Error(`Unable to resolve ${BOTTOM_TEAM_COUNT} teams from ESPN standings.`);
+  }
+
+  const bottomTeams = standings.slice(0, BOTTOM_TEAM_COUNT);
+  const schedulePayloads = await Promise.all(
+    bottomTeams.map((team) =>
+      fetchJson(`${ESPN_TEAM_SCHEDULE_BASE}/${team.teamId}/schedule?seasontype=2`, ESPN_FETCH_ATTEMPTS)
+    )
+  );
+
+  const games = normalizeEspnSchedule(schedulePayloads);
+  const rows = buildRows(bottomTeams, games);
+  const todaySchedule = buildTodaySchedule(bottomTeams, games);
+
+  return buildLivePayload({
+    rows,
+    todaySchedule,
+    provider: 'espn',
+    dataSources: {
+      standings: ESPN_STANDINGS_URL,
+      schedule: `${ESPN_TEAM_SCHEDULE_BASE}/{teamId}/schedule?seasontype=2`,
+    },
+  });
+}
+
+async function loadFromNba() {
+  const [standingsJson, scheduleJson] = await Promise.all([
+    fetchJson(STANDINGS_URL),
+    fetchJson(SCHEDULE_URL),
+  ]);
+
+  const standings = normalizeStandings(standingsJson);
+  if (standings.length < BOTTOM_TEAM_COUNT) {
+    throw new Error(`Unable to resolve ${BOTTOM_TEAM_COUNT} teams from NBA standings feed.`);
+  }
+
+  const bottomTeams = standings.slice(0, BOTTOM_TEAM_COUNT);
+  const games = normalizeSchedule(scheduleJson);
+  const rows = buildRows(bottomTeams, games);
+  const todaySchedule = buildTodaySchedule(bottomTeams, games);
+
+  return buildLivePayload({
+    rows,
+    todaySchedule,
+    provider: 'nba',
+    dataSources: {
+      standings: STANDINGS_URL,
+      schedule: SCHEDULE_URL,
+    },
+  });
+}
+
+async function loadLivePayload() {
+  const loaders = [
+    { name: 'espn', fn: loadFromEspn },
+    { name: 'nba', fn: loadFromNba },
+  ];
+
+  let lastError = null;
+  for (const loader of loaders) {
+    try {
+      const payload = await loader.fn();
+      console.log(`Live data source selected: ${loader.name}`);
+      return payload;
+    } catch (error) {
+      lastError = error;
+      console.warn(`Live source ${loader.name} failed: ${error?.message || error}`);
+    }
+  }
+
+  throw lastError || new Error('No live data source succeeded.');
+}
+
 async function main() {
   try {
-    const [standingsJson, scheduleJson] = await Promise.all([
-      fetchJson(STANDINGS_URL),
-      fetchJson(SCHEDULE_URL),
-    ]);
-
-    const standings = normalizeStandings(standingsJson);
-    if (standings.length < BOTTOM_TEAM_COUNT) {
-      throw new Error(`Unable to resolve ${BOTTOM_TEAM_COUNT} teams from standings feed.`);
-    }
-
-    const bottomTeams = standings.slice(0, BOTTOM_TEAM_COUNT);
-    const games = normalizeSchedule(scheduleJson);
-
-    const rows = buildRows(bottomTeams, games);
-    const todaySchedule = buildTodaySchedule(bottomTeams, games);
-
-    const generatedAt = new Date().toISOString();
-    const payload = {
-      app: 'Race to the Tank',
-      generatedAt,
-      dataSources: {
-        standings: STANDINGS_URL,
-        schedule: SCHEDULE_URL,
-      },
-      refreshStatus: {
-        source: 'live',
-        attemptedAt: generatedAt,
-      },
-      todaySchedule,
-      rows,
-    };
-
+    const payload = await loadLivePayload();
     await writePayload(payload);
-
-    console.log(`Wrote ${rows.length} rows to ${OUTPUT_PATH}`);
+    console.log(`Wrote ${payload.rows.length} rows to ${OUTPUT_PATH}`);
   } catch (error) {
     const { isNetworkLike, code } = classifyFetchError(error);
-    if (!isNetworkLike) throw error;
 
     const cached = await readCachedPayload();
     if (!cached) throw error;
@@ -413,8 +592,10 @@ async function main() {
       ...cached,
       refreshStatus: {
         source: 'cached',
+        provider: cached?.refreshStatus?.provider || null,
         attemptedAt: new Date().toISOString(),
         lastLiveGeneratedAt: cached.generatedAt || null,
+        reasonType: isNetworkLike ? 'network' : 'processing',
         reasonCode: code || null,
       },
     };

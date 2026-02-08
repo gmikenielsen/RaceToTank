@@ -1,93 +1,652 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-08T00:00:00.000Z",
+  "generatedAt": "2026-02-08T06:34:54.284Z",
   "dataSources": {
-    "standings": "https://cdn.nba.com/static/json/liveData/standings/standings.json",
-    "schedule": "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json"
+    "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
+    "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
+  },
+  "refreshStatus": {
+    "source": "live",
+    "provider": "espn",
+    "attemptedAt": "2026-02-08T06:34:54.284Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "dateEt": "2026-02-08",
-    "games": []
+    "games": [
+      {
+        "gameId": "401810613",
+        "matchup": "Miami Heat at Washington Wizards",
+        "tipoffUtc": "2026-02-08T19:00:00.000Z",
+        "trackedTeams": [
+          "Washington Wizards"
+        ],
+        "status": "Sun, February 8th at 2:00 PM EST"
+      },
+      {
+        "gameId": "401810614",
+        "matchup": "Indiana Pacers at Toronto Raptors",
+        "tipoffUtc": "2026-02-08T20:00:00.000Z",
+        "trackedTeams": [
+          "Indiana Pacers"
+        ],
+        "status": "Sun, February 8th at 3:00 PM EST"
+      },
+      {
+        "gameId": "401810615",
+        "matchup": "LA Clippers at Minnesota Timberwolves",
+        "tipoffUtc": "2026-02-08T20:00:00.000Z",
+        "trackedTeams": [
+          "LA Clippers"
+        ],
+        "status": "Sun, February 8th at 3:00 PM EST"
+      }
+    ]
   },
   "rows": [
     {
       "rank": 1,
-      "team": "Chicago Bulls",
-      "teamDisplay": "Chicago Bulls (11)",
-      "opponentsText": "Pending refresh"
+      "teamId": "23",
+      "team": "Sacramento Kings",
+      "teamDisplay": "Sacramento Kings (15)",
+      "winPct": 0.22222222,
+      "record": "12-42",
+      "totalRemainingVsBottom12": 15,
+      "opponents": [
+        {
+          "opponentTeamId": "17",
+          "opponentTeam": "Brooklyn Nets",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "30",
+          "opponentTeam": "Charlotte Hornets",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "4",
+          "opponentTeam": "Chicago Bulls",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "6",
+          "opponentTeam": "Dallas Mavericks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "11",
+          "opponentTeam": "Indiana Pacers",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "12",
+          "opponentTeam": "LA Clippers",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "29",
+          "opponentTeam": "Memphis Grizzlies",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "3",
+          "opponentTeam": "New Orleans Pelicans",
+          "gamesRemaining": 3
+        },
+        {
+          "opponentTeamId": "26",
+          "opponentTeam": "Utah Jazz",
+          "gamesRemaining": 2
+        }
+      ],
+      "opponentsText": "Brooklyn Nets (2), Charlotte Hornets (2), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (2), Memphis Grizzlies (1), New Orleans Pelicans (3), Utah Jazz (2)"
     },
     {
       "rank": 2,
-      "team": "LA Clippers",
-      "teamDisplay": "LA Clippers (16)",
-      "opponentsText": "Pending refresh"
+      "teamId": "11",
+      "team": "Indiana Pacers",
+      "teamDisplay": "Indiana Pacers (13)",
+      "winPct": 0.25,
+      "record": "13-39",
+      "totalRemainingVsBottom12": 13,
+      "opponents": [
+        {
+          "opponentTeamId": "17",
+          "opponentTeam": "Brooklyn Nets",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "30",
+          "opponentTeam": "Charlotte Hornets",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "4",
+          "opponentTeam": "Chicago Bulls",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "6",
+          "opponentTeam": "Dallas Mavericks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "12",
+          "opponentTeam": "LA Clippers",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "29",
+          "opponentTeam": "Memphis Grizzlies",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "15",
+          "opponentTeam": "Milwaukee Bucks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "23",
+          "opponentTeam": "Sacramento Kings",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "27",
+          "opponentTeam": "Washington Wizards",
+          "gamesRemaining": 2
+        }
+      ],
+      "opponentsText": "Brooklyn Nets (2), Charlotte Hornets (2), Chicago Bulls (1), Dallas Mavericks (1), LA Clippers (2), Memphis Grizzlies (1), Milwaukee Bucks (1), Sacramento Kings (1), Washington Wizards (2)"
     },
     {
       "rank": 3,
-      "team": "Portland Trail Blazers",
-      "teamDisplay": "Portland Trail Blazers (17)",
-      "opponentsText": "Pending refresh"
+      "teamId": "3",
+      "team": "New Orleans Pelicans",
+      "teamDisplay": "New Orleans Pelicans (12)",
+      "winPct": 0.25925925,
+      "record": "14-40",
+      "totalRemainingVsBottom12": 12,
+      "opponents": [
+        {
+          "opponentTeamId": "6",
+          "opponentTeam": "Dallas Mavericks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "12",
+          "opponentTeam": "LA Clippers",
+          "gamesRemaining": 3
+        },
+        {
+          "opponentTeamId": "15",
+          "opponentTeam": "Milwaukee Bucks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "23",
+          "opponentTeam": "Sacramento Kings",
+          "gamesRemaining": 3
+        },
+        {
+          "opponentTeamId": "26",
+          "opponentTeam": "Utah Jazz",
+          "gamesRemaining": 3
+        },
+        {
+          "opponentTeamId": "27",
+          "opponentTeam": "Washington Wizards",
+          "gamesRemaining": 1
+        }
+      ],
+      "opponentsText": "Dallas Mavericks (1), LA Clippers (3), Milwaukee Bucks (1), Sacramento Kings (3), Utah Jazz (3), Washington Wizards (1)"
     },
     {
       "rank": 4,
-      "team": "Memphis Grizzlies",
-      "teamDisplay": "Memphis Grizzlies (14)",
-      "opponentsText": "Pending refresh"
+      "teamId": "17",
+      "team": "Brooklyn Nets",
+      "teamDisplay": "Brooklyn Nets (11)",
+      "winPct": 0.27450982,
+      "record": "14-37",
+      "totalRemainingVsBottom12": 11,
+      "opponents": [
+        {
+          "opponentTeamId": "30",
+          "opponentTeam": "Charlotte Hornets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "4",
+          "opponentTeam": "Chicago Bulls",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "6",
+          "opponentTeam": "Dallas Mavericks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "11",
+          "opponentTeam": "Indiana Pacers",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "29",
+          "opponentTeam": "Memphis Grizzlies",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "15",
+          "opponentTeam": "Milwaukee Bucks",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "23",
+          "opponentTeam": "Sacramento Kings",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "27",
+          "opponentTeam": "Washington Wizards",
+          "gamesRemaining": 1
+        }
+      ],
+      "opponentsText": "Charlotte Hornets (1), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (2), Memphis Grizzlies (1), Milwaukee Bucks (2), Sacramento Kings (2), Washington Wizards (1)"
     },
     {
       "rank": 5,
-      "team": "Milwaukee Bucks",
-      "teamDisplay": "Milwaukee Bucks (13)",
-      "opponentsText": "Pending refresh"
+      "teamId": "27",
+      "team": "Washington Wizards",
+      "teamDisplay": "Washington Wizards (9)",
+      "winPct": 0.27450982,
+      "record": "14-37",
+      "totalRemainingVsBottom12": 9,
+      "opponents": [
+        {
+          "opponentTeamId": "17",
+          "opponentTeam": "Brooklyn Nets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "30",
+          "opponentTeam": "Charlotte Hornets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "4",
+          "opponentTeam": "Chicago Bulls",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "11",
+          "opponentTeam": "Indiana Pacers",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "3",
+          "opponentTeam": "New Orleans Pelicans",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "26",
+          "opponentTeam": "Utah Jazz",
+          "gamesRemaining": 2
+        }
+      ],
+      "opponentsText": "Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (2), Indiana Pacers (2), New Orleans Pelicans (1), Utah Jazz (2)"
     },
     {
       "rank": 6,
-      "team": "Dallas Mavericks",
-      "teamDisplay": "Dallas Mavericks (11)",
-      "opponentsText": "Pending refresh"
+      "teamId": "26",
+      "team": "Utah Jazz",
+      "teamDisplay": "Utah Jazz (11)",
+      "winPct": 0.3018868,
+      "record": "16-37",
+      "totalRemainingVsBottom12": 11,
+      "opponents": [
+        {
+          "opponentTeamId": "29",
+          "opponentTeam": "Memphis Grizzlies",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "15",
+          "opponentTeam": "Milwaukee Bucks",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "3",
+          "opponentTeam": "New Orleans Pelicans",
+          "gamesRemaining": 3
+        },
+        {
+          "opponentTeamId": "23",
+          "opponentTeam": "Sacramento Kings",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "27",
+          "opponentTeam": "Washington Wizards",
+          "gamesRemaining": 2
+        }
+      ],
+      "opponentsText": "Memphis Grizzlies (2), Milwaukee Bucks (2), New Orleans Pelicans (3), Sacramento Kings (2), Washington Wizards (2)"
     },
     {
       "rank": 7,
-      "team": "Utah Jazz",
-      "teamDisplay": "Utah Jazz (13)",
-      "opponentsText": "Pending refresh"
+      "teamId": "6",
+      "team": "Dallas Mavericks",
+      "teamDisplay": "Dallas Mavericks (11)",
+      "winPct": 0.3653846,
+      "record": "19-33",
+      "totalRemainingVsBottom12": 11,
+      "opponents": [
+        {
+          "opponentTeamId": "17",
+          "opponentTeam": "Brooklyn Nets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "30",
+          "opponentTeam": "Charlotte Hornets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "4",
+          "opponentTeam": "Chicago Bulls",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "11",
+          "opponentTeam": "Indiana Pacers",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "12",
+          "opponentTeam": "LA Clippers",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "29",
+          "opponentTeam": "Memphis Grizzlies",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "15",
+          "opponentTeam": "Milwaukee Bucks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "3",
+          "opponentTeam": "New Orleans Pelicans",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "23",
+          "opponentTeam": "Sacramento Kings",
+          "gamesRemaining": 1
+        }
+      ],
+      "opponentsText": "Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (1), Indiana Pacers (1), LA Clippers (2), Memphis Grizzlies (2), Milwaukee Bucks (1), New Orleans Pelicans (1), Sacramento Kings (1)"
     },
     {
       "rank": 8,
-      "team": "Washington Wizards",
-      "teamDisplay": "Washington Wizards (10)",
-      "opponentsText": "Pending refresh"
+      "teamId": "29",
+      "team": "Memphis Grizzlies",
+      "teamDisplay": "Memphis Grizzlies (12)",
+      "winPct": 0.39215687,
+      "record": "20-31",
+      "totalRemainingVsBottom12": 12,
+      "opponents": [
+        {
+          "opponentTeamId": "17",
+          "opponentTeam": "Brooklyn Nets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "30",
+          "opponentTeam": "Charlotte Hornets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "4",
+          "opponentTeam": "Chicago Bulls",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "6",
+          "opponentTeam": "Dallas Mavericks",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "11",
+          "opponentTeam": "Indiana Pacers",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "12",
+          "opponentTeam": "LA Clippers",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "15",
+          "opponentTeam": "Milwaukee Bucks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "23",
+          "opponentTeam": "Sacramento Kings",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "26",
+          "opponentTeam": "Utah Jazz",
+          "gamesRemaining": 2
+        }
+      ],
+      "opponentsText": "Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (2), Dallas Mavericks (2), Indiana Pacers (1), LA Clippers (1), Milwaukee Bucks (1), Sacramento Kings (1), Utah Jazz (2)"
     },
     {
       "rank": 9,
-      "team": "Brooklyn Nets",
-      "teamDisplay": "Brooklyn Nets (13)",
-      "opponentsText": "Pending refresh"
+      "teamId": "15",
+      "team": "Milwaukee Bucks",
+      "teamDisplay": "Milwaukee Bucks (11)",
+      "winPct": 0.42,
+      "record": "21-29",
+      "totalRemainingVsBottom12": 11,
+      "opponents": [
+        {
+          "opponentTeamId": "17",
+          "opponentTeam": "Brooklyn Nets",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "4",
+          "opponentTeam": "Chicago Bulls",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "6",
+          "opponentTeam": "Dallas Mavericks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "11",
+          "opponentTeam": "Indiana Pacers",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "12",
+          "opponentTeam": "LA Clippers",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "29",
+          "opponentTeam": "Memphis Grizzlies",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "3",
+          "opponentTeam": "New Orleans Pelicans",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "26",
+          "opponentTeam": "Utah Jazz",
+          "gamesRemaining": 2
+        }
+      ],
+      "opponentsText": "Brooklyn Nets (2), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (2), Memphis Grizzlies (1), New Orleans Pelicans (1), Utah Jazz (2)"
     },
     {
       "rank": 10,
-      "team": "Indiana Pacers",
-      "teamDisplay": "Indiana Pacers (14)",
-      "opponentsText": "Pending refresh"
+      "teamId": "4",
+      "team": "Chicago Bulls",
+      "teamDisplay": "Chicago Bulls (11)",
+      "winPct": 0.4528302,
+      "record": "24-29",
+      "totalRemainingVsBottom12": 11,
+      "opponents": [
+        {
+          "opponentTeamId": "17",
+          "opponentTeam": "Brooklyn Nets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "30",
+          "opponentTeam": "Charlotte Hornets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "6",
+          "opponentTeam": "Dallas Mavericks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "11",
+          "opponentTeam": "Indiana Pacers",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "12",
+          "opponentTeam": "LA Clippers",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "29",
+          "opponentTeam": "Memphis Grizzlies",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "15",
+          "opponentTeam": "Milwaukee Bucks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "23",
+          "opponentTeam": "Sacramento Kings",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "27",
+          "opponentTeam": "Washington Wizards",
+          "gamesRemaining": 2
+        }
+      ],
+      "opponentsText": "Brooklyn Nets (1), Charlotte Hornets (1), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (1), Memphis Grizzlies (2), Milwaukee Bucks (1), Sacramento Kings (1), Washington Wizards (2)"
     },
     {
       "rank": 11,
-      "team": "New Orleans Pelicans",
-      "teamDisplay": "New Orleans Pelicans (13)",
-      "opponentsText": "Pending refresh"
+      "teamId": "12",
+      "team": "LA Clippers",
+      "teamDisplay": "LA Clippers (13)",
+      "winPct": 0.47058824,
+      "record": "24-27",
+      "totalRemainingVsBottom12": 13,
+      "opponents": [
+        {
+          "opponentTeamId": "4",
+          "opponentTeam": "Chicago Bulls",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "6",
+          "opponentTeam": "Dallas Mavericks",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "11",
+          "opponentTeam": "Indiana Pacers",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "29",
+          "opponentTeam": "Memphis Grizzlies",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "15",
+          "opponentTeam": "Milwaukee Bucks",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "3",
+          "opponentTeam": "New Orleans Pelicans",
+          "gamesRemaining": 3
+        },
+        {
+          "opponentTeamId": "23",
+          "opponentTeam": "Sacramento Kings",
+          "gamesRemaining": 2
+        }
+      ],
+      "opponentsText": "Chicago Bulls (1), Dallas Mavericks (2), Indiana Pacers (2), Memphis Grizzlies (1), Milwaukee Bucks (2), New Orleans Pelicans (3), Sacramento Kings (2)"
     },
     {
       "rank": 12,
-      "team": "Sacramento Kings",
-      "teamDisplay": "Sacramento Kings (15)",
-      "opponentsText": "Pending refresh"
+      "teamId": "30",
+      "team": "Charlotte Hornets",
+      "teamDisplay": "Charlotte Hornets (9)",
+      "winPct": 0.4716981,
+      "record": "25-28",
+      "totalRemainingVsBottom12": 9,
+      "opponents": [
+        {
+          "opponentTeamId": "17",
+          "opponentTeam": "Brooklyn Nets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "4",
+          "opponentTeam": "Chicago Bulls",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "6",
+          "opponentTeam": "Dallas Mavericks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "11",
+          "opponentTeam": "Indiana Pacers",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "29",
+          "opponentTeam": "Memphis Grizzlies",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "23",
+          "opponentTeam": "Sacramento Kings",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "27",
+          "opponentTeam": "Washington Wizards",
+          "gamesRemaining": 1
+        }
+      ],
+      "opponentsText": "Brooklyn Nets (1), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (2), Memphis Grizzlies (1), Sacramento Kings (2), Washington Wizards (1)"
     }
-  ],
-  "refreshStatus": {
-    "source": "cached",
-    "attemptedAt": "2026-02-08T06:25:11.729Z",
-    "lastLiveGeneratedAt": "2026-02-08T00:00:00.000Z",
-    "reasonCode": 20
-  }
+  ]
 }
