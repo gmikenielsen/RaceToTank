@@ -118,7 +118,7 @@ function renderRows(rows) {
     const aHasRank = Number.isFinite(aRank) && aRank > 0;
     const bHasRank = Number.isFinite(bRank) && bRank > 0;
 
-    if (aHasRank && bHasRank) return bRank - aRank;
+    if (aHasRank && bHasRank) return aRank - bRank;
     if (aHasRank) return -1;
     if (bHasRank) return 1;
 
