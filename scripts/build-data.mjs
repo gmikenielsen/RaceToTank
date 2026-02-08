@@ -4,6 +4,8 @@ import path from 'node:path';
 const STANDINGS_URL = 'https://cdn.nba.com/static/json/liveData/standings/standings.json';
 const SCHEDULE_URL = 'https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json';
 const BOTTOM_TEAM_COUNT = 12;
+const FETCH_TIMEOUT_MS = 25000;
+const FETCH_ATTEMPTS = 4;
 
 const OUTPUT_PATH = path.join(process.cwd(), 'public', 'data', 'latest.json');
 
@@ -277,53 +279,128 @@ function buildTodaySchedule(bottomTeams, games) {
   };
 }
 
-async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: {
-      'user-agent': 'race-to-the-tank-data-bot/1.0',
-      accept: 'application/json,text/plain,*/*',
-    },
-  });
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
-  if (!res.ok) {
-    throw new Error(`Fetch failed: ${url} -> ${res.status}`);
+function classifyFetchError(error) {
+  const cause = error?.cause;
+  const code = cause?.code || error?.code || '';
+  const message = String(error?.message || '').toLowerCase();
+
+  return {
+    code,
+    isNetworkLike:
+      code === 'ETIMEDOUT' ||
+      code === 'ECONNRESET' ||
+      code === 'ECONNREFUSED' ||
+      code === 'EAI_AGAIN' ||
+      code === 'ENOTFOUND' ||
+      message.includes('fetch failed') ||
+      message.includes('network') ||
+      message.includes('timed out') ||
+      message.includes('aborted'),
+  };
+}
+
+async function fetchJson(url, attempts = FETCH_ATTEMPTS) {
+  let lastError = null;
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
+    try {
+      const res = await fetch(url, {
+        signal: controller.signal,
+        headers: {
+          'user-agent': 'race-to-the-tank-data-bot/1.0',
+          accept: 'application/json,text/plain,*/*',
+        },
+      });
+
+      if (!res.ok) {
+        throw new Error(`Fetch failed: ${url} -> ${res.status}`);
+      }
+
+      return await res.json();
+    } catch (error) {
+      lastError = error;
+      const { isNetworkLike, code } = classifyFetchError(error);
+      const waitMs = 1200 * attempt;
+      if (attempt < attempts) {
+        const codeText = code ? ` (${code})` : '';
+        console.warn(`Fetch retry ${attempt}/${attempts} for ${url}${codeText}. Waiting ${waitMs}ms...`);
+        await sleep(waitMs);
+      } else {
+        console.warn(`Fetch exhausted retries for ${url}.`);
+      }
+
+      if (!isNetworkLike && attempt >= attempts) break;
+    } finally {
+      clearTimeout(timer);
+    }
   }
 
-  return res.json();
+  throw lastError;
+}
+
+async function readCachedPayload() {
+  try {
+    const raw = await fs.readFile(OUTPUT_PATH, 'utf8');
+    const parsed = JSON.parse(raw);
+    if (!parsed || !Array.isArray(parsed.rows)) return null;
+    return parsed;
+  } catch {
+    return null;
+  }
 }
 
 async function main() {
-  const [standingsJson, scheduleJson] = await Promise.all([
-    fetchJson(STANDINGS_URL),
-    fetchJson(SCHEDULE_URL),
-  ]);
+  try {
+    const [standingsJson, scheduleJson] = await Promise.all([
+      fetchJson(STANDINGS_URL),
+      fetchJson(SCHEDULE_URL),
+    ]);
 
-  const standings = normalizeStandings(standingsJson);
-  if (standings.length < BOTTOM_TEAM_COUNT) {
-    throw new Error(`Unable to resolve ${BOTTOM_TEAM_COUNT} teams from standings feed.`);
+    const standings = normalizeStandings(standingsJson);
+    if (standings.length < BOTTOM_TEAM_COUNT) {
+      throw new Error(`Unable to resolve ${BOTTOM_TEAM_COUNT} teams from standings feed.`);
+    }
+
+    const bottomTeams = standings.slice(0, BOTTOM_TEAM_COUNT);
+    const games = normalizeSchedule(scheduleJson);
+
+    const rows = buildRows(bottomTeams, games);
+    const todaySchedule = buildTodaySchedule(bottomTeams, games);
+
+    const payload = {
+      app: 'Race to the Tank',
+      generatedAt: new Date().toISOString(),
+      dataSources: {
+        standings: STANDINGS_URL,
+        schedule: SCHEDULE_URL,
+      },
+      todaySchedule,
+      rows,
+    };
+
+    await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
+    await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
+
+    console.log(`Wrote ${rows.length} rows to ${OUTPUT_PATH}`);
+  } catch (error) {
+    const { isNetworkLike, code } = classifyFetchError(error);
+    if (!isNetworkLike) throw error;
+
+    const cached = await readCachedPayload();
+    if (!cached) throw error;
+
+    const cachedAt = cached.generatedAt || 'unknown timestamp';
+    const codeText = code ? ` (${code})` : '';
+    console.warn(`Using cached data from ${cachedAt} because upstream fetch timed out${codeText}.`);
+    console.warn('Keeping existing public/data/latest.json unchanged.');
   }
-
-  const bottomTeams = standings.slice(0, BOTTOM_TEAM_COUNT);
-  const games = normalizeSchedule(scheduleJson);
-
-  const rows = buildRows(bottomTeams, games);
-  const todaySchedule = buildTodaySchedule(bottomTeams, games);
-
-  const payload = {
-    app: 'Race to the Tank',
-    generatedAt: new Date().toISOString(),
-    dataSources: {
-      standings: STANDINGS_URL,
-      schedule: SCHEDULE_URL,
-    },
-    todaySchedule,
-    rows,
-  };
-
-  await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
-  await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
-
-  console.log(`Wrote ${rows.length} rows to ${OUTPUT_PATH}`);
 }
 
 main().catch((error) => {
