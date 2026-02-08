@@ -153,19 +153,21 @@ function renderRows(rows, payload) {
 
   const desktopHtml = orderedRows
     .map((row, index) => {
-      const team = `${index + 1}.&nbsp;${escapeHtml(resolveTeamDisplay(row))}`;
+      const rank = escapeHtml(String(index + 1));
+      const teamName = escapeHtml(resolveTeamDisplay(row));
       const record = escapeHtml(resolveRecordText(row));
       const opponents = escapeHtml(row.opponentsText || 'None');
-      return `<tr><td class="team"><div class="team-main">${team}</div><div class="team-record">Record: ${record}</div></td><td class="opponents">${opponents}</td></tr>`;
+      return `<tr><td class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">Record: ${record}</div></td><td class="opponents">${opponents}</td></tr>`;
     })
     .join('');
 
   const mobileHtml = orderedRows
     .map((row, index) => {
-      const team = `${index + 1}.&nbsp;${escapeHtml(resolveTeamDisplay(row))}`;
+      const rank = escapeHtml(String(index + 1));
+      const teamName = escapeHtml(resolveTeamDisplay(row));
       const record = escapeHtml(resolveRecordText(row));
       const opponents = escapeHtml(row.opponentsText || 'None');
-      return `<article class="card"><div class="team"><div class="team-main">${team}</div><div class="team-record">Record: ${record}</div></div><div class="opponents">${opponents}</div></article>`;
+      return `<article class="card"><div class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">Record: ${record}</div></div><div class="opponents">${opponents}</div></article>`;
     })
     .join('');
 

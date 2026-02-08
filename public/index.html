@@ -164,12 +164,25 @@
       }
 
       .team-main {
+        display: grid;
+        grid-template-columns: 2.3ch minmax(0, 1fr);
+        column-gap: 0.24rem;
+        align-items: baseline;
+      }
+
+      .team-rank {
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .team-name {
         white-space: nowrap;
         text-wrap: nowrap;
       }
 
       .team-record {
         margin-top: 4px;
+        margin-left: calc(2.3ch + 0.24rem);
         color: #cddcf7;
         font-size: 0.86rem;
         font-weight: 600;
