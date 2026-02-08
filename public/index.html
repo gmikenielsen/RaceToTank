@@ -87,49 +87,6 @@
         color: var(--muted);
         font-size: 0.96rem;
       }
-
-      .meta {
-        margin-top: 14px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-
-      .chip {
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        padding: 7px 11px;
-        background: rgba(255, 255, 255, 0.08);
-        font-size: 0.84rem;
-      }
-
-      .chip-alert {
-        border-color: rgba(249, 160, 27, 0.75);
-        background: rgba(249, 160, 27, 0.16);
-        color: #ffd89c;
-        font-weight: 700;
-      }
-
-      .hidden {
-        display: none;
-      }
-
-      .button {
-        border: 0;
-        border-radius: 10px;
-        background: var(--accent);
-        color: #fff;
-        font: inherit;
-        font-weight: 700;
-        padding: 9px 13px;
-        cursor: pointer;
-      }
-
-      .button:active {
-        transform: translateY(1px);
-      }
-
       .today {
         margin-top: 14px;
         border: 1px solid var(--line);
@@ -260,11 +217,6 @@
             <p class="subtitle">Bottom 14 teams with remaining head-to-head games</p>
           </div>
           <img class="hero-art" src="./assets/tank-watch-hero.jpg" alt="Tank Watch basketball tank artwork" />
-        </div>
-        <div class="meta">
-          <span class="chip" id="updated-chip">Last updated: loading...</span>
-          <span class="chip chip-alert hidden" id="refresh-status-chip"></span>
-          <button class="button" id="refresh-btn" type="button">Refresh</button>
         </div>
         <section class="today">
           <h2 class="today-title">Today’s TANK schedule (Bottom 14 teams)</h2>

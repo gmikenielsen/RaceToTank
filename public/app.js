@@ -1,13 +1,10 @@
 const DATA_URL = './data/latest.json';
 
 const statusEl = document.getElementById('status');
-const updatedChipEl = document.getElementById('updated-chip');
 const desktopBodyEl = document.getElementById('desktop-body');
 const mobileCardsEl = document.getElementById('mobile-cards');
-const refreshButtonEl = document.getElementById('refresh-btn');
 const todaySubEl = document.getElementById('today-sub');
 const todayListEl = document.getElementById('today-list');
-const refreshStatusChipEl = document.getElementById('refresh-status-chip');
 
 function escapeHtml(value) {
   return String(value)
@@ -85,19 +82,15 @@ function resolveTeamDisplay(row) {
   return baseTeam;
 }
 
-function renderRefreshStatus(refreshStatus) {
-  if (!refreshStatusChipEl) return;
+function formatLoadStatus(rowsCount, generatedAt, refreshStatus) {
+  let message = `${rowsCount} teams loaded. Last updated: ${formatTimestamp(generatedAt)}.`;
 
-  const status = refreshStatus && typeof refreshStatus === 'object' ? refreshStatus : {};
-  if (status.source !== 'cached') {
-    refreshStatusChipEl.textContent = '';
-    refreshStatusChipEl.classList.add('hidden');
-    return;
+  if (refreshStatus && refreshStatus.source === 'cached') {
+    const lastLive = refreshStatus.lastLiveGeneratedAt ? formatTimestamp(refreshStatus.lastLiveGeneratedAt) : 'unknown';
+    message += ` Using cached data (last live: ${lastLive}).`;
   }
 
-  const lastLive = status.lastLiveGeneratedAt ? formatTimestamp(status.lastLiveGeneratedAt) : 'unknown';
-  refreshStatusChipEl.textContent = `Using cached data (last live: ${lastLive})`;
-  refreshStatusChipEl.classList.remove('hidden');
+  return message;
 }
 
 function renderTodaySchedule(todaySchedule) {
@@ -130,7 +123,7 @@ function renderTodaySchedule(todaySchedule) {
     .join('');
 }
 
-function renderRows(rows) {
+function renderRows(rows, payload) {
   desktopBodyEl.innerHTML = '';
   mobileCardsEl.innerHTML = '';
 
@@ -171,7 +164,7 @@ function renderRows(rows) {
 
   desktopBodyEl.innerHTML = desktopHtml;
   mobileCardsEl.innerHTML = mobileHtml;
-  showStatus(`${rows.length} teams loaded.`);
+  showStatus(formatLoadStatus(rows.length, payload.generatedAt, payload.refreshStatus));
 }
 
 async function loadData() {
@@ -186,21 +179,14 @@ async function loadData() {
     const payload = await response.json();
     const rows = Array.isArray(payload.rows) ? payload.rows : [];
 
-    updatedChipEl.textContent = `Last updated: ${formatTimestamp(payload.generatedAt)}`;
-    renderRefreshStatus(payload.refreshStatus);
     renderTodaySchedule(payload.todaySchedule);
-    renderRows(rows);
+    renderRows(rows, payload);
   } catch (error) {
     showStatus(`Unable to load data: ${error.message}`, true);
     todaySubEl.textContent = 'Unavailable';
     todayListEl.innerHTML = "<li>Unable to load today's schedule.</li>";
-    renderRefreshStatus(null);
   }
 }
-
-refreshButtonEl.addEventListener('click', () => {
-  loadData();
-});
 
 async function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
