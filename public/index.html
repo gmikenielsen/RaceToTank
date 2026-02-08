@@ -69,13 +69,12 @@
 
       .hero-art {
         width: 100%;
-        max-width: 100%;
+        max-width: 460px;
         border-radius: 14px;
         border: 1px solid var(--line);
         box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        object-position: center 24%;
+        object-fit: contain;
+        object-position: center top;
       }
 
       .hero-copy {
@@ -221,6 +220,7 @@
           width: 100%;
           max-width: 100%;
           aspect-ratio: 16 / 8.5;
+          object-fit: cover;
           object-position: center 22%;
         }
 
