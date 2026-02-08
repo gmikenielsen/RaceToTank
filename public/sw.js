@@ -1,13 +1,15 @@
-const CACHE_NAME = 'race-to-tank-v1';
+const CACHE_NAME = 'race-to-tank-v2';
 const STATIC_ASSETS = [
   './',
   './index.html',
   './app.js',
   './manifest.webmanifest',
   './assets/tank-watch-hero.jpg',
-  './assets/icons/icon-192.png',
-  './assets/icons/icon-512.png',
-  './assets/icons/apple-touch-icon.png',
+  './assets/icons/icon-192-v2.png',
+  './assets/icons/icon-512-v2.png',
+  './assets/icons/icon-192-maskable-v2.png',
+  './assets/icons/icon-512-maskable-v2.png',
+  './assets/icons/apple-touch-icon-v2.png',
   './data/latest.json',
 ];
 
