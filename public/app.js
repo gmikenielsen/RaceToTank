@@ -111,7 +111,19 @@ function renderRows(rows) {
     return;
   }
 
-  const orderedRows = [...rows].reverse();
+  const orderedRows = [...rows].sort((a, b) => {
+    const aRank = Number(a?.rank);
+    const bRank = Number(b?.rank);
+
+    const aHasRank = Number.isFinite(aRank) && aRank > 0;
+    const bHasRank = Number.isFinite(bRank) && bRank > 0;
+
+    if (aHasRank && bHasRank) return bRank - aRank;
+    if (aHasRank) return -1;
+    if (bHasRank) return 1;
+
+    return 0;
+  });
 
   const desktopHtml = orderedRows
     .map((row, index) => {
