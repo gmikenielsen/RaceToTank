@@ -1,0 +1,24 @@
+{
+  "name": "Race to the Tank",
+  "short_name": "Tank Race",
+  "description": "Bottom 14 NBA teams with remaining head-to-head tank schedule.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#06162f",
+  "theme_color": "#06162f",
+  "icons": [
+    {
+      "src": "./assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
