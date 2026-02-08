@@ -83,5 +83,11 @@
       "teamDisplay": "Sacramento Kings (15)",
       "opponentsText": "Pending refresh"
     }
-  ]
+  ],
+  "refreshStatus": {
+    "source": "cached",
+    "attemptedAt": "2026-02-08T06:25:11.729Z",
+    "lastLiveGeneratedAt": "2026-02-08T00:00:00.000Z",
+    "reasonCode": 20
+  }
 }

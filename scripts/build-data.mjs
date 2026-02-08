@@ -356,6 +356,11 @@ async function readCachedPayload() {
   }
 }
 
+async function writePayload(payload) {
+  await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
+  await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
+}
+
 async function main() {
   try {
     const [standingsJson, scheduleJson] = await Promise.all([
@@ -374,19 +379,23 @@ async function main() {
     const rows = buildRows(bottomTeams, games);
     const todaySchedule = buildTodaySchedule(bottomTeams, games);
 
+    const generatedAt = new Date().toISOString();
     const payload = {
       app: 'Race to the Tank',
-      generatedAt: new Date().toISOString(),
+      generatedAt,
       dataSources: {
         standings: STANDINGS_URL,
         schedule: SCHEDULE_URL,
+      },
+      refreshStatus: {
+        source: 'live',
+        attemptedAt: generatedAt,
       },
       todaySchedule,
       rows,
     };
 
-    await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
-    await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
+    await writePayload(payload);
 
     console.log(`Wrote ${rows.length} rows to ${OUTPUT_PATH}`);
   } catch (error) {
@@ -399,7 +408,19 @@ async function main() {
     const cachedAt = cached.generatedAt || 'unknown timestamp';
     const codeText = code ? ` (${code})` : '';
     console.warn(`Using cached data from ${cachedAt} because upstream fetch timed out${codeText}.`);
-    console.warn('Keeping existing public/data/latest.json unchanged.');
+
+    const fallbackPayload = {
+      ...cached,
+      refreshStatus: {
+        source: 'cached',
+        attemptedAt: new Date().toISOString(),
+        lastLiveGeneratedAt: cached.generatedAt || null,
+        reasonCode: code || null,
+      },
+    };
+
+    await writePayload(fallbackPayload);
+    console.warn('Wrote cached payload with refreshStatus=cached.');
   }
 }
 

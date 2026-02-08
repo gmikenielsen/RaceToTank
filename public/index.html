@@ -96,6 +96,17 @@
         font-size: 0.84rem;
       }
 
+      .chip-alert {
+        border-color: rgba(249, 160, 27, 0.75);
+        background: rgba(249, 160, 27, 0.16);
+        color: #ffd89c;
+        font-weight: 700;
+      }
+
+      .hidden {
+        display: none;
+      }
+
       .button {
         border: 0;
         border-radius: 10px;
@@ -236,16 +247,17 @@
         <div class="hero-top">
           <div>
             <h1 class="title">Race to the Tank</h1>
-            <p class="subtitle">Bottom 12 teams with remaining head-to-head games shown as a two-column mobile-friendly list.</p>
+            <p class="subtitle">Bottom 12 teams with remaining head-to-head games</p>
           </div>
           <img class="hero-art" src="./assets/tank-watch-hero.jpg" alt="Tank Watch basketball tank artwork" />
         </div>
         <div class="meta">
           <span class="chip" id="updated-chip">Last updated: loading...</span>
+          <span class="chip chip-alert hidden" id="refresh-status-chip"></span>
           <button class="button" id="refresh-btn" type="button">Refresh</button>
         </div>
         <section class="today">
-          <h2 class="today-title">Today’s schedule (Bottom 12 teams)</h2>
+          <h2 class="today-title">Today’s TANK schedule (Bottom 12 teams)</h2>
           <p class="today-sub" id="today-sub">Loading today’s games...</p>
           <ul class="today-list" id="today-list"></ul>
         </section>
@@ -255,7 +267,7 @@
         <table id="desktop-table" aria-label="Race to the Tank table">
           <thead>
             <tr>
-              <th scope="col">Teams 1-12</th>
+              <th scope="col">Team (Total vs Bottom 12)</th>
               <th scope="col">Remaining Opponents (comma list)</th>
             </tr>
           </thead>

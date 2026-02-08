@@ -7,6 +7,7 @@ const mobileCardsEl = document.getElementById('mobile-cards');
 const refreshButtonEl = document.getElementById('refresh-btn');
 const todaySubEl = document.getElementById('today-sub');
 const todayListEl = document.getElementById('today-list');
+const refreshStatusChipEl = document.getElementById('refresh-status-chip');
 
 function escapeHtml(value) {
   return String(value)
@@ -27,6 +28,45 @@ function formatTimestamp(iso) {
 function showStatus(message, isError = false) {
   statusEl.textContent = message;
   statusEl.className = isError ? 'status error' : 'status';
+}
+
+function sumFromOpponentsText(opponentsText) {
+  if (typeof opponentsText !== 'string') return null;
+  const matches = [...opponentsText.matchAll(/\((\d+)\)/g)];
+  if (!matches.length) return null;
+  return matches.reduce((sum, m) => sum + Number(m[1] || 0), 0);
+}
+
+function resolveTeamDisplay(row) {
+  const baseTeam = row.team || row.teamDisplay || 'Unknown Team';
+
+  const directTotal = Number(row.totalRemainingVsBottom12);
+  if (Number.isFinite(directTotal)) return `${baseTeam} (${directTotal})`;
+
+  if (Array.isArray(row.opponents) && row.opponents.length) {
+    const total = row.opponents.reduce((sum, item) => sum + Number(item?.gamesRemaining || 0), 0);
+    return `${baseTeam} (${total})`;
+  }
+
+  const parsedTotal = sumFromOpponentsText(row.opponentsText);
+  if (Number.isFinite(parsedTotal)) return `${baseTeam} (${parsedTotal})`;
+
+  return baseTeam;
+}
+
+function renderRefreshStatus(refreshStatus) {
+  if (!refreshStatusChipEl) return;
+
+  const status = refreshStatus && typeof refreshStatus === 'object' ? refreshStatus : {};
+  if (status.source !== 'cached') {
+    refreshStatusChipEl.textContent = '';
+    refreshStatusChipEl.classList.add('hidden');
+    return;
+  }
+
+  const lastLive = status.lastLiveGeneratedAt ? formatTimestamp(status.lastLiveGeneratedAt) : 'unknown';
+  refreshStatusChipEl.textContent = `Using cached data (last live: ${lastLive})`;
+  refreshStatusChipEl.classList.remove('hidden');
 }
 
 function renderTodaySchedule(todaySchedule) {
@@ -71,17 +111,19 @@ function renderRows(rows) {
     return;
   }
 
-  const desktopHtml = rows
-    .map((row) => {
-      const team = escapeHtml(row.teamDisplay || row.team || 'Unknown Team');
+  const orderedRows = [...rows].reverse();
+
+  const desktopHtml = orderedRows
+    .map((row, index) => {
+      const team = escapeHtml(`${index + 1}. ${resolveTeamDisplay(row)}`);
       const opponents = escapeHtml(row.opponentsText || 'None');
       return `<tr><td class="team">${team}</td><td class="opponents">${opponents}</td></tr>`;
     })
     .join('');
 
-  const mobileHtml = rows
-    .map((row) => {
-      const team = escapeHtml(row.teamDisplay || row.team || 'Unknown Team');
+  const mobileHtml = orderedRows
+    .map((row, index) => {
+      const team = escapeHtml(`${index + 1}. ${resolveTeamDisplay(row)}`);
       const opponents = escapeHtml(row.opponentsText || 'None');
       return `<article class="card"><div class="team">${team}</div><div class="opponents">${opponents}</div></article>`;
     })
@@ -105,12 +147,14 @@ async function loadData() {
     const rows = Array.isArray(payload.rows) ? payload.rows : [];
 
     updatedChipEl.textContent = `Last updated: ${formatTimestamp(payload.generatedAt)}`;
+    renderRefreshStatus(payload.refreshStatus);
     renderTodaySchedule(payload.todaySchedule);
     renderRows(rows);
   } catch (error) {
     showStatus(`Unable to load data: ${error.message}`, true);
     todaySubEl.textContent = 'Unavailable';
     todayListEl.innerHTML = "<li>Unable to load today's schedule.</li>";
+    renderRefreshStatus(null);
   }
 }
 
