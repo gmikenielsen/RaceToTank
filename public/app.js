@@ -115,7 +115,7 @@ function renderRows(rows) {
 
   const desktopHtml = orderedRows
     .map((row, index) => {
-      const team = escapeHtml(`${index + 1}. ${resolveTeamDisplay(row)}`);
+      const team = `${index + 1}.&nbsp;${escapeHtml(resolveTeamDisplay(row))}`;
       const opponents = escapeHtml(row.opponentsText || 'None');
       return `<tr><td class="team">${team}</td><td class="opponents">${opponents}</td></tr>`;
     })
@@ -123,7 +123,7 @@ function renderRows(rows) {
 
   const mobileHtml = orderedRows
     .map((row, index) => {
-      const team = escapeHtml(`${index + 1}. ${resolveTeamDisplay(row)}`);
+      const team = `${index + 1}.&nbsp;${escapeHtml(resolveTeamDisplay(row))}`;
       const opponents = escapeHtml(row.opponentsText || 'None');
       return `<article class="card"><div class="team">${team}</div><div class="opponents">${opponents}</div></article>`;
     })
