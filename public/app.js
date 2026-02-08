@@ -88,7 +88,7 @@ function resolveRecordText(row) {
 }
 
 function formatLoadStatus(rowsCount, generatedAt, refreshStatus) {
-  let message = `${rowsCount} teams loaded. Last updated: ${formatTimestamp(generatedAt)}.`;
+  let message = `Last updated: ${formatTimestamp(generatedAt)}.`;
 
   if (refreshStatus && refreshStatus.source === 'cached') {
     const lastLive = refreshStatus.lastLiveGeneratedAt ? formatTimestamp(refreshStatus.lastLiveGeneratedAt) : 'unknown';
