@@ -3,7 +3,6 @@ const DATA_URL = './data/latest.json';
 const statusEl = document.getElementById('status');
 const desktopBodyEl = document.getElementById('desktop-body');
 const mobileCardsEl = document.getElementById('mobile-cards');
-const todaySubEl = document.getElementById('today-sub');
 const todayListEl = document.getElementById('today-list');
 
 function escapeHtml(value) {
@@ -128,18 +127,38 @@ function formatLoadStatus(rowsCount, generatedAt, refreshStatus) {
   return message;
 }
 
+function normalizeScheduleDays(todaySchedule) {
+  const schedule = todaySchedule && typeof todaySchedule === 'object' ? todaySchedule : {};
+  const timeZone = schedule.timeZone || 'America/New_York';
+
+  if (Array.isArray(schedule.days) && schedule.days.length) {
+    return {
+      timeZone,
+      days: schedule.days.slice(0, 3).map((day) => ({
+        dateEt: day?.dateEt || 'Unknown date',
+        games: Array.isArray(day?.games) ? day.games : [],
+      })),
+    };
+  }
+
+  return {
+    timeZone,
+    days: [
+      {
+        dateEt: schedule.dateEt || 'Unknown date',
+        games: Array.isArray(schedule.games) ? schedule.games : [],
+      },
+    ],
+  };
+}
+
 function renderTodaySchedule(todaySchedule) {
   todayListEl.innerHTML = '';
 
-  const schedule = todaySchedule && typeof todaySchedule === 'object' ? todaySchedule : {};
-  const games = Array.isArray(schedule.games) ? schedule.games : [];
-  const dateEt = schedule.dateEt || 'Unknown date';
-  const timeZone = schedule.timeZone || 'America/New_York';
+  const { timeZone, days } = normalizeScheduleDays(todaySchedule);
 
-  todaySubEl.textContent = formatScheduleDate(dateEt, timeZone);
-
-  if (!games.length) {
-    todayListEl.innerHTML = '<li>No games today for these 14 teams.</li>';
+  if (!days.length) {
+    todayListEl.innerHTML = '<p class="today-empty">No tank games in the next 3 days.</p>';
     return;
   }
 
@@ -149,11 +168,22 @@ function renderTodaySchedule(todaySchedule) {
     timeZone,
   });
 
-  todayListEl.innerHTML = games
-    .map((game) => {
-      const matchup = escapeHtml(game.matchup || 'Unknown matchup');
-      const tipoff = game.tipoffUtc ? formatter.format(new Date(game.tipoffUtc)) : 'TBD';
-      return `<li><strong>${tipoff}</strong> - ${matchup}</li>`;
+  todayListEl.innerHTML = days
+    .map((day) => {
+      const dateLabel = escapeHtml(formatScheduleDate(day.dateEt, timeZone));
+      const games = Array.isArray(day.games) ? day.games : [];
+
+      const gamesHtml = games.length
+        ? `<ul class="today-list">${games
+            .map((game) => {
+              const matchup = escapeHtml(game.matchup || 'Unknown matchup');
+              const tipoffText = game.tipoffUtc ? `${formatter.format(new Date(game.tipoffUtc))} (EST)` : 'TBD (EST)';
+              return `<li><strong>${escapeHtml(tipoffText)}</strong> - ${matchup}</li>`;
+            })
+            .join('')}</ul>`
+        : '<p class="today-empty">No tank games.</p>';
+
+      return `<section class="today-day"><p class="today-date">${dateLabel}</p>${gamesHtml}</section>`;
     })
     .join('');
 }
@@ -222,8 +252,7 @@ async function loadData() {
     renderRows(rows, payload);
   } catch (error) {
     showStatus(`Unable to load data: ${error.message}`, true);
-    todaySubEl.textContent = 'Unavailable';
-    todayListEl.innerHTML = "<li>Unable to load today's schedule.</li>";
+    todayListEl.innerHTML = '<p class="today-empty">Unable to load schedule.</p>';
   }
 }
 
@@ -231,7 +260,7 @@ async function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
 
   try {
-    await navigator.serviceWorker.register('./sw.js?v=7', { scope: './' });
+    await navigator.serviceWorker.register('./sw.js?v=8', { scope: './' });
   } catch (error) {
     console.warn('Service worker registration failed', error);
   }

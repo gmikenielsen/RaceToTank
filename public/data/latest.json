@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-08T14:14:20.842Z",
+  "generatedAt": "2026-02-08T15:21:47.067Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,38 +8,153 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-08T14:14:20.842Z"
+    "attemptedAt": "2026-02-08T15:21:47.067Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
-    "dateEt": "2026-02-08",
-    "games": [
+    "days": [
       {
-        "gameId": "401810613",
-        "matchup": "Miami Heat at Washington Wizards",
-        "tipoffUtc": "2026-02-08T19:00:00.000Z",
-        "trackedTeams": [
-          "Washington Wizards"
-        ],
-        "status": "Sun, February 8th at 2:00 PM EST"
+        "dateEt": "2026-02-08",
+        "games": [
+          {
+            "gameId": "401810613",
+            "matchup": "Miami Heat at Washington Wizards",
+            "tipoffUtc": "2026-02-08T19:00:00.000Z",
+            "trackedTeams": [
+              "Washington Wizards"
+            ],
+            "status": "Sun, February 8th at 2:00 PM EST"
+          },
+          {
+            "gameId": "401810614",
+            "matchup": "Indiana Pacers at Toronto Raptors",
+            "tipoffUtc": "2026-02-08T20:00:00.000Z",
+            "trackedTeams": [
+              "Indiana Pacers"
+            ],
+            "status": "Sun, February 8th at 3:00 PM EST"
+          },
+          {
+            "gameId": "401810615",
+            "matchup": "LA Clippers at Minnesota Timberwolves",
+            "tipoffUtc": "2026-02-08T20:00:00.000Z",
+            "trackedTeams": [
+              "LA Clippers"
+            ],
+            "status": "Sun, February 8th at 3:00 PM EST"
+          }
+        ]
       },
       {
-        "gameId": "401810614",
-        "matchup": "Indiana Pacers at Toronto Raptors",
-        "tipoffUtc": "2026-02-08T20:00:00.000Z",
-        "trackedTeams": [
-          "Indiana Pacers"
-        ],
-        "status": "Sun, February 8th at 3:00 PM EST"
+        "dateEt": "2026-02-09",
+        "games": [
+          {
+            "gameId": "401810616",
+            "matchup": "Detroit Pistons at Charlotte Hornets",
+            "tipoffUtc": "2026-02-10T00:00:00.000Z",
+            "trackedTeams": [
+              "Charlotte Hornets"
+            ],
+            "status": "Mon, February 9th at 7:00 PM EST"
+          },
+          {
+            "gameId": "401810617",
+            "matchup": "Chicago Bulls at Brooklyn Nets",
+            "tipoffUtc": "2026-02-10T00:30:00.000Z",
+            "trackedTeams": [
+              "Chicago Bulls",
+              "Brooklyn Nets"
+            ],
+            "status": "Mon, February 9th at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810618",
+            "matchup": "Utah Jazz at Miami Heat",
+            "tipoffUtc": "2026-02-10T00:30:00.000Z",
+            "trackedTeams": [
+              "Utah Jazz"
+            ],
+            "status": "Mon, February 9th at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810619",
+            "matchup": "Milwaukee Bucks at Orlando Magic",
+            "tipoffUtc": "2026-02-10T00:30:00.000Z",
+            "trackedTeams": [
+              "Milwaukee Bucks"
+            ],
+            "status": "Mon, February 9th at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810621",
+            "matchup": "Sacramento Kings at New Orleans Pelicans",
+            "tipoffUtc": "2026-02-10T01:00:00.000Z",
+            "trackedTeams": [
+              "Sacramento Kings",
+              "New Orleans Pelicans"
+            ],
+            "status": "Mon, February 9th at 8:00 PM EST"
+          },
+          {
+            "gameId": "401810620",
+            "matchup": "Atlanta Hawks at Minnesota Timberwolves",
+            "tipoffUtc": "2026-02-10T01:00:00.000Z",
+            "trackedTeams": [
+              "Atlanta Hawks"
+            ],
+            "status": "Mon, February 9th at 8:00 PM EST"
+          },
+          {
+            "gameId": "401810623",
+            "matchup": "Memphis Grizzlies at Golden State Warriors",
+            "tipoffUtc": "2026-02-10T03:00:00.000Z",
+            "trackedTeams": [
+              "Memphis Grizzlies"
+            ],
+            "status": "Mon, February 9th at 10:00 PM EST"
+          },
+          {
+            "gameId": "401810625",
+            "matchup": "Philadelphia 76ers at Portland Trail Blazers",
+            "tipoffUtc": "2026-02-10T03:00:00.000Z",
+            "trackedTeams": [
+              "Portland Trail Blazers"
+            ],
+            "status": "Mon, February 9th at 10:00 PM EST"
+          }
+        ]
       },
       {
-        "gameId": "401810615",
-        "matchup": "LA Clippers at Minnesota Timberwolves",
-        "tipoffUtc": "2026-02-08T20:00:00.000Z",
-        "trackedTeams": [
-          "LA Clippers"
-        ],
-        "status": "Sun, February 8th at 3:00 PM EST"
+        "dateEt": "2026-02-10",
+        "games": [
+          {
+            "gameId": "401810626",
+            "matchup": "Indiana Pacers at New York Knicks",
+            "tipoffUtc": "2026-02-11T00:30:00.000Z",
+            "trackedTeams": [
+              "Indiana Pacers"
+            ],
+            "status": "Tue, February 10th at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810627",
+            "matchup": "LA Clippers at Houston Rockets",
+            "tipoffUtc": "2026-02-11T01:00:00.000Z",
+            "trackedTeams": [
+              "LA Clippers"
+            ],
+            "status": "Tue, February 10th at 8:00 PM EST"
+          },
+          {
+            "gameId": "401810628",
+            "matchup": "Dallas Mavericks at Phoenix Suns",
+            "tipoffUtc": "2026-02-11T02:00:00.000Z",
+            "trackedTeams": [
+              "Dallas Mavericks"
+            ],
+            "status": "Tue, February 10th at 9:00 PM EST"
+          }
+        ]
       }
     ]
   },

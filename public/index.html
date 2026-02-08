@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#06162f" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Race to the Tank" />
-    <title>Race to the Tank</title>
-    <link rel="manifest" href="./manifest.webmanifest?v=7" />
+    <meta name="apple-mobile-web-app-title" content="Race 2 Tank" />
+    <title>Race 2 Tank</title>
+    <link rel="manifest" href="./manifest.webmanifest?v=8" />
     <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon-v4.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/icons/icon-192-v4.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="./assets/icons/icon-512-v4.png" />
@@ -81,15 +81,28 @@
         text-align: center;
       }
 
-      .title {
-        margin: 0;
-        font-size: clamp(1.7rem, 3vw, 2.4rem);
-        letter-spacing: 0.5px;
-        font-family: 'Space Grotesk', sans-serif;
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .title-image {
+        width: min(100%, 560px);
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
       }
 
       .subtitle {
-        margin: 8px 0 0;
+        margin: 10px 0 0;
         color: var(--muted);
         font-size: 0.96rem;
       }
@@ -108,10 +121,24 @@
         color: #f8fbff;
       }
 
-      .today-sub {
-        margin: 4px 0 10px;
+      .today-days {
+        margin-top: 8px;
+        display: grid;
+        gap: 9px;
+      }
+
+      .today-day {
+        border: 1px solid rgba(203, 223, 255, 0.15);
+        border-radius: 10px;
+        padding: 8px 10px;
+        background: rgba(7, 25, 52, 0.45);
+      }
+
+      .today-date {
+        margin: 0 0 6px;
         color: #d9e7ff;
-        font-size: 0.9rem;
+        font-size: 0.92rem;
+        font-weight: 700;
       }
 
       .today-list {
@@ -121,9 +148,15 @@
       }
 
       .today-list li {
-        margin-bottom: 8px;
+        margin-bottom: 7px;
         line-height: 1.45;
         font-size: 1.01rem;
+      }
+
+      .today-empty {
+        margin: 0;
+        color: #d9e7ff;
+        font-size: 0.95rem;
       }
 
       .panel {
@@ -260,8 +293,8 @@
           object-position: center 8%;
         }
 
-        .title {
-          text-align: center;
+        .title-image {
+          max-width: 100%;
         }
 
         .subtitle {
@@ -325,20 +358,20 @@
       <section class="hero">
         <div class="hero-top">
           <div class="hero-copy">
-            <h1 class="title">Race to the Tank</h1>
-            <p class="subtitle">Bottom 14 teams with remaining head-to-head games</p>
+            <h1 class="sr-only">Race 2 Tank</h1>
+            <img class="title-image" src="./assets/race2tank-title.svg" alt="Race 2 Tank" />
+            <p class="subtitle">Bottom 14 NBA teams with remaining head-to-head games</p>
           </div>
           <img class="hero-art" src="./assets/tank-watch-hero.jpg" alt="Tank Watch basketball tank artwork" />
         </div>
         <section class="today">
-          <h2 class="today-title">Today’s TANK schedule</h2>
-          <p class="today-sub" id="today-sub">Loading today’s games...</p>
-          <ul class="today-list" id="today-list"></ul>
+          <h2 class="today-title">TANK Schedule</h2>
+          <div class="today-days" id="today-list"></div>
         </section>
       </section>
 
       <section class="panel">
-        <table id="desktop-table" aria-label="Race to the Tank table">
+        <table id="desktop-table" aria-label="Race 2 Tank table">
           <thead>
             <tr>
               <th scope="col">Team (Total vs Bottom 14)</th>
@@ -352,6 +385,6 @@
       </section>
     </div>
 
-    <script type="module" src="./app.js?v=7"></script>
+    <script type="module" src="./app.js?v=8"></script>
   </body>
 </html>

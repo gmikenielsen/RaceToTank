@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-labelledby="title desc">
+  <title id="title">Race 2 Tank</title>
+  <desc id="desc">Stylized Race 2 Tank title graphic.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd26f" />
+      <stop offset="55%" stop-color="#f9a01b" />
+      <stop offset="100%" stop-color="#de6d05" />
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#b5c7e9" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <rect x="8" y="8" width="884" height="204" rx="28" fill="rgba(3,14,33,0.72)" stroke="rgba(255,255,255,0.22)" stroke-width="2" />
+
+  <g filter="url(#shadow)" font-family="'Space Grotesk', 'Sora', sans-serif" font-weight="800" text-anchor="middle">
+    <text x="450" y="98" font-size="92" fill="url(#g2)" stroke="#152542" stroke-width="6" letter-spacing="3">RACE 2</text>
+    <text x="450" y="180" font-size="100" fill="url(#g1)" stroke="#2e1703" stroke-width="6" letter-spacing="4">TANK</text>
+  </g>
+</svg>

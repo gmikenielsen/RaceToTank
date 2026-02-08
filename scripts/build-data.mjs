@@ -453,23 +453,33 @@ function dateKey(date, timeZone) {
   }).format(date);
 }
 
-function buildTodaySchedule(bottomTeams, games) {
+function buildUpcomingSchedule(bottomTeams, games) {
   const easternTimeZone = 'America/New_York';
-  const todayDateEt = dateKey(new Date(), easternTimeZone);
+  const today = new Date();
+
+  const dayKeys = [];
+  for (let offset = 0; offset < 3; offset += 1) {
+    const day = new Date(today.getTime() + offset * 24 * 60 * 60 * 1000);
+    dayKeys.push(dateKey(day, easternTimeZone));
+  }
+
+  const daySet = new Set(dayKeys);
   const bottomTeamIds = new Set(bottomTeams.map((team) => team.teamId));
   const bottomTeamNameById = new Map(bottomTeams.map((team) => [team.teamId, team.teamName]));
 
-  const result = [];
+  const dayGames = new Map(dayKeys.map((key) => [key, []]));
+
   for (const game of games) {
     if (!game.date) continue;
-    if (dateKey(game.date, easternTimeZone) !== todayDateEt) continue;
+    const gameDayKey = dateKey(game.date, easternTimeZone);
+    if (!daySet.has(gameDayKey)) continue;
     if (!bottomTeamIds.has(game.homeTeamId) && !bottomTeamIds.has(game.awayTeamId)) continue;
 
     const trackedTeams = [];
     if (bottomTeamIds.has(game.awayTeamId)) trackedTeams.push(bottomTeamNameById.get(game.awayTeamId) || game.awayTeamName);
     if (bottomTeamIds.has(game.homeTeamId)) trackedTeams.push(bottomTeamNameById.get(game.homeTeamId) || game.homeTeamName);
 
-    result.push({
+    dayGames.get(gameDayKey).push({
       gameId: game.gameId,
       matchup: `${game.awayTeamName} at ${game.homeTeamName}`,
       tipoffUtc: game.date.toISOString(),
@@ -478,11 +488,16 @@ function buildTodaySchedule(bottomTeams, games) {
     });
   }
 
-  result.sort((a, b) => new Date(a.tipoffUtc).getTime() - new Date(b.tipoffUtc).getTime());
+  for (const key of dayKeys) {
+    dayGames.get(key).sort((a, b) => new Date(a.tipoffUtc).getTime() - new Date(b.tipoffUtc).getTime());
+  }
+
   return {
     timeZone: easternTimeZone,
-    dateEt: todayDateEt,
-    games: result,
+    days: dayKeys.map((dateEt) => ({
+      dateEt,
+      games: dayGames.get(dateEt) || [],
+    })),
   };
 }
 
@@ -600,7 +615,7 @@ async function loadFromEspn() {
 
   const games = normalizeEspnSchedule(schedulePayloads);
   const rows = buildRows(bottomTeams, games);
-  const todaySchedule = buildTodaySchedule(bottomTeams, games);
+  const todaySchedule = buildUpcomingSchedule(bottomTeams, games);
 
   return buildLivePayload({
     rows,
@@ -627,7 +642,7 @@ async function loadFromNba() {
   const bottomTeams = standings.slice(0, BOTTOM_TEAM_COUNT);
   const games = normalizeSchedule(scheduleJson);
   const rows = buildRows(bottomTeams, games);
-  const todaySchedule = buildTodaySchedule(bottomTeams, games);
+  const todaySchedule = buildUpcomingSchedule(bottomTeams, games);
 
   return buildLivePayload({
     rows,
