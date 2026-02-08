@@ -1,4 +1,4 @@
-const CACHE_NAME = 'race-to-tank-v3';
+const CACHE_NAME = 'race-to-tank-v4';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -12,6 +12,11 @@ const STATIC_ASSETS = [
   './assets/icons/apple-touch-icon-v3.png',
   './data/latest.json',
 ];
+
+function cachePut(cache, request, response) {
+  if (!response || !response.ok || response.type !== 'basic') return;
+  cache.put(request, response);
+}
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(STATIC_ASSETS)));
@@ -38,15 +43,21 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  if (url.pathname.endsWith('/data/latest.json')) {
+  const isLatestData = url.pathname.endsWith('/data/latest.json');
+  const isAppShell =
+    request.mode === 'navigate' ||
+    url.pathname.endsWith('/index.html') ||
+    url.pathname.endsWith('/app.js') ||
+    url.pathname.endsWith('/manifest.webmanifest') ||
+    url.pathname.endsWith('/sw.js');
+
+  if (isLatestData) {
     const canonicalDataRequest = new Request(`${url.origin}${url.pathname}`);
     event.respondWith(
       fetch(request)
-        .then((response) => {
-          if (response.ok) {
-            const copy = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(canonicalDataRequest, copy));
-          }
+        .then(async (response) => {
+          const cache = await caches.open(CACHE_NAME);
+          cachePut(cache, canonicalDataRequest, response.clone());
           return response;
         })
         .catch(async () => {
@@ -59,17 +70,31 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  if (isAppShell) {
+    event.respondWith(
+      fetch(request)
+        .then(async (response) => {
+          const cache = await caches.open(CACHE_NAME);
+          cachePut(cache, request, response.clone());
+          return response;
+        })
+        .catch(async () => {
+          const cache = await caches.open(CACHE_NAME);
+          const cached = await cache.match(request);
+          if (cached) return cached;
+          throw new Error(`No cached response available for ${url.pathname}`);
+        })
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(request).then((cached) => {
       if (cached) return cached;
 
-      return fetch(request).then((response) => {
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
-        }
-
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+      return fetch(request).then(async (response) => {
+        const cache = await caches.open(CACHE_NAME);
+        cachePut(cache, request, response.clone());
         return response;
       });
     })
