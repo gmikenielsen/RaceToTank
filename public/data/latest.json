@@ -1,0 +1,87 @@
+{
+  "app": "Race to the Tank",
+  "generatedAt": "2026-02-08T00:00:00.000Z",
+  "dataSources": {
+    "standings": "https://cdn.nba.com/static/json/liveData/standings/standings.json",
+    "schedule": "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json"
+  },
+  "todaySchedule": {
+    "timeZone": "America/New_York",
+    "dateEt": "2026-02-08",
+    "games": []
+  },
+  "rows": [
+    {
+      "rank": 1,
+      "team": "Chicago Bulls",
+      "teamDisplay": "Chicago Bulls (11)",
+      "opponentsText": "Pending refresh"
+    },
+    {
+      "rank": 2,
+      "team": "LA Clippers",
+      "teamDisplay": "LA Clippers (16)",
+      "opponentsText": "Pending refresh"
+    },
+    {
+      "rank": 3,
+      "team": "Portland Trail Blazers",
+      "teamDisplay": "Portland Trail Blazers (17)",
+      "opponentsText": "Pending refresh"
+    },
+    {
+      "rank": 4,
+      "team": "Memphis Grizzlies",
+      "teamDisplay": "Memphis Grizzlies (14)",
+      "opponentsText": "Pending refresh"
+    },
+    {
+      "rank": 5,
+      "team": "Milwaukee Bucks",
+      "teamDisplay": "Milwaukee Bucks (13)",
+      "opponentsText": "Pending refresh"
+    },
+    {
+      "rank": 6,
+      "team": "Dallas Mavericks",
+      "teamDisplay": "Dallas Mavericks (11)",
+      "opponentsText": "Pending refresh"
+    },
+    {
+      "rank": 7,
+      "team": "Utah Jazz",
+      "teamDisplay": "Utah Jazz (13)",
+      "opponentsText": "Pending refresh"
+    },
+    {
+      "rank": 8,
+      "team": "Washington Wizards",
+      "teamDisplay": "Washington Wizards (10)",
+      "opponentsText": "Pending refresh"
+    },
+    {
+      "rank": 9,
+      "team": "Brooklyn Nets",
+      "teamDisplay": "Brooklyn Nets (13)",
+      "opponentsText": "Pending refresh"
+    },
+    {
+      "rank": 10,
+      "team": "Indiana Pacers",
+      "teamDisplay": "Indiana Pacers (14)",
+      "opponentsText": "Pending refresh"
+    },
+    {
+      "rank": 11,
+      "team": "New Orleans Pelicans",
+      "teamDisplay": "New Orleans Pelicans (13)",
+      "opponentsText": "Pending refresh"
+    },
+    {
+      "rank": 12,
+      "team": "Sacramento Kings",
+      "teamDisplay": "Sacramento Kings (15)",
+      "opponentsText": "Pending refresh"
+    }
+  ]
+}

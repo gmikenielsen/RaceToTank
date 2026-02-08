@@ -1,0 +1,38 @@
+name: Refresh Data
+
+on:
+  schedule:
+    - cron: '15 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build latest data
+        run: node scripts/build-data.mjs
+
+      - name: Commit updated data
+        run: |
+          if [[ -z "$(git status --porcelain public/data/latest.json)" ]]; then
+            echo "No data changes."
+            exit 0
+          fi
+
+          git config user.name "race-to-the-tank-bot"
+          git config user.email "race-to-the-tank-bot@users.noreply.github.com"
+          git add public/data/latest.json
+          git commit -m "chore: refresh race-to-the-tank data"
+          git push
