@@ -21,8 +21,23 @@ jobs:
         with:
           node-version: 20
 
-      - name: Build latest data
-        run: node scripts/build-data.mjs
+      - name: Build latest data (with retry)
+        run: |
+          set -euo pipefail
+
+          max_attempts=3
+          attempt=1
+
+          until node scripts/build-data.mjs; do
+            if [ "$attempt" -ge "$max_attempts" ]; then
+              echo "Build failed after ${max_attempts} attempts."
+              exit 1
+            fi
+
+            echo "Build failed on attempt ${attempt}. Retrying in 20s..."
+            attempt=$((attempt + 1))
+            sleep 20
+          done
 
       - name: Commit updated data
         run: |
