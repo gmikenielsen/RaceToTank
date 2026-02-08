@@ -195,9 +195,17 @@
         color: #cddcf7;
         font-size: 0.86rem;
         font-weight: 600;
-        white-space: nowrap;
+        display: flex;
+        align-items: baseline;
+        flex-wrap: nowrap;
+        column-gap: 1.8rem;
+        row-gap: 0.2rem;
         overflow: hidden;
         text-overflow: ellipsis;
+      }
+
+      .team-record .record-item {
+        white-space: nowrap;
       }
 
       .opponents {
@@ -299,6 +307,9 @@
           white-space: normal;
           overflow: visible;
           text-overflow: clip;
+          flex-wrap: wrap;
+          column-gap: 1.8rem;
+          row-gap: 0.28rem;
         }
 
         .card .opponents {

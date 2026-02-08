@@ -99,13 +99,22 @@ function resolveLast10Text(row) {
   return `${match[1]}-${match[2]}`;
 }
 
-function resolveRecordLine(row) {
-  const parts = [`Record: ${resolveRecordText(row)}`];
+function buildRecordLineHtml(row) {
+  const record = escapeHtml(resolveRecordText(row));
   const streak = resolveStreakText(row);
   const last10 = resolveLast10Text(row);
-  if (streak) parts.push(streak);
-  if (last10) parts.push(`L10 (${last10})`);
-  return parts.join('   ');
+
+  const parts = [`<span class="record-item record-main">Record: ${record}</span>`];
+
+  if (streak) {
+    parts.push(`<span class="record-item record-streak">${escapeHtml(streak)}</span>`);
+  }
+
+  if (last10) {
+    parts.push(`<span class="record-item record-l10">L10 (${escapeHtml(last10)})</span>`);
+  }
+
+  return parts.join('');
 }
 
 function formatLoadStatus(rowsCount, generatedAt, refreshStatus) {
@@ -176,7 +185,7 @@ function renderRows(rows, payload) {
     .map((row, index) => {
       const rank = escapeHtml(String(index + 1));
       const teamName = escapeHtml(resolveTeamDisplay(row));
-      const recordLine = escapeHtml(resolveRecordLine(row));
+      const recordLine = buildRecordLineHtml(row);
       const opponents = escapeHtml(row.opponentsText || 'None');
       return `<tr><td class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">${recordLine}</div></td><td class="opponents">${opponents}</td></tr>`;
     })
@@ -186,7 +195,7 @@ function renderRows(rows, payload) {
     .map((row, index) => {
       const rank = escapeHtml(String(index + 1));
       const teamName = escapeHtml(resolveTeamDisplay(row));
-      const recordLine = escapeHtml(resolveRecordLine(row));
+      const recordLine = buildRecordLineHtml(row);
       const opponents = escapeHtml(row.opponentsText || 'None');
       return `<article class="card"><div class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">${recordLine}</div></div><div class="opponents">${opponents}</div></article>`;
     })
