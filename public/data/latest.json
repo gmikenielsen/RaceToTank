@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-11T04:42:48.111Z",
+  "generatedAt": "2026-02-11T06:41:35.025Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,43 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-11T04:42:48.111Z"
+    "attemptedAt": "2026-02-11T06:41:35.025Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-02-10",
-        "games": [
-          {
-            "gameId": "401810626",
-            "matchup": "Indiana Pacers at New York Knicks",
-            "tipoffUtc": "2026-02-11T00:30:00.000Z",
-            "trackedTeams": [
-              "Indiana Pacers"
-            ],
-            "status": "Final/OT"
-          },
-          {
-            "gameId": "401810627",
-            "matchup": "LA Clippers at Houston Rockets",
-            "tipoffUtc": "2026-02-11T01:00:00.000Z",
-            "trackedTeams": [
-              "LA Clippers"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810628",
-            "matchup": "Dallas Mavericks at Phoenix Suns",
-            "tipoffUtc": "2026-02-11T02:00:00.000Z",
-            "trackedTeams": [
-              "Dallas Mavericks"
-            ],
-            "status": "Final"
-          }
-        ]
-      },
       {
         "dateEt": "2026-02-11",
         "games": [
@@ -175,6 +143,10 @@
             "status": "Thu, February 12th at 10:00 PM EST"
           }
         ]
+      },
+      {
+        "dateEt": "2026-02-13",
+        "games": []
       }
     ]
   },
