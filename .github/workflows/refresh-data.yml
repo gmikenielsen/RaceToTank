@@ -3,10 +3,10 @@ name: Refresh Data
 on:
   schedule:
     # GitHub Actions cron uses UTC.
-    # Targets local Mountain time (winter): 6:07 AM, 8:07 PM, 10:37 PM.
-    - cron: '7 13 * * *'
-    - cron: '7 3 * * *'
-    - cron: '37 5 * * *'
+    # Targets local Mountain time (winter): 5:00 AM, 8:00 PM, 10:30 PM.
+    - cron: '0 12 * * *'
+    - cron: '0 3 * * *'
+    - cron: '30 5 * * *'
   workflow_dispatch:
 
 permissions:
