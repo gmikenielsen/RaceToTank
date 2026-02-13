@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-13T05:00:23.973Z",
+  "generatedAt": "2026-02-13T06:38:06.038Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-13T05:00:23.973Z"
+    "attemptedAt": "2026-02-13T06:38:06.038Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -372,10 +372,10 @@
       "teamId": "6",
       "team": "Dallas Mavericks",
       "teamDisplay": "Dallas Mavericks (14)",
-      "winPct": 0.35849056,
-      "record": "19-34",
-      "streak": "L8",
-      "last10": "2-8",
+      "winPct": 0.35185185,
+      "record": "19-35",
+      "streak": "L9",
+      "last10": "1-9",
       "totalRemainingVsBottom12": 14,
       "opponents": [
         {
