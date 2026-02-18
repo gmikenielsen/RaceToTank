@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-18T03:34:36.875Z",
+  "generatedAt": "2026-02-18T05:44:44.583Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,15 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-18T03:34:36.875Z"
+    "attemptedAt": "2026-02-18T05:44:44.583Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-02-17",
-        "games": []
-      },
       {
         "dateEt": "2026-02-18",
         "games": []
@@ -87,6 +83,95 @@
               "LA Clippers"
             ],
             "status": "Thu, February 19th at 10:30 PM EST"
+          }
+        ]
+      },
+      {
+        "dateEt": "2026-02-20",
+        "games": [
+          {
+            "gameId": "401810658",
+            "matchup": "Indiana Pacers at Washington Wizards",
+            "tipoffUtc": "2026-02-21T00:00:00.000Z",
+            "trackedTeams": [
+              "Indiana Pacers",
+              "Washington Wizards"
+            ],
+            "status": "Fri, February 20th at 7:00 PM EST"
+          },
+          {
+            "gameId": "401810659",
+            "matchup": "Utah Jazz at Memphis Grizzlies",
+            "tipoffUtc": "2026-02-21T00:00:00.000Z",
+            "trackedTeams": [
+              "Utah Jazz",
+              "Memphis Grizzlies"
+            ],
+            "status": "Fri, February 20th at 7:00 PM EST"
+          },
+          {
+            "gameId": "401810657",
+            "matchup": "Cleveland Cavaliers at Charlotte Hornets",
+            "tipoffUtc": "2026-02-21T00:00:00.000Z",
+            "trackedTeams": [
+              "Charlotte Hornets"
+            ],
+            "status": "Fri, February 20th at 7:00 PM EST"
+          },
+          {
+            "gameId": "401810661",
+            "matchup": "Dallas Mavericks at Minnesota Timberwolves",
+            "tipoffUtc": "2026-02-21T00:30:00.000Z",
+            "trackedTeams": [
+              "Dallas Mavericks"
+            ],
+            "status": "Fri, February 20th at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810660",
+            "matchup": "Miami Heat at Atlanta Hawks",
+            "tipoffUtc": "2026-02-21T00:30:00.000Z",
+            "trackedTeams": [
+              "Atlanta Hawks"
+            ],
+            "status": "Fri, February 20th at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810662",
+            "matchup": "Milwaukee Bucks at New Orleans Pelicans",
+            "tipoffUtc": "2026-02-21T01:00:00.000Z",
+            "trackedTeams": [
+              "Milwaukee Bucks",
+              "New Orleans Pelicans"
+            ],
+            "status": "Fri, February 20th at 8:00 PM EST"
+          },
+          {
+            "gameId": "401810663",
+            "matchup": "Brooklyn Nets at Oklahoma City Thunder",
+            "tipoffUtc": "2026-02-21T01:00:00.000Z",
+            "trackedTeams": [
+              "Brooklyn Nets"
+            ],
+            "status": "Fri, February 20th at 8:00 PM EST"
+          },
+          {
+            "gameId": "401810664",
+            "matchup": "LA Clippers at Los Angeles Lakers",
+            "tipoffUtc": "2026-02-21T03:00:00.000Z",
+            "trackedTeams": [
+              "LA Clippers"
+            ],
+            "status": "Fri, February 20th at 10:00 PM EST"
+          },
+          {
+            "gameId": "401810665",
+            "matchup": "Denver Nuggets at Portland Trail Blazers",
+            "tipoffUtc": "2026-02-21T03:00:00.000Z",
+            "trackedTeams": [
+              "Portland Trail Blazers"
+            ],
+            "status": "Fri, February 20th at 10:00 PM EST"
           }
         ]
       }
