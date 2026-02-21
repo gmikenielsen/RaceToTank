@@ -219,7 +219,7 @@ function renderTodaySchedule(todaySchedule, rows = []) {
               const matchup = escapeHtml(game.matchup || 'Unknown matchup');
               const tipoffText = game.tipoffUtc ? `${formatter.format(new Date(game.tipoffUtc))} (EST)` : 'TBD (EST)';
               const emphasize = isBottomEightMatchup(game, bottomEightNames);
-              return `<li class="${emphasize ? 'bottom-eight' : ''}"><strong>${escapeHtml(tipoffText)}</strong> - ${matchup}</li>`;
+              return `<li class="${emphasize ? 'bottom-eight' : ''}">${escapeHtml(tipoffText)} - ${matchup}</li>`;
             })
             .join('')}</ul>`
         : '<p class="today-empty">No tank games.</p>';
