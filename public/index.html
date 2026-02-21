@@ -255,28 +255,37 @@
       }
 
       .team {
-        --team-indent: 3.4ch;
-        --team-gap: 0;
         font-weight: 700;
         width: 35%;
         overflow: hidden;
       }
 
       .team-main {
-        display: grid;
-        grid-template-columns: var(--team-indent) minmax(0, 1fr);
-        column-gap: var(--team-gap);
-        align-items: baseline;
+        display: flex;
+        gap: 0.12rem;
+        align-items: flex-start;
         min-width: 0;
       }
 
       .team-rank {
+        display: block;
         text-align: left;
         white-space: nowrap;
-        padding-right: 0;
+        font-variant-numeric: tabular-nums;
+        flex: 0 0 2.4ch;
+      }
+
+      .team-copy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 4px;
+        min-width: 0;
+        flex: 1 1 auto;
       }
 
       .team-name {
+        display: block;
         white-space: nowrap;
         text-wrap: nowrap;
         overflow: hidden;
@@ -284,9 +293,9 @@
       }
 
       .team-record {
-        margin-top: 4px;
+        margin-top: 0;
         margin-left: 0;
-        padding-left: calc(var(--team-indent) + var(--team-gap));
+        padding-left: 0;
         color: #cddcf7;
         font-size: 0.86rem;
         font-weight: 600;
@@ -375,23 +384,13 @@
           display: block;
         }
 
-        .card {
-          --mobile-indent: 3.4ch;
-          --mobile-gap: 0;
-        }
-
         .card .team {
           width: 100%;
           overflow: visible;
         }
 
         .card .team-main {
-          grid-template-columns: var(--mobile-indent) minmax(0, 1fr);
-          column-gap: var(--mobile-gap);
-        }
-
-        .card .team-rank {
-          padding-right: 0;
+          gap: 0.1rem;
         }
 
         .card .team-name {
@@ -403,7 +402,7 @@
 
         .card .team-record {
           margin-left: 0;
-          padding-left: calc(var(--mobile-indent) + var(--mobile-gap));
+          padding-left: 0;
           white-space: normal;
           overflow: visible;
           text-overflow: clip;
@@ -415,7 +414,8 @@
         .card .opponents {
           width: 100%;
           margin-left: 0;
-          padding-left: calc(var(--mobile-indent) + var(--mobile-gap));
+          padding-left: 0;
+          margin-top: 8px;
         }
       }
     </style>
