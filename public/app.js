@@ -52,6 +52,23 @@ function formatScheduleDate(dateEt, timeZone) {
   return `${weekday}, ${month} ${day}${ordinalSuffix(day)}`;
 }
 
+function formatNotableDate(dateEt, timeZone) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateEt || '').trim());
+  if (!match) return String(dateEt || '').trim() || 'Unknown';
+
+  const year = Number(match[1]);
+  const monthIndex = Number(match[2]) - 1;
+  const day = Number(match[3]);
+  const date = new Date(Date.UTC(year, monthIndex, day, 12, 0, 0));
+  if (Number.isNaN(date.getTime())) return String(dateEt || '').trim() || 'Unknown';
+
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    timeZone,
+  }).format(date);
+}
+
 function showStatus(message, isError = false) {
   statusEl.textContent = message;
   statusEl.className = isError ? 'status error' : 'status';
@@ -191,6 +208,61 @@ function isBottomEightMatchup(game, bottomEightNames) {
   return bottomEightNames.has(parts[0]) && bottomEightNames.has(parts[1]);
 }
 
+function extractMatchupTeams(game) {
+  const matchup = String(game?.matchup || '');
+  const parts = matchup.split(/\s+at\s+/i).map((part) => part.trim()).filter(Boolean);
+  if (parts.length !== 2) return null;
+
+  return {
+    awayTeam: parts[0],
+    homeTeam: parts[1],
+  };
+}
+
+function buildNotableGamesByTeam(todaySchedule, rows) {
+  const byTeam = new Map();
+  const teamNames = new Set(rows.map((row) => String(row?.team || '').trim()).filter(Boolean));
+  for (const teamName of teamNames) byTeam.set(teamName, []);
+
+  const { timeZone, days } = normalizeScheduleDays(todaySchedule);
+  const bottomEightNames = getBottomEightTeamNames(rows);
+
+  for (const day of days) {
+    const dateLabel = formatNotableDate(day.dateEt, timeZone);
+    const games = Array.isArray(day.games) ? day.games : [];
+
+    for (const game of games) {
+      if (!isBottomEightMatchup(game, bottomEightNames)) continue;
+
+      const matchupTeams = extractMatchupTeams(game);
+      if (!matchupTeams) continue;
+
+      const { awayTeam, homeTeam } = matchupTeams;
+
+      if (byTeam.has(homeTeam)) {
+        byTeam.get(homeTeam).push(`${dateLabel}: vs. ${awayTeam}`);
+      }
+
+      if (byTeam.has(awayTeam)) {
+        byTeam.get(awayTeam).push(`${dateLabel}: at ${homeTeam}`);
+      }
+    }
+  }
+
+  return byTeam;
+}
+
+function buildNotableGamesHtml(notableGames) {
+  const items = Array.isArray(notableGames) ? notableGames.filter(Boolean) : [];
+  if (!items.length) {
+    return '<div class="notable-games"><p class="notable-title">Notable Tank Games</p><p class="notable-empty">None in next 3 days.</p></div>';
+  }
+
+  return `<div class="notable-games"><p class="notable-title">Notable Tank Games</p><ul class="notable-list">${items
+    .map((item) => `<li>${escapeHtml(item)}</li>`)
+    .join('')}</ul></div>`;
+}
+
 function renderTodaySchedule(todaySchedule, rows = []) {
   todayListEl.innerHTML = '';
 
@@ -251,6 +323,7 @@ function renderRows(rows, payload) {
 
     return 0;
   });
+  const notableGamesByTeam = buildNotableGamesByTeam(payload?.todaySchedule, orderedRows);
 
   const desktopHtml = orderedRows
     .map((row, index) => {
@@ -258,7 +331,9 @@ function renderRows(rows, payload) {
       const teamName = escapeHtml(resolveTeamDisplay(row));
       const recordLine = buildRecordLineHtml(row);
       const opponents = escapeHtml(row.opponentsText || 'None');
-      return `<tr><td class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">${recordLine}</div></td><td class="opponents">${opponents}</td></tr>`;
+      const notableGames = notableGamesByTeam.get(String(row?.team || '').trim()) || [];
+      const notableGamesHtml = buildNotableGamesHtml(notableGames);
+      return `<tr><td class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">${recordLine}</div></td><td class="opponents"><div class="opponents-text">${opponents}</div>${notableGamesHtml}</td></tr>`;
     })
     .join('');
 
@@ -268,7 +343,9 @@ function renderRows(rows, payload) {
       const teamName = escapeHtml(resolveTeamDisplay(row));
       const recordLine = buildRecordLineHtml(row);
       const opponents = escapeHtml(row.opponentsText || 'None');
-      return `<article class="card"><div class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">${recordLine}</div></div><div class="opponents">${opponents}</div></article>`;
+      const notableGames = notableGamesByTeam.get(String(row?.team || '').trim()) || [];
+      const notableGamesHtml = buildNotableGamesHtml(notableGames);
+      return `<article class="card"><div class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">${recordLine}</div></div><div class="opponents"><div class="opponents-text">${opponents}</div>${notableGamesHtml}</div></article>`;
     })
     .join('');
 
