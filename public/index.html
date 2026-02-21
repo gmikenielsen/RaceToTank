@@ -255,7 +255,8 @@
       }
 
       .team {
-        --team-indent: calc(2.8ch + 0.28rem);
+        --team-indent: 2.2ch;
+        --team-gap: 0.18rem;
         font-weight: 700;
         width: 35%;
         overflow: hidden;
@@ -263,14 +264,14 @@
 
       .team-main {
         display: grid;
-        grid-template-columns: 2.8ch minmax(0, 1fr);
-        column-gap: 0.28rem;
+        grid-template-columns: var(--team-indent) minmax(0, 1fr);
+        column-gap: var(--team-gap);
         align-items: baseline;
         min-width: 0;
       }
 
       .team-rank {
-        text-align: left;
+        text-align: right;
         white-space: nowrap;
         padding-right: 0;
       }
@@ -285,7 +286,7 @@
       .team-record {
         margin-top: 4px;
         margin-left: 0;
-        padding-left: var(--team-indent);
+        padding-left: calc(var(--team-indent) + var(--team-gap));
         color: #cddcf7;
         font-size: 0.86rem;
         font-weight: 600;
@@ -375,7 +376,8 @@
         }
 
         .card {
-          --mobile-indent: calc(2.8ch + 0.28rem);
+          --mobile-indent: 2.2ch;
+          --mobile-gap: 0.18rem;
         }
 
         .card .team {
@@ -384,8 +386,8 @@
         }
 
         .card .team-main {
-          grid-template-columns: 2.8ch minmax(0, 1fr);
-          column-gap: 0.28rem;
+          grid-template-columns: var(--mobile-indent) minmax(0, 1fr);
+          column-gap: var(--mobile-gap);
         }
 
         .card .team-rank {
@@ -401,7 +403,7 @@
 
         .card .team-record {
           margin-left: 0;
-          padding-left: var(--mobile-indent);
+          padding-left: calc(var(--mobile-indent) + var(--mobile-gap));
           white-space: normal;
           overflow: visible;
           text-overflow: clip;
@@ -413,7 +415,7 @@
         .card .opponents {
           width: 100%;
           margin-left: 0;
-          padding-left: var(--mobile-indent);
+          padding-left: calc(var(--mobile-indent) + var(--mobile-gap));
         }
       }
     </style>
