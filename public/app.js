@@ -152,10 +152,50 @@ function normalizeScheduleDays(todaySchedule) {
   };
 }
 
-function renderTodaySchedule(todaySchedule) {
+function getBottomEightTeamNames(rows) {
+  if (!Array.isArray(rows) || !rows.length) return new Set();
+
+  const orderedRows = [...rows].sort((a, b) => {
+    const aRank = Number(a?.rank);
+    const bRank = Number(b?.rank);
+    const aHasRank = Number.isFinite(aRank) && aRank > 0;
+    const bHasRank = Number.isFinite(bRank) && bRank > 0;
+
+    if (aHasRank && bHasRank) return aRank - bRank;
+    if (aHasRank) return -1;
+    if (bHasRank) return 1;
+    return 0;
+  });
+
+  return new Set(
+    orderedRows
+      .slice(0, 8)
+      .map((row) => String(row?.team || '').trim())
+      .filter(Boolean)
+  );
+}
+
+function isBottomEightMatchup(game, bottomEightNames) {
+  const trackedTeams = Array.isArray(game?.trackedTeams)
+    ? game.trackedTeams.map((name) => String(name || '').trim()).filter(Boolean)
+    : [];
+
+  if (trackedTeams.length >= 2) {
+    return trackedTeams.slice(0, 2).every((teamName) => bottomEightNames.has(teamName));
+  }
+
+  const matchup = String(game?.matchup || '');
+  const parts = matchup.split(/\s+at\s+/i).map((part) => part.trim()).filter(Boolean);
+  if (parts.length !== 2) return false;
+
+  return bottomEightNames.has(parts[0]) && bottomEightNames.has(parts[1]);
+}
+
+function renderTodaySchedule(todaySchedule, rows = []) {
   todayListEl.innerHTML = '';
 
   const { timeZone, days } = normalizeScheduleDays(todaySchedule);
+  const bottomEightNames = getBottomEightTeamNames(rows);
 
   if (!days.length) {
     todayListEl.innerHTML = '<p class="today-empty">No tank games in the next 3 days.</p>';
@@ -178,7 +218,8 @@ function renderTodaySchedule(todaySchedule) {
             .map((game) => {
               const matchup = escapeHtml(game.matchup || 'Unknown matchup');
               const tipoffText = game.tipoffUtc ? `${formatter.format(new Date(game.tipoffUtc))} (EST)` : 'TBD (EST)';
-              return `<li><strong>${escapeHtml(tipoffText)}</strong> - ${matchup}</li>`;
+              const emphasize = isBottomEightMatchup(game, bottomEightNames);
+              return `<li class="${emphasize ? 'bottom-eight' : ''}"><strong>${escapeHtml(tipoffText)}</strong> - ${matchup}</li>`;
             })
             .join('')}</ul>`
         : '<p class="today-empty">No tank games.</p>';
@@ -248,7 +289,7 @@ async function loadData() {
     const payload = await response.json();
     const rows = Array.isArray(payload.rows) ? payload.rows : [];
 
-    renderTodaySchedule(payload.todaySchedule);
+    renderTodaySchedule(payload.todaySchedule, rows);
     renderRows(rows, payload);
   } catch (error) {
     showStatus(`Unable to load data: ${error.message}`, true);
