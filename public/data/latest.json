@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-21T03:20:19.021Z",
+  "generatedAt": "2026-02-21T05:27:21.101Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,100 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-21T03:20:19.021Z"
+    "attemptedAt": "2026-02-21T05:27:21.101Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-02-20",
-        "games": [
-          {
-            "gameId": "401810658",
-            "matchup": "Indiana Pacers at Washington Wizards",
-            "tipoffUtc": "2026-02-21T00:00:00.000Z",
-            "trackedTeams": [
-              "Indiana Pacers",
-              "Washington Wizards"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810659",
-            "matchup": "Utah Jazz at Memphis Grizzlies",
-            "tipoffUtc": "2026-02-21T00:00:00.000Z",
-            "trackedTeams": [
-              "Utah Jazz",
-              "Memphis Grizzlies"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810657",
-            "matchup": "Cleveland Cavaliers at Charlotte Hornets",
-            "tipoffUtc": "2026-02-21T00:00:00.000Z",
-            "trackedTeams": [
-              "Charlotte Hornets"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810661",
-            "matchup": "Dallas Mavericks at Minnesota Timberwolves",
-            "tipoffUtc": "2026-02-21T00:30:00.000Z",
-            "trackedTeams": [
-              "Dallas Mavericks"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810660",
-            "matchup": "Miami Heat at Atlanta Hawks",
-            "tipoffUtc": "2026-02-21T00:30:00.000Z",
-            "trackedTeams": [
-              "Atlanta Hawks"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810662",
-            "matchup": "Milwaukee Bucks at New Orleans Pelicans",
-            "tipoffUtc": "2026-02-21T01:00:00.000Z",
-            "trackedTeams": [
-              "Milwaukee Bucks",
-              "New Orleans Pelicans"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810663",
-            "matchup": "Brooklyn Nets at Oklahoma City Thunder",
-            "tipoffUtc": "2026-02-21T01:00:00.000Z",
-            "trackedTeams": [
-              "Brooklyn Nets"
-            ],
-            "status": "7:59 - 4th Quarter"
-          },
-          {
-            "gameId": "401810665",
-            "matchup": "Denver Nuggets at Portland Trail Blazers",
-            "tipoffUtc": "2026-02-21T03:00:00.000Z",
-            "trackedTeams": [
-              "Portland Trail Blazers"
-            ],
-            "status": "8:31 - 1st Quarter"
-          },
-          {
-            "gameId": "401810664",
-            "matchup": "LA Clippers at Los Angeles Lakers",
-            "tipoffUtc": "2026-02-21T03:15:00.000Z",
-            "trackedTeams": [
-              "LA Clippers"
-            ],
-            "status": "9:53 - 1st Quarter"
-          }
-        ]
-      },
       {
         "dateEt": "2026-02-21",
         "games": [
@@ -211,6 +122,30 @@
               "LA Clippers"
             ],
             "status": "Sun, February 22nd at 9:00 PM EST"
+          }
+        ]
+      },
+      {
+        "dateEt": "2026-02-23",
+        "games": [
+          {
+            "gameId": "401810684",
+            "matchup": "Sacramento Kings at Memphis Grizzlies",
+            "tipoffUtc": "2026-02-24T01:00:00.000Z",
+            "trackedTeams": [
+              "Sacramento Kings",
+              "Memphis Grizzlies"
+            ],
+            "status": "Mon, February 23rd at 8:00 PM EST"
+          },
+          {
+            "gameId": "401810685",
+            "matchup": "Utah Jazz at Houston Rockets",
+            "tipoffUtc": "2026-02-24T02:30:00.000Z",
+            "trackedTeams": [
+              "Utah Jazz"
+            ],
+            "status": "Mon, February 23rd at 9:30 PM EST"
           }
         ]
       }
@@ -394,9 +329,9 @@
       "teamId": "17",
       "team": "Brooklyn Nets",
       "teamDisplay": "Brooklyn Nets (14)",
-      "winPct": 0.2777778,
-      "record": "15-39",
-      "streak": "L2",
+      "winPct": 0.27272728,
+      "record": "15-40",
+      "streak": "L3",
       "last10": "3-7",
       "totalRemainingVsBottom12": 14,
       "opponents": [
