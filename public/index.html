@@ -202,10 +202,30 @@
 
       .panel {
         margin-top: 16px;
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 20px;
+        border: 1px solid rgba(248, 194, 106, 0.35);
+        background: rgba(4, 15, 33, 0.88);
+        border-radius: 14px;
+        padding: 12px 13px;
         overflow: hidden;
+      }
+
+      .panel-title {
+        margin: 0;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1rem;
+        color: #f8fbff;
+      }
+
+      .panel table {
+        margin-top: 8px;
+      }
+
+      .panel .cards {
+        margin-top: 8px;
+      }
+
+      .panel .status {
+        margin-top: 8px;
       }
 
       table {
@@ -416,6 +436,7 @@
       </section>
 
       <section class="panel">
+        <h2 class="panel-title">TANK Teams</h2>
         <table id="desktop-table" aria-label="Race 2 Tank table">
           <thead>
             <tr>
