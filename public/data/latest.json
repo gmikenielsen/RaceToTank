@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-21T05:27:21.101Z",
+  "generatedAt": "2026-02-21T12:24:00.888Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-21T05:27:21.101Z"
+    "attemptedAt": "2026-02-21T12:24:00.888Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -840,9 +840,9 @@
       "teamId": "22",
       "team": "Portland Trail Blazers",
       "teamDisplay": "Portland Trail Blazers (17)",
-      "winPct": 0.48214287,
-      "record": "27-29",
-      "streak": "W1",
+      "winPct": 0.47368422,
+      "record": "27-30",
+      "streak": "L1",
       "last10": "4-6",
       "totalRemainingVsBottom12": 17,
       "opponents": [
@@ -919,10 +919,10 @@
       "teamId": "12",
       "team": "LA Clippers",
       "teamDisplay": "LA Clippers (15)",
-      "winPct": 0.4909091,
-      "record": "27-28",
-      "streak": "W2",
-      "last10": "6-4",
+      "winPct": 0.48214287,
+      "record": "27-29",
+      "streak": "L1",
+      "last10": "5-5",
       "totalRemainingVsBottom12": 15,
       "opponents": [
         {
