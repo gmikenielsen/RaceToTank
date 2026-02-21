@@ -255,7 +255,7 @@
       }
 
       .team {
-        --team-indent: 2.8rem;
+        --team-indent: calc(2.8ch + 0.28rem);
         font-weight: 700;
         width: 35%;
         overflow: hidden;
@@ -263,16 +263,16 @@
 
       .team-main {
         display: grid;
-        grid-template-columns: var(--team-indent) minmax(0, 1fr);
-        column-gap: 0;
+        grid-template-columns: 2.8ch minmax(0, 1fr);
+        column-gap: 0.28rem;
         align-items: baseline;
         min-width: 0;
       }
 
       .team-rank {
-        text-align: right;
+        text-align: left;
         white-space: nowrap;
-        padding-right: 0.32rem;
+        padding-right: 0;
       }
 
       .team-name {
@@ -375,7 +375,7 @@
         }
 
         .card {
-          --mobile-indent: 2.8rem;
+          --mobile-indent: calc(2.8ch + 0.28rem);
         }
 
         .card .team {
@@ -384,12 +384,12 @@
         }
 
         .card .team-main {
-          grid-template-columns: var(--mobile-indent) minmax(0, 1fr);
-          column-gap: 0;
+          grid-template-columns: 2.8ch minmax(0, 1fr);
+          column-gap: 0.28rem;
         }
 
         .card .team-rank {
-          padding-right: 0.32rem;
+          padding-right: 0;
         }
 
         .card .team-name {
