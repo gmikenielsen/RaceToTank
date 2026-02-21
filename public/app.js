@@ -220,6 +220,25 @@ function extractMatchupTeams(game) {
 }
 
 function buildNotableGamesByTeam(todaySchedule, rows) {
+  const byRowData = new Map();
+  let hasRowLevelData = false;
+
+  for (const row of rows) {
+    const teamName = String(row?.team || '').trim();
+    if (!teamName) continue;
+
+    const items = Array.isArray(row?.notableTankGames)
+      ? row.notableTankGames.map((item) => String(item || '').trim()).filter(Boolean)
+      : [];
+
+    if (items.length) hasRowLevelData = true;
+    byRowData.set(teamName, items);
+  }
+
+  if (hasRowLevelData) {
+    return byRowData;
+  }
+
   const byTeam = new Map();
   const teamNames = new Set(rows.map((row) => String(row?.team || '').trim()).filter(Boolean));
   for (const teamName of teamNames) byTeam.set(teamName, []);
@@ -255,7 +274,7 @@ function buildNotableGamesByTeam(todaySchedule, rows) {
 function buildNotableGamesHtml(notableGames) {
   const items = Array.isArray(notableGames) ? notableGames.filter(Boolean) : [];
   if (!items.length) {
-    return '<div class="notable-games"><p class="notable-title">Notable Tank Games</p><p class="notable-empty">None in next 3 days.</p></div>';
+    return '<div class="notable-games"><p class="notable-title">Notable Tank Games</p><p class="notable-empty">No notable tank games remaining.</p></div>';
   }
 
   return `<div class="notable-games"><p class="notable-title">Notable Tank Games</p><ul class="notable-list">${items

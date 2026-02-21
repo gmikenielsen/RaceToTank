@@ -415,6 +415,7 @@ function buildRows(bottomTeams, games) {
   }
 
   const names = new Map(bottomTeams.map((t) => [t.teamId, t.teamName]));
+  const notableTankGamesByTeam = buildSeasonNotableTankGames(bottomTeams, games, now);
 
   return bottomTeams.map((team, rankIndex) => {
     const opponentCounts = [...(counts.get(team.teamId)?.entries() ?? [])]
@@ -440,8 +441,53 @@ function buildRows(bottomTeams, games) {
       totalRemainingVsBottom12: total,
       opponents: remainingOnly,
       opponentsText: remainingOnly.map((x) => `${x.opponentTeam} (${x.gamesRemaining})`).join(', '),
+      notableTankGames: notableTankGamesByTeam.get(team.teamId) || [],
     };
   });
+}
+
+function formatNotableGameDate(date, timeZone = 'America/New_York') {
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    timeZone,
+  }).format(date);
+}
+
+function buildSeasonNotableTankGames(bottomTeams, games, now) {
+  const bottomEight = bottomTeams.slice(0, 8);
+  const bottomEightIds = new Set(bottomEight.map((team) => team.teamId));
+  const namesById = new Map(bottomTeams.map((team) => [team.teamId, team.teamName]));
+  const byTeam = new Map(bottomTeams.map((team) => [team.teamId, []]));
+
+  for (const game of games) {
+    const { homeTeamId, awayTeamId, isFinal, date } = game;
+    if (isFinal || !date || date < now) continue;
+    if (!bottomEightIds.has(homeTeamId) || !bottomEightIds.has(awayTeamId)) continue;
+
+    const homeTeamName = namesById.get(homeTeamId) || game.homeTeamName || homeTeamId;
+    const awayTeamName = namesById.get(awayTeamId) || game.awayTeamName || awayTeamId;
+    const dateLabel = formatNotableGameDate(date);
+
+    byTeam.get(homeTeamId)?.push({
+      sortAt: date.toISOString(),
+      label: `${dateLabel}: vs. ${awayTeamName}`,
+    });
+    byTeam.get(awayTeamId)?.push({
+      sortAt: date.toISOString(),
+      label: `${dateLabel}: at ${homeTeamName}`,
+    });
+  }
+
+  for (const [teamId, entries] of byTeam.entries()) {
+    entries.sort((a, b) => a.sortAt.localeCompare(b.sortAt) || a.label.localeCompare(b.label));
+    byTeam.set(
+      teamId,
+      entries.map((entry) => entry.label)
+    );
+  }
+
+  return byTeam;
 }
 
 function dateKey(date, timeZone) {

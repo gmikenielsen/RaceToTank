@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-21T12:24:00.888Z",
+  "generatedAt": "2026-02-21T15:35:20.275Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-21T12:24:00.888Z"
+    "attemptedAt": "2026-02-21T15:35:20.275Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -219,7 +219,17 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (2), Charlotte Hornets (2), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (2), Memphis Grizzlies (1), New Orleans Pelicans (2), Portland Trail Blazers (1), Utah Jazz (1)"
+      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (2), Charlotte Hornets (2), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (2), Memphis Grizzlies (1), New Orleans Pelicans (2), Portland Trail Blazers (1), Utah Jazz (1)",
+      "notableTankGames": [
+        "Feb 23: at Memphis Grizzlies",
+        "Feb 26: at Dallas Mavericks",
+        "Mar 5: vs. New Orleans Pelicans",
+        "Mar 10: vs. Indiana Pacers",
+        "Mar 15: vs. Utah Jazz",
+        "Mar 22: vs. Brooklyn Nets",
+        "Mar 29: at Brooklyn Nets",
+        "Apr 3: vs. New Orleans Pelicans"
+      ]
     },
     {
       "rank": 2,
@@ -278,7 +288,13 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Brooklyn Nets (1), Charlotte Hornets (2), Chicago Bulls (1), Dallas Mavericks (1), LA Clippers (2), Memphis Grizzlies (1), Milwaukee Bucks (1), Portland Trail Blazers (2), Sacramento Kings (1)"
+      "opponentsText": "Brooklyn Nets (1), Charlotte Hornets (2), Chicago Bulls (1), Dallas Mavericks (1), LA Clippers (2), Memphis Grizzlies (1), Milwaukee Bucks (1), Portland Trail Blazers (2), Sacramento Kings (1)",
+      "notableTankGames": [
+        "Feb 22: vs. Dallas Mavericks",
+        "Mar 1: vs. Memphis Grizzlies",
+        "Mar 10: at Sacramento Kings",
+        "Apr 9: at Brooklyn Nets"
+      ]
     },
     {
       "rank": 3,
@@ -322,7 +338,16 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Dallas Mavericks (1), LA Clippers (3), Portland Trail Blazers (1), Sacramento Kings (2), Utah Jazz (3), Washington Wizards (1)"
+      "opponentsText": "Dallas Mavericks (1), LA Clippers (3), Portland Trail Blazers (1), Sacramento Kings (2), Utah Jazz (3), Washington Wizards (1)",
+      "notableTankGames": [
+        "Feb 26: at Utah Jazz",
+        "Feb 28: at Utah Jazz",
+        "Mar 5: at Sacramento Kings",
+        "Mar 8: vs. Washington Wizards",
+        "Mar 16: vs. Dallas Mavericks",
+        "Apr 3: at Sacramento Kings",
+        "Apr 7: vs. Utah Jazz"
+      ]
     },
     {
       "rank": 4,
@@ -381,7 +406,15 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Atlanta Hawks (3), Charlotte Hornets (1), Dallas Mavericks (1), Indiana Pacers (1), Memphis Grizzlies (1), Milwaukee Bucks (2), Portland Trail Blazers (2), Sacramento Kings (2), Washington Wizards (1)"
+      "opponentsText": "Atlanta Hawks (3), Charlotte Hornets (1), Dallas Mavericks (1), Indiana Pacers (1), Memphis Grizzlies (1), Milwaukee Bucks (2), Portland Trail Blazers (2), Sacramento Kings (2), Washington Wizards (1)",
+      "notableTankGames": [
+        "Feb 24: vs. Dallas Mavericks",
+        "Mar 9: vs. Memphis Grizzlies",
+        "Mar 22: at Sacramento Kings",
+        "Mar 29: vs. Sacramento Kings",
+        "Apr 5: vs. Washington Wizards",
+        "Apr 9: vs. Indiana Pacers"
+      ]
     },
     {
       "rank": 5,
@@ -430,7 +463,13 @@
           "gamesRemaining": 2
         }
       ],
-      "opponentsText": "Atlanta Hawks (2), Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (2), New Orleans Pelicans (1), Portland Trail Blazers (1), Utah Jazz (2)"
+      "opponentsText": "Atlanta Hawks (2), Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (2), New Orleans Pelicans (1), Portland Trail Blazers (1), Utah Jazz (2)",
+      "notableTankGames": [
+        "Mar 5: vs. Utah Jazz",
+        "Mar 8: at New Orleans Pelicans",
+        "Mar 25: at Utah Jazz",
+        "Apr 5: at Brooklyn Nets"
+      ]
     },
     {
       "rank": 6,
@@ -474,7 +513,16 @@
           "gamesRemaining": 2
         }
       ],
-      "opponentsText": "Memphis Grizzlies (1), Milwaukee Bucks (2), New Orleans Pelicans (3), Portland Trail Blazers (1), Sacramento Kings (1), Washington Wizards (2)"
+      "opponentsText": "Memphis Grizzlies (1), Milwaukee Bucks (2), New Orleans Pelicans (3), Portland Trail Blazers (1), Sacramento Kings (1), Washington Wizards (2)",
+      "notableTankGames": [
+        "Feb 26: vs. New Orleans Pelicans",
+        "Feb 28: vs. New Orleans Pelicans",
+        "Mar 5: at Washington Wizards",
+        "Mar 15: at Sacramento Kings",
+        "Mar 25: vs. Washington Wizards",
+        "Apr 7: at New Orleans Pelicans",
+        "Apr 10: vs. Memphis Grizzlies"
+      ]
     },
     {
       "rank": 7,
@@ -543,7 +591,15 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Atlanta Hawks (2), Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (1), Indiana Pacers (1), LA Clippers (2), Memphis Grizzlies (2), Milwaukee Bucks (1), New Orleans Pelicans (1), Portland Trail Blazers (1), Sacramento Kings (1)"
+      "opponentsText": "Atlanta Hawks (2), Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (1), Indiana Pacers (1), LA Clippers (2), Memphis Grizzlies (2), Milwaukee Bucks (1), New Orleans Pelicans (1), Portland Trail Blazers (1), Sacramento Kings (1)",
+      "notableTankGames": [
+        "Feb 22: at Indiana Pacers",
+        "Feb 24: at Brooklyn Nets",
+        "Feb 26: vs. Sacramento Kings",
+        "Feb 27: vs. Memphis Grizzlies",
+        "Mar 12: at Memphis Grizzlies",
+        "Mar 16: at New Orleans Pelicans"
+      ]
     },
     {
       "rank": 8,
@@ -612,7 +668,15 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (2), Dallas Mavericks (2), Indiana Pacers (1), LA Clippers (1), Milwaukee Bucks (1), Portland Trail Blazers (1), Sacramento Kings (1), Utah Jazz (1)"
+      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (2), Dallas Mavericks (2), Indiana Pacers (1), LA Clippers (1), Milwaukee Bucks (1), Portland Trail Blazers (1), Sacramento Kings (1), Utah Jazz (1)",
+      "notableTankGames": [
+        "Feb 23: vs. Sacramento Kings",
+        "Feb 27: at Dallas Mavericks",
+        "Mar 1: at Indiana Pacers",
+        "Mar 9: at Brooklyn Nets",
+        "Mar 12: vs. Dallas Mavericks",
+        "Apr 10: at Utah Jazz"
+      ]
     },
     {
       "rank": 9,
@@ -671,7 +735,8 @@
           "gamesRemaining": 2
         }
       ],
-      "opponentsText": "Charlotte Hornets (1), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (1), Memphis Grizzlies (2), Milwaukee Bucks (1), Portland Trail Blazers (1), Sacramento Kings (1), Washington Wizards (2)"
+      "opponentsText": "Charlotte Hornets (1), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (1), Memphis Grizzlies (2), Milwaukee Bucks (1), Portland Trail Blazers (1), Sacramento Kings (1), Washington Wizards (2)",
+      "notableTankGames": []
     },
     {
       "rank": 10,
@@ -730,7 +795,8 @@
           "gamesRemaining": 2
         }
       ],
-      "opponentsText": "Atlanta Hawks (2), Brooklyn Nets (2), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (2), Memphis Grizzlies (1), Portland Trail Blazers (1), Utah Jazz (2)"
+      "opponentsText": "Atlanta Hawks (2), Brooklyn Nets (2), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (2), Memphis Grizzlies (1), Portland Trail Blazers (1), Utah Jazz (2)",
+      "notableTankGames": []
     },
     {
       "rank": 11,
@@ -784,7 +850,8 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Brooklyn Nets (1), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (2), Memphis Grizzlies (1), Portland Trail Blazers (2), Sacramento Kings (2), Washington Wizards (1)"
+      "opponentsText": "Brooklyn Nets (1), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (2), Memphis Grizzlies (1), Portland Trail Blazers (2), Sacramento Kings (2), Washington Wizards (1)",
+      "notableTankGames": []
     },
     {
       "rank": 12,
@@ -833,7 +900,8 @@
           "gamesRemaining": 2
         }
       ],
-      "opponentsText": "Brooklyn Nets (3), Dallas Mavericks (2), Memphis Grizzlies (1), Milwaukee Bucks (2), Portland Trail Blazers (1), Sacramento Kings (1), Washington Wizards (2)"
+      "opponentsText": "Brooklyn Nets (3), Dallas Mavericks (2), Memphis Grizzlies (1), Milwaukee Bucks (2), Portland Trail Blazers (1), Sacramento Kings (1), Washington Wizards (2)",
+      "notableTankGames": []
     },
     {
       "rank": 13,
@@ -912,7 +980,8 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (2), Charlotte Hornets (2), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (2), LA Clippers (2), Memphis Grizzlies (1), Milwaukee Bucks (1), New Orleans Pelicans (1), Sacramento Kings (1), Utah Jazz (1), Washington Wizards (1)"
+      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (2), Charlotte Hornets (2), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (2), LA Clippers (2), Memphis Grizzlies (1), Milwaukee Bucks (1), New Orleans Pelicans (1), Sacramento Kings (1), Utah Jazz (1), Washington Wizards (1)",
+      "notableTankGames": []
     },
     {
       "rank": 14,
@@ -966,7 +1035,8 @@
           "gamesRemaining": 2
         }
       ],
-      "opponentsText": "Chicago Bulls (1), Dallas Mavericks (2), Indiana Pacers (2), Memphis Grizzlies (1), Milwaukee Bucks (2), New Orleans Pelicans (3), Portland Trail Blazers (2), Sacramento Kings (2)"
+      "opponentsText": "Chicago Bulls (1), Dallas Mavericks (2), Indiana Pacers (2), Memphis Grizzlies (1), Milwaukee Bucks (2), New Orleans Pelicans (3), Portland Trail Blazers (2), Sacramento Kings (2)",
+      "notableTankGames": []
     }
   ]
 }
