@@ -350,8 +350,9 @@ function renderRows(rows, payload) {
       const teamName = escapeHtml(resolveTeamDisplay(row));
       const recordLine = buildRecordLineHtml(row);
       const opponents = escapeHtml(row.opponentsText || 'None');
-      const notableGames = notableGamesByTeam.get(String(row?.team || '').trim()) || [];
-      const notableGamesHtml = buildNotableGamesHtml(notableGames);
+      const showNotable = index < 8;
+      const notableGames = showNotable ? notableGamesByTeam.get(String(row?.team || '').trim()) || [] : [];
+      const notableGamesHtml = showNotable ? buildNotableGamesHtml(notableGames) : '';
       return `<tr><td class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">${recordLine}</div></td><td class="opponents"><div class="opponents-text">${opponents}</div>${notableGamesHtml}</td></tr>`;
     })
     .join('');
@@ -362,8 +363,9 @@ function renderRows(rows, payload) {
       const teamName = escapeHtml(resolveTeamDisplay(row));
       const recordLine = buildRecordLineHtml(row);
       const opponents = escapeHtml(row.opponentsText || 'None');
-      const notableGames = notableGamesByTeam.get(String(row?.team || '').trim()) || [];
-      const notableGamesHtml = buildNotableGamesHtml(notableGames);
+      const showNotable = index < 8;
+      const notableGames = showNotable ? notableGamesByTeam.get(String(row?.team || '').trim()) || [] : [];
+      const notableGamesHtml = showNotable ? buildNotableGamesHtml(notableGames) : '';
       return `<article class="card"><div class="team"><div class="team-main"><span class="team-rank">${rank}.</span><span class="team-name">${teamName}</span></div><div class="team-record">${recordLine}</div></div><div class="opponents"><div class="opponents-text">${opponents}</div>${notableGamesHtml}</div></article>`;
     })
     .join('');
