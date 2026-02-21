@@ -455,15 +455,15 @@ function formatNotableGameDate(date, timeZone = 'America/New_York') {
 }
 
 function buildSeasonNotableTankGames(bottomTeams, games, now) {
-  const bottomEight = bottomTeams.slice(0, 8);
-  const bottomEightIds = new Set(bottomEight.map((team) => team.teamId));
+  const bottomNine = bottomTeams.slice(0, 9);
+  const bottomNineIds = new Set(bottomNine.map((team) => team.teamId));
   const namesById = new Map(bottomTeams.map((team) => [team.teamId, team.teamName]));
   const byTeam = new Map(bottomTeams.map((team) => [team.teamId, []]));
 
   for (const game of games) {
     const { homeTeamId, awayTeamId, isFinal, date } = game;
     if (isFinal || !date || date < now) continue;
-    if (!bottomEightIds.has(homeTeamId) || !bottomEightIds.has(awayTeamId)) continue;
+    if (!bottomNineIds.has(homeTeamId) || !bottomNineIds.has(awayTeamId)) continue;
 
     const homeTeamName = namesById.get(homeTeamId) || game.homeTeamName || homeTeamId;
     const awayTeamName = namesById.get(awayTeamId) || game.awayTeamName || awayTeamId;

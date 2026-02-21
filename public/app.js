@@ -1,4 +1,5 @@
 const DATA_URL = './data/latest.json';
+const NOTABLE_TEAM_COUNT = 9;
 
 const statusEl = document.getElementById('status');
 const desktopBodyEl = document.getElementById('desktop-body');
@@ -169,7 +170,7 @@ function normalizeScheduleDays(todaySchedule) {
   };
 }
 
-function getBottomEightTeamNames(rows) {
+function getBottomNotableTeamNames(rows) {
   if (!Array.isArray(rows) || !rows.length) return new Set();
 
   const orderedRows = [...rows].sort((a, b) => {
@@ -186,26 +187,26 @@ function getBottomEightTeamNames(rows) {
 
   return new Set(
     orderedRows
-      .slice(0, 8)
+      .slice(0, NOTABLE_TEAM_COUNT)
       .map((row) => String(row?.team || '').trim())
       .filter(Boolean)
   );
 }
 
-function isBottomEightMatchup(game, bottomEightNames) {
+function isNotableMatchup(game, notableTeamNames) {
   const trackedTeams = Array.isArray(game?.trackedTeams)
     ? game.trackedTeams.map((name) => String(name || '').trim()).filter(Boolean)
     : [];
 
   if (trackedTeams.length >= 2) {
-    return trackedTeams.slice(0, 2).every((teamName) => bottomEightNames.has(teamName));
+    return trackedTeams.slice(0, 2).every((teamName) => notableTeamNames.has(teamName));
   }
 
   const matchup = String(game?.matchup || '');
   const parts = matchup.split(/\s+at\s+/i).map((part) => part.trim()).filter(Boolean);
   if (parts.length !== 2) return false;
 
-  return bottomEightNames.has(parts[0]) && bottomEightNames.has(parts[1]);
+  return notableTeamNames.has(parts[0]) && notableTeamNames.has(parts[1]);
 }
 
 function extractMatchupTeams(game) {
@@ -244,14 +245,14 @@ function buildNotableGamesByTeam(todaySchedule, rows) {
   for (const teamName of teamNames) byTeam.set(teamName, []);
 
   const { timeZone, days } = normalizeScheduleDays(todaySchedule);
-  const bottomEightNames = getBottomEightTeamNames(rows);
+  const notableTeamNames = getBottomNotableTeamNames(rows);
 
   for (const day of days) {
     const dateLabel = formatNotableDate(day.dateEt, timeZone);
     const games = Array.isArray(day.games) ? day.games : [];
 
     for (const game of games) {
-      if (!isBottomEightMatchup(game, bottomEightNames)) continue;
+      if (!isNotableMatchup(game, notableTeamNames)) continue;
 
       const matchupTeams = extractMatchupTeams(game);
       if (!matchupTeams) continue;
@@ -286,7 +287,7 @@ function renderTodaySchedule(todaySchedule, rows = []) {
   todayListEl.innerHTML = '';
 
   const { timeZone, days } = normalizeScheduleDays(todaySchedule);
-  const bottomEightNames = getBottomEightTeamNames(rows);
+  const notableTeamNames = getBottomNotableTeamNames(rows);
 
   if (!days.length) {
     todayListEl.innerHTML = '<p class="today-empty">No tank games in the next 3 days.</p>';
@@ -309,8 +310,8 @@ function renderTodaySchedule(todaySchedule, rows = []) {
             .map((game) => {
               const matchup = escapeHtml(game.matchup || 'Unknown matchup');
               const tipoffText = game.tipoffUtc ? `${formatter.format(new Date(game.tipoffUtc))} (EST)` : 'TBD (EST)';
-              const emphasize = isBottomEightMatchup(game, bottomEightNames);
-              return `<li class="${emphasize ? 'bottom-eight' : ''}">${escapeHtml(tipoffText)} - ${matchup}</li>`;
+              const emphasize = isNotableMatchup(game, notableTeamNames);
+              return `<li class="${emphasize ? 'notable-matchup' : ''}">${escapeHtml(tipoffText)} - ${matchup}</li>`;
             })
             .join('')}</ul>`
         : '<p class="today-empty">No tank games.</p>';
@@ -350,7 +351,7 @@ function renderRows(rows, payload) {
       const teamName = escapeHtml(resolveTeamDisplay(row));
       const recordLine = buildRecordLineHtml(row);
       const opponents = escapeHtml(row.opponentsText || 'None');
-      const showNotable = index < 8;
+      const showNotable = index < NOTABLE_TEAM_COUNT;
       const notableGames = showNotable ? notableGamesByTeam.get(String(row?.team || '').trim()) || [] : [];
       const notableGamesHtml = showNotable ? buildNotableGamesHtml(notableGames) : '';
       return `<tr><td class="team"><div class="team-main"><span class="team-rank">${rank}.</span><div class="team-copy"><span class="team-name">${teamName}</span><div class="team-record">${recordLine}</div></div></div></td><td class="opponents"><div class="opponents-text">${opponents}</div>${notableGamesHtml}</td></tr>`;
@@ -363,7 +364,7 @@ function renderRows(rows, payload) {
       const teamName = escapeHtml(resolveTeamDisplay(row));
       const recordLine = buildRecordLineHtml(row);
       const opponents = escapeHtml(row.opponentsText || 'None');
-      const showNotable = index < 8;
+      const showNotable = index < NOTABLE_TEAM_COUNT;
       const notableGames = showNotable ? notableGamesByTeam.get(String(row?.team || '').trim()) || [] : [];
       const notableGamesHtml = showNotable ? buildNotableGamesHtml(notableGames) : '';
       return `<article class="card"><div class="team"><div class="team-main"><span class="team-rank">${rank}.</span><div class="team-copy"><span class="team-name">${teamName}</span><div class="team-record">${recordLine}</div><div class="opponents"><div class="opponents-text">${opponents}</div>${notableGamesHtml}</div></div></div></div></article>`;
