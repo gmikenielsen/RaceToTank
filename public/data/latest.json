@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-22T03:33:19.459Z",
+  "generatedAt": "2026-02-22T05:35:09.840Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,52 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-22T03:33:19.459Z"
+    "attemptedAt": "2026-02-22T05:35:09.840Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-02-21",
-        "games": [
-          {
-            "gameId": "401810667",
-            "matchup": "Philadelphia 76ers at New Orleans Pelicans",
-            "tipoffUtc": "2026-02-22T00:00:00.000Z",
-            "trackedTeams": [
-              "New Orleans Pelicans"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810670",
-            "matchup": "Sacramento Kings at San Antonio Spurs",
-            "tipoffUtc": "2026-02-22T01:00:00.000Z",
-            "trackedTeams": [
-              "Sacramento Kings"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810668",
-            "matchup": "Memphis Grizzlies at Miami Heat",
-            "tipoffUtc": "2026-02-22T01:00:00.000Z",
-            "trackedTeams": [
-              "Memphis Grizzlies"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810669",
-            "matchup": "Detroit Pistons at Chicago Bulls",
-            "tipoffUtc": "2026-02-22T01:00:00.000Z",
-            "trackedTeams": [
-              "Chicago Bulls"
-            ],
-            "status": "Final"
-          }
-        ]
-      },
       {
         "dateEt": "2026-02-22",
         "games": [
@@ -146,6 +105,77 @@
               "Utah Jazz"
             ],
             "status": "Mon, February 23rd at 9:30 PM EST"
+          }
+        ]
+      },
+      {
+        "dateEt": "2026-02-24",
+        "games": [
+          {
+            "gameId": "401810686",
+            "matchup": "Philadelphia 76ers at Indiana Pacers",
+            "tipoffUtc": "2026-02-25T00:00:00.000Z",
+            "trackedTeams": [
+              "Indiana Pacers"
+            ],
+            "status": "Tue, February 24th at 7:00 PM EST"
+          },
+          {
+            "gameId": "401810688",
+            "matchup": "Dallas Mavericks at Brooklyn Nets",
+            "tipoffUtc": "2026-02-25T00:30:00.000Z",
+            "trackedTeams": [
+              "Dallas Mavericks",
+              "Brooklyn Nets"
+            ],
+            "status": "Tue, February 24th at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810687",
+            "matchup": "Washington Wizards at Atlanta Hawks",
+            "tipoffUtc": "2026-02-25T00:30:00.000Z",
+            "trackedTeams": [
+              "Washington Wizards",
+              "Atlanta Hawks"
+            ],
+            "status": "Tue, February 24th at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810693",
+            "matchup": "Golden State Warriors at New Orleans Pelicans",
+            "tipoffUtc": "2026-02-25T01:00:00.000Z",
+            "trackedTeams": [
+              "New Orleans Pelicans"
+            ],
+            "status": "Tue, February 24th at 8:00 PM EST"
+          },
+          {
+            "gameId": "401810691",
+            "matchup": "Charlotte Hornets at Chicago Bulls",
+            "tipoffUtc": "2026-02-25T01:00:00.000Z",
+            "trackedTeams": [
+              "Charlotte Hornets",
+              "Chicago Bulls"
+            ],
+            "status": "Tue, February 24th at 8:00 PM EST"
+          },
+          {
+            "gameId": "401810692",
+            "matchup": "Miami Heat at Milwaukee Bucks",
+            "tipoffUtc": "2026-02-25T01:00:00.000Z",
+            "trackedTeams": [
+              "Milwaukee Bucks"
+            ],
+            "status": "Tue, February 24th at 8:00 PM EST"
+          },
+          {
+            "gameId": "401810696",
+            "matchup": "Minnesota Timberwolves at Portland Trail Blazers",
+            "tipoffUtc": "2026-02-25T03:00:00.000Z",
+            "trackedTeams": [
+              "Portland Trail Blazers"
+            ],
+            "status": "Tue, February 24th at 10:00 PM EST"
           }
         ]
       }
