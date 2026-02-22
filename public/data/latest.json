@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-21T18:02:20.925Z",
+  "generatedAt": "2026-02-22T03:33:19.459Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-21T18:02:20.925Z"
+    "attemptedAt": "2026-02-22T03:33:19.459Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -23,7 +23,7 @@
             "trackedTeams": [
               "New Orleans Pelicans"
             ],
-            "status": "Sat, February 21st at 7:00 PM EST"
+            "status": "Final"
           },
           {
             "gameId": "401810670",
@@ -32,7 +32,7 @@
             "trackedTeams": [
               "Sacramento Kings"
             ],
-            "status": "Sat, February 21st at 8:00 PM EST"
+            "status": "Final"
           },
           {
             "gameId": "401810668",
@@ -41,7 +41,7 @@
             "trackedTeams": [
               "Memphis Grizzlies"
             ],
-            "status": "Sat, February 21st at 8:00 PM EST"
+            "status": "Final"
           },
           {
             "gameId": "401810669",
@@ -50,7 +50,7 @@
             "trackedTeams": [
               "Chicago Bulls"
             ],
-            "status": "Sat, February 21st at 8:00 PM EST"
+            "status": "Final"
           }
         ]
       },
@@ -157,9 +157,9 @@
       "teamId": "23",
       "team": "Sacramento Kings",
       "teamDisplay": "Sacramento Kings (15)",
-      "winPct": 0.21052632,
-      "record": "12-45",
-      "streak": "L15",
+      "winPct": 0.20689656,
+      "record": "12-46",
+      "streak": "L16",
       "last10": "0-10",
       "totalRemainingVsBottom12": 15,
       "opponents": [
@@ -300,59 +300,6 @@
     },
     {
       "rank": 3,
-      "teamId": "3",
-      "team": "New Orleans Pelicans",
-      "teamDisplay": "New Orleans Pelicans (11)",
-      "winPct": 0.2631579,
-      "record": "15-42",
-      "streak": "L2",
-      "last10": "4-6",
-      "totalRemainingVsBottom12": 11,
-      "opponents": [
-        {
-          "opponentTeamId": "6",
-          "opponentTeam": "Dallas Mavericks",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "12",
-          "opponentTeam": "LA Clippers",
-          "gamesRemaining": 3
-        },
-        {
-          "opponentTeamId": "22",
-          "opponentTeam": "Portland Trail Blazers",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "23",
-          "opponentTeam": "Sacramento Kings",
-          "gamesRemaining": 2
-        },
-        {
-          "opponentTeamId": "26",
-          "opponentTeam": "Utah Jazz",
-          "gamesRemaining": 3
-        },
-        {
-          "opponentTeamId": "27",
-          "opponentTeam": "Washington Wizards",
-          "gamesRemaining": 1
-        }
-      ],
-      "opponentsText": "Dallas Mavericks (1), LA Clippers (3), Portland Trail Blazers (1), Sacramento Kings (2), Utah Jazz (3), Washington Wizards (1)",
-      "notableTankGames": [
-        "Feb 26: at Utah Jazz",
-        "Feb 28: at Utah Jazz",
-        "Mar 5: at Sacramento Kings",
-        "Mar 8: vs. Washington Wizards",
-        "Mar 16: vs. Dallas Mavericks",
-        "Apr 3: at Sacramento Kings",
-        "Apr 7: vs. Utah Jazz"
-      ]
-    },
-    {
-      "rank": 4,
       "teamId": "17",
       "team": "Brooklyn Nets",
       "teamDisplay": "Brooklyn Nets (14)",
@@ -416,6 +363,59 @@
         "Mar 29: vs. Sacramento Kings",
         "Apr 5: vs. Washington Wizards",
         "Apr 9: vs. Indiana Pacers"
+      ]
+    },
+    {
+      "rank": 4,
+      "teamId": "3",
+      "team": "New Orleans Pelicans",
+      "teamDisplay": "New Orleans Pelicans (11)",
+      "winPct": 0.27586207,
+      "record": "16-42",
+      "streak": "W1",
+      "last10": "4-6",
+      "totalRemainingVsBottom12": 11,
+      "opponents": [
+        {
+          "opponentTeamId": "6",
+          "opponentTeam": "Dallas Mavericks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "12",
+          "opponentTeam": "LA Clippers",
+          "gamesRemaining": 3
+        },
+        {
+          "opponentTeamId": "22",
+          "opponentTeam": "Portland Trail Blazers",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "23",
+          "opponentTeam": "Sacramento Kings",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "26",
+          "opponentTeam": "Utah Jazz",
+          "gamesRemaining": 3
+        },
+        {
+          "opponentTeamId": "27",
+          "opponentTeam": "Washington Wizards",
+          "gamesRemaining": 1
+        }
+      ],
+      "opponentsText": "Dallas Mavericks (1), LA Clippers (3), Portland Trail Blazers (1), Sacramento Kings (2), Utah Jazz (3), Washington Wizards (1)",
+      "notableTankGames": [
+        "Feb 26: at Utah Jazz",
+        "Feb 28: at Utah Jazz",
+        "Mar 5: at Sacramento Kings",
+        "Mar 8: vs. Washington Wizards",
+        "Mar 16: vs. Dallas Mavericks",
+        "Apr 3: at Sacramento Kings",
+        "Apr 7: vs. Utah Jazz"
       ]
     },
     {
@@ -611,9 +611,9 @@
       "teamId": "29",
       "team": "Memphis Grizzlies",
       "teamDisplay": "Memphis Grizzlies (13)",
-      "winPct": 0.3888889,
-      "record": "21-33",
-      "streak": "W1",
+      "winPct": 0.38181818,
+      "record": "21-34",
+      "streak": "L1",
       "last10": "3-7",
       "totalRemainingVsBottom12": 13,
       "opponents": [
@@ -690,9 +690,9 @@
       "teamId": "4",
       "team": "Chicago Bulls",
       "teamDisplay": "Chicago Bulls (11)",
-      "winPct": 0.42857143,
-      "record": "24-32",
-      "streak": "L7",
+      "winPct": 0.42105263,
+      "record": "24-33",
+      "streak": "L8",
       "last10": "1-9",
       "totalRemainingVsBottom12": 11,
       "opponents": [
