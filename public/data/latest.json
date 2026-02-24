@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-23T12:37:43.613Z",
+  "generatedAt": "2026-02-24T03:32:57.962Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-23T12:37:43.613Z"
+    "attemptedAt": "2026-02-24T03:32:57.962Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -24,7 +24,7 @@
               "Sacramento Kings",
               "Memphis Grizzlies"
             ],
-            "status": "Mon, February 23rd at 8:00 PM EST"
+            "status": "Final"
           },
           {
             "gameId": "401810685",
@@ -33,7 +33,7 @@
             "trackedTeams": [
               "Utah Jazz"
             ],
-            "status": "Mon, February 23rd at 9:30 PM EST"
+            "status": "6:28 - 2nd Quarter"
           }
         ]
       },
@@ -147,12 +147,12 @@
       "rank": 1,
       "teamId": "23",
       "team": "Sacramento Kings",
-      "teamDisplay": "Sacramento Kings (15)",
-      "winPct": 0.20689656,
-      "record": "12-46",
-      "streak": "L16",
-      "last10": "0-10",
-      "totalRemainingVsBottom12": 15,
+      "teamDisplay": "Sacramento Kings (14)",
+      "winPct": 0.22033899,
+      "record": "13-46",
+      "streak": "W1",
+      "last10": "1-9",
+      "totalRemainingVsBottom12": 14,
       "opponents": [
         {
           "opponentTeamId": "1",
@@ -190,11 +190,6 @@
           "gamesRemaining": 2
         },
         {
-          "opponentTeamId": "29",
-          "opponentTeam": "Memphis Grizzlies",
-          "gamesRemaining": 1
-        },
-        {
           "opponentTeamId": "3",
           "opponentTeam": "New Orleans Pelicans",
           "gamesRemaining": 2
@@ -210,9 +205,8 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (2), Charlotte Hornets (2), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (2), Memphis Grizzlies (1), New Orleans Pelicans (2), Portland Trail Blazers (1), Utah Jazz (1)",
+      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (2), Charlotte Hornets (2), Chicago Bulls (1), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (2), New Orleans Pelicans (2), Portland Trail Blazers (1), Utah Jazz (1)",
       "notableTankGames": [
-        "Feb 23: at Memphis Grizzlies",
         "Feb 26: at Dallas Mavericks",
         "Mar 5: vs. New Orleans Pelicans",
         "Mar 8: vs. Chicago Bulls",
@@ -584,12 +578,12 @@
       "rank": 8,
       "teamId": "29",
       "team": "Memphis Grizzlies",
-      "teamDisplay": "Memphis Grizzlies (13)",
-      "winPct": 0.38181818,
-      "record": "21-34",
-      "streak": "L1",
+      "teamDisplay": "Memphis Grizzlies (12)",
+      "winPct": 0.375,
+      "record": "21-35",
+      "streak": "L2",
       "last10": "3-7",
-      "totalRemainingVsBottom12": 13,
+      "totalRemainingVsBottom12": 12,
       "opponents": [
         {
           "opponentTeamId": "1",
@@ -637,19 +631,13 @@
           "gamesRemaining": 1
         },
         {
-          "opponentTeamId": "23",
-          "opponentTeam": "Sacramento Kings",
-          "gamesRemaining": 1
-        },
-        {
           "opponentTeamId": "26",
           "opponentTeam": "Utah Jazz",
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (2), Dallas Mavericks (2), Indiana Pacers (1), LA Clippers (1), Milwaukee Bucks (1), Portland Trail Blazers (1), Sacramento Kings (1), Utah Jazz (1)",
+      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (2), Dallas Mavericks (2), Indiana Pacers (1), LA Clippers (1), Milwaukee Bucks (1), Portland Trail Blazers (1), Utah Jazz (1)",
       "notableTankGames": [
-        "Feb 23: vs. Sacramento Kings",
         "Feb 27: at Dallas Mavericks",
         "Mar 1: at Indiana Pacers",
         "Mar 9: at Brooklyn Nets",
