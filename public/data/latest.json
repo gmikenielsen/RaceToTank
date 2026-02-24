@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-24T03:32:57.962Z",
+  "generatedAt": "2026-02-24T05:41:47.873Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,35 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-24T03:32:57.962Z"
+    "attemptedAt": "2026-02-24T05:41:47.873Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-02-23",
-        "games": [
-          {
-            "gameId": "401810684",
-            "matchup": "Sacramento Kings at Memphis Grizzlies",
-            "tipoffUtc": "2026-02-24T01:00:00.000Z",
-            "trackedTeams": [
-              "Sacramento Kings",
-              "Memphis Grizzlies"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810685",
-            "matchup": "Utah Jazz at Houston Rockets",
-            "tipoffUtc": "2026-02-24T02:30:00.000Z",
-            "trackedTeams": [
-              "Utah Jazz"
-            ],
-            "status": "6:28 - 2nd Quarter"
-          }
-        ]
-      },
       {
         "dateEt": "2026-02-24",
         "games": [
@@ -137,6 +113,79 @@
               "Milwaukee Bucks"
             ],
             "status": "Wed, February 25th at 8:00 PM EST"
+          }
+        ]
+      },
+      {
+        "dateEt": "2026-02-26",
+        "games": [
+          {
+            "gameId": "401810703",
+            "matchup": "Charlotte Hornets at Indiana Pacers",
+            "tipoffUtc": "2026-02-27T00:00:00.000Z",
+            "trackedTeams": [
+              "Charlotte Hornets",
+              "Indiana Pacers"
+            ],
+            "status": "Thu, February 26th at 7:00 PM EST"
+          },
+          {
+            "gameId": "401810706",
+            "matchup": "San Antonio Spurs at Brooklyn Nets",
+            "tipoffUtc": "2026-02-27T00:30:00.000Z",
+            "trackedTeams": [
+              "Brooklyn Nets"
+            ],
+            "status": "Thu, February 26th at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810705",
+            "matchup": "Washington Wizards at Atlanta Hawks",
+            "tipoffUtc": "2026-02-27T00:30:00.000Z",
+            "trackedTeams": [
+              "Washington Wizards",
+              "Atlanta Hawks"
+            ],
+            "status": "Thu, February 26th at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810708",
+            "matchup": "Portland Trail Blazers at Chicago Bulls",
+            "tipoffUtc": "2026-02-27T01:00:00.000Z",
+            "trackedTeams": [
+              "Portland Trail Blazers",
+              "Chicago Bulls"
+            ],
+            "status": "Thu, February 26th at 8:00 PM EST"
+          },
+          {
+            "gameId": "401810709",
+            "matchup": "Sacramento Kings at Dallas Mavericks",
+            "tipoffUtc": "2026-02-27T01:30:00.000Z",
+            "trackedTeams": [
+              "Sacramento Kings",
+              "Dallas Mavericks"
+            ],
+            "status": "Thu, February 26th at 8:30 PM EST"
+          },
+          {
+            "gameId": "401810711",
+            "matchup": "New Orleans Pelicans at Utah Jazz",
+            "tipoffUtc": "2026-02-27T02:00:00.000Z",
+            "trackedTeams": [
+              "New Orleans Pelicans",
+              "Utah Jazz"
+            ],
+            "status": "Thu, February 26th at 9:00 PM EST"
+          },
+          {
+            "gameId": "401810712",
+            "matchup": "Minnesota Timberwolves at LA Clippers",
+            "tipoffUtc": "2026-02-27T03:00:00.000Z",
+            "trackedTeams": [
+              "LA Clippers"
+            ],
+            "status": "Thu, February 26th at 10:00 PM EST"
           }
         ]
       }
@@ -454,9 +503,9 @@
       "teamId": "26",
       "team": "Utah Jazz",
       "teamDisplay": "Utah Jazz (10)",
-      "winPct": 0.31578946,
-      "record": "18-39",
-      "streak": "L2",
+      "winPct": 0.31034482,
+      "record": "18-40",
+      "streak": "L3",
       "last10": "3-7",
       "totalRemainingVsBottom12": 10,
       "opponents": [
