@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-25T05:44:12.589Z",
+  "generatedAt": "2026-02-25T12:37:36.340Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-25T05:44:12.589Z"
+    "attemptedAt": "2026-02-25T12:37:36.340Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -874,9 +874,9 @@
       "teamId": "22",
       "team": "Portland Trail Blazers",
       "teamDisplay": "Portland Trail Blazers (17)",
-      "winPct": 0.4827586,
-      "record": "28-30",
-      "streak": "W1",
+      "winPct": 0.47457626,
+      "record": "28-31",
+      "streak": "L1",
       "last10": "5-5",
       "totalRemainingVsBottom12": 17,
       "opponents": [
