@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-25T12:37:36.340Z",
+  "generatedAt": "2026-02-26T03:29:49.974Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-25T12:37:36.340Z"
+    "attemptedAt": "2026-02-26T03:29:49.974Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -23,7 +23,7 @@
             "trackedTeams": [
               "Memphis Grizzlies"
             ],
-            "status": "Wed, February 25th at 7:30 PM EST"
+            "status": "Final"
           },
           {
             "gameId": "401810700",
@@ -32,7 +32,7 @@
             "trackedTeams": [
               "Sacramento Kings"
             ],
-            "status": "Wed, February 25th at 8:00 PM EST"
+            "status": "Final"
           },
           {
             "gameId": "401810701",
@@ -41,7 +41,7 @@
             "trackedTeams": [
               "Milwaukee Bucks"
             ],
-            "status": "Wed, February 25th at 8:00 PM EST"
+            "status": "Final"
           }
         ]
       },
@@ -159,9 +159,9 @@
       "teamId": "23",
       "team": "Sacramento Kings",
       "teamDisplay": "Sacramento Kings (14)",
-      "winPct": 0.22033899,
-      "record": "13-46",
-      "streak": "W1",
+      "winPct": 0.21666667,
+      "record": "13-47",
+      "streak": "L1",
       "last10": "1-9",
       "totalRemainingVsBottom12": 14,
       "opponents": [
@@ -578,9 +578,9 @@
       "teamId": "29",
       "team": "Memphis Grizzlies",
       "teamDisplay": "Memphis Grizzlies (12)",
-      "winPct": 0.375,
-      "record": "21-35",
-      "streak": "L2",
+      "winPct": 0.36842105,
+      "record": "21-36",
+      "streak": "L3",
       "last10": "3-7",
       "totalRemainingVsBottom12": 12,
       "opponents": [
@@ -714,10 +714,10 @@
       "teamId": "15",
       "team": "Milwaukee Bucks",
       "teamDisplay": "Milwaukee Bucks (13)",
-      "winPct": 0.44642857,
-      "record": "25-31",
-      "streak": "W1",
-      "last10": "7-3",
+      "winPct": 0.45614034,
+      "record": "26-31",
+      "streak": "W2",
+      "last10": "8-2",
       "totalRemainingVsBottom12": 13,
       "opponents": [
         {
