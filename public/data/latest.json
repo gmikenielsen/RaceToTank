@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-27T05:35:55.864Z",
+  "generatedAt": "2026-02-27T12:32:58.052Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-27T05:35:55.864Z"
+    "attemptedAt": "2026-02-27T12:32:58.052Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -751,10 +751,10 @@
       "teamId": "12",
       "team": "LA Clippers",
       "teamDisplay": "LA Clippers (15)",
-      "winPct": 0.47368422,
-      "record": "27-30",
-      "streak": "L2",
-      "last10": "5-5",
+      "winPct": 0.46551725,
+      "record": "27-31",
+      "streak": "L3",
+      "last10": "4-6",
       "totalRemainingVsBottom12": 15,
       "opponents": [
         {
