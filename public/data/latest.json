@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-28T03:06:53.223Z",
+  "generatedAt": "2026-02-28T05:08:04.017Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,44 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-28T03:06:53.223Z"
+    "attemptedAt": "2026-02-28T05:08:04.017Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-02-27",
-        "games": [
-          {
-            "gameId": "401810714",
-            "matchup": "Brooklyn Nets at Boston Celtics",
-            "tipoffUtc": "2026-02-28T00:30:00.000Z",
-            "trackedTeams": [
-              "Brooklyn Nets"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810715",
-            "matchup": "New York Knicks at Milwaukee Bucks",
-            "tipoffUtc": "2026-02-28T01:00:00.000Z",
-            "trackedTeams": [
-              "Milwaukee Bucks"
-            ],
-            "status": "6:13 - 4th Quarter"
-          },
-          {
-            "gameId": "401810716",
-            "matchup": "Memphis Grizzlies at Dallas Mavericks",
-            "tipoffUtc": "2026-02-28T01:30:00.000Z",
-            "trackedTeams": [
-              "Memphis Grizzlies",
-              "Dallas Mavericks"
-            ],
-            "status": "5:17 - 3rd Quarter"
-          }
-        ]
-      },
       {
         "dateEt": "2026-02-28",
         "games": [
@@ -149,6 +116,47 @@
               "Sacramento Kings"
             ],
             "status": "Sun, March 1st at 9:30 PM EST"
+          }
+        ]
+      },
+      {
+        "dateEt": "2026-03-02",
+        "games": [
+          {
+            "gameId": "401810734",
+            "matchup": "Houston Rockets at Washington Wizards",
+            "tipoffUtc": "2026-03-03T00:00:00.000Z",
+            "trackedTeams": [
+              "Washington Wizards"
+            ],
+            "status": "Mon, March 2nd at 7:00 PM EST"
+          },
+          {
+            "gameId": "401810735",
+            "matchup": "Boston Celtics at Milwaukee Bucks",
+            "tipoffUtc": "2026-03-03T00:30:00.000Z",
+            "trackedTeams": [
+              "Milwaukee Bucks"
+            ],
+            "status": "Mon, March 2nd at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810736",
+            "matchup": "Denver Nuggets at Utah Jazz",
+            "tipoffUtc": "2026-03-03T02:00:00.000Z",
+            "trackedTeams": [
+              "Utah Jazz"
+            ],
+            "status": "Mon, March 2nd at 9:00 PM EST"
+          },
+          {
+            "gameId": "401810737",
+            "matchup": "LA Clippers at Golden State Warriors",
+            "tipoffUtc": "2026-03-03T03:00:00.000Z",
+            "trackedTeams": [
+              "LA Clippers"
+            ],
+            "status": "Mon, March 2nd at 10:00 PM EST"
           }
         ]
       }
@@ -500,9 +508,9 @@
       "teamId": "6",
       "team": "Dallas Mavericks",
       "teamDisplay": "Dallas Mavericks (10)",
-      "winPct": 0.36206895,
-      "record": "21-37",
-      "streak": "L1",
+      "winPct": 0.3559322,
+      "record": "21-38",
+      "streak": "L2",
       "last10": "2-8",
       "totalRemainingVsBottom12": 10,
       "opponents": [
@@ -559,9 +567,9 @@
       "teamId": "29",
       "team": "Memphis Grizzlies",
       "teamDisplay": "Memphis Grizzlies (11)",
-      "winPct": 0.36842105,
-      "record": "21-36",
-      "streak": "L3",
+      "winPct": 0.37931034,
+      "record": "22-36",
+      "streak": "W1",
       "last10": "3-7",
       "totalRemainingVsBottom12": 11,
       "opponents": [
@@ -689,10 +697,10 @@
       "teamId": "15",
       "team": "Milwaukee Bucks",
       "teamDisplay": "Milwaukee Bucks (13)",
-      "winPct": 0.45614034,
-      "record": "26-31",
-      "streak": "W2",
-      "last10": "8-2",
+      "winPct": 0.44827586,
+      "record": "26-32",
+      "streak": "L1",
+      "last10": "7-3",
       "totalRemainingVsBottom12": 13,
       "opponents": [
         {
