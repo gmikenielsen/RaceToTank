@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-02-27T12:32:58.052Z",
+  "generatedAt": "2026-02-28T03:06:53.223Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-02-27T12:32:58.052Z"
+    "attemptedAt": "2026-02-28T03:06:53.223Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -23,7 +23,7 @@
             "trackedTeams": [
               "Brooklyn Nets"
             ],
-            "status": "Fri, February 27th at 7:30 PM EST"
+            "status": "Final"
           },
           {
             "gameId": "401810715",
@@ -32,7 +32,7 @@
             "trackedTeams": [
               "Milwaukee Bucks"
             ],
-            "status": "Fri, February 27th at 8:00 PM EST"
+            "status": "6:13 - 4th Quarter"
           },
           {
             "gameId": "401810716",
@@ -42,7 +42,7 @@
               "Memphis Grizzlies",
               "Dallas Mavericks"
             ],
-            "status": "Fri, February 27th at 8:30 PM EST"
+            "status": "5:17 - 3rd Quarter"
           }
         ]
       },
@@ -288,9 +288,9 @@
       "teamId": "17",
       "team": "Brooklyn Nets",
       "teamDisplay": "Brooklyn Nets (12)",
-      "winPct": 0.25862068,
-      "record": "15-43",
-      "streak": "L6",
+      "winPct": 0.2542373,
+      "record": "15-44",
+      "streak": "L7",
       "last10": "2-8",
       "totalRemainingVsBottom12": 12,
       "opponents": [
@@ -499,12 +499,12 @@
       "rank": 7,
       "teamId": "6",
       "team": "Dallas Mavericks",
-      "teamDisplay": "Dallas Mavericks (11)",
+      "teamDisplay": "Dallas Mavericks (10)",
       "winPct": 0.36206895,
       "record": "21-37",
       "streak": "L1",
       "last10": "2-8",
-      "totalRemainingVsBottom12": 11,
+      "totalRemainingVsBottom12": 10,
       "opponents": [
         {
           "opponentTeamId": "1",
@@ -529,7 +529,7 @@
         {
           "opponentTeamId": "29",
           "opponentTeam": "Memphis Grizzlies",
-          "gamesRemaining": 2
+          "gamesRemaining": 1
         },
         {
           "opponentTeamId": "15",
@@ -547,9 +547,8 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Atlanta Hawks (2), Charlotte Hornets (1), Chicago Bulls (1), LA Clippers (2), Memphis Grizzlies (2), Milwaukee Bucks (1), New Orleans Pelicans (1), Portland Trail Blazers (1)",
+      "opponentsText": "Atlanta Hawks (2), Charlotte Hornets (1), Chicago Bulls (1), LA Clippers (2), Memphis Grizzlies (1), Milwaukee Bucks (1), New Orleans Pelicans (1), Portland Trail Blazers (1)",
       "notableTankGames": [
-        "Feb 27: vs. Memphis Grizzlies",
         "Mar 12: at Memphis Grizzlies",
         "Mar 16: at New Orleans Pelicans",
         "Apr 12: vs. Chicago Bulls"
@@ -559,12 +558,12 @@
       "rank": 8,
       "teamId": "29",
       "team": "Memphis Grizzlies",
-      "teamDisplay": "Memphis Grizzlies (12)",
+      "teamDisplay": "Memphis Grizzlies (11)",
       "winPct": 0.36842105,
       "record": "21-36",
       "streak": "L3",
       "last10": "3-7",
-      "totalRemainingVsBottom12": 12,
+      "totalRemainingVsBottom12": 11,
       "opponents": [
         {
           "opponentTeamId": "1",
@@ -589,7 +588,7 @@
         {
           "opponentTeamId": "6",
           "opponentTeam": "Dallas Mavericks",
-          "gamesRemaining": 2
+          "gamesRemaining": 1
         },
         {
           "opponentTeamId": "11",
@@ -617,9 +616,8 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (2), Dallas Mavericks (2), Indiana Pacers (1), LA Clippers (1), Milwaukee Bucks (1), Portland Trail Blazers (1), Utah Jazz (1)",
+      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (2), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (1), Milwaukee Bucks (1), Portland Trail Blazers (1), Utah Jazz (1)",
       "notableTankGames": [
-        "Feb 27: at Dallas Mavericks",
         "Mar 1: at Indiana Pacers",
         "Mar 9: at Brooklyn Nets",
         "Mar 12: vs. Dallas Mavericks",
