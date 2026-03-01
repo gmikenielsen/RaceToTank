@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-01T03:38:34.018Z",
+  "generatedAt": "2026-03-01T05:36:04.210Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,45 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-01T03:38:34.018Z"
+    "attemptedAt": "2026-03-01T05:36:04.210Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-02-28",
-        "games": [
-          {
-            "gameId": "401810718",
-            "matchup": "Portland Trail Blazers at Charlotte Hornets",
-            "tipoffUtc": "2026-02-28T18:00:00.000Z",
-            "trackedTeams": [
-              "Portland Trail Blazers",
-              "Charlotte Hornets"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810720",
-            "matchup": "Toronto Raptors at Washington Wizards",
-            "tipoffUtc": "2026-03-01T00:00:00.000Z",
-            "trackedTeams": [
-              "Washington Wizards"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810722",
-            "matchup": "New Orleans Pelicans at Utah Jazz",
-            "tipoffUtc": "2026-03-01T02:30:00.000Z",
-            "trackedTeams": [
-              "New Orleans Pelicans",
-              "Utah Jazz"
-            ],
-            "status": "1:48 - 2nd Quarter"
-          }
-        ]
-      },
       {
         "dateEt": "2026-03-01",
         "games": [
@@ -157,6 +123,75 @@
               "LA Clippers"
             ],
             "status": "Mon, March 2nd at 10:00 PM EST"
+          }
+        ]
+      },
+      {
+        "dateEt": "2026-03-03",
+        "games": [
+          {
+            "gameId": "401810740",
+            "matchup": "Washington Wizards at Orlando Magic",
+            "tipoffUtc": "2026-03-04T00:00:00.000Z",
+            "trackedTeams": [
+              "Washington Wizards"
+            ],
+            "status": "Tue, March 3rd at 7:00 PM EST"
+          },
+          {
+            "gameId": "401810738",
+            "matchup": "Dallas Mavericks at Charlotte Hornets",
+            "tipoffUtc": "2026-03-04T00:00:00.000Z",
+            "trackedTeams": [
+              "Dallas Mavericks",
+              "Charlotte Hornets"
+            ],
+            "status": "Tue, March 3rd at 7:00 PM EST"
+          },
+          {
+            "gameId": "401810741",
+            "matchup": "Brooklyn Nets at Miami Heat",
+            "tipoffUtc": "2026-03-04T00:30:00.000Z",
+            "trackedTeams": [
+              "Brooklyn Nets"
+            ],
+            "status": "Tue, March 3rd at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810745",
+            "matchup": "Memphis Grizzlies at Minnesota Timberwolves",
+            "tipoffUtc": "2026-03-04T01:00:00.000Z",
+            "trackedTeams": [
+              "Memphis Grizzlies"
+            ],
+            "status": "Tue, March 3rd at 8:00 PM EST"
+          },
+          {
+            "gameId": "401810744",
+            "matchup": "Oklahoma City Thunder at Chicago Bulls",
+            "tipoffUtc": "2026-03-04T01:00:00.000Z",
+            "trackedTeams": [
+              "Chicago Bulls"
+            ],
+            "status": "Tue, March 3rd at 8:00 PM EST"
+          },
+          {
+            "gameId": "401810746",
+            "matchup": "New Orleans Pelicans at Los Angeles Lakers",
+            "tipoffUtc": "2026-03-04T03:30:00.000Z",
+            "trackedTeams": [
+              "New Orleans Pelicans"
+            ],
+            "status": "Tue, March 3rd at 10:30 PM EST"
+          },
+          {
+            "gameId": "401810747",
+            "matchup": "Phoenix Suns at Sacramento Kings",
+            "tipoffUtc": "2026-03-04T04:00:00.000Z",
+            "trackedTeams": [
+              "Sacramento Kings"
+            ],
+            "status": "Tue, March 3rd at 11:00 PM EST"
           }
         ]
       }
@@ -401,63 +436,12 @@
     },
     {
       "rank": 5,
-      "teamId": "3",
-      "team": "New Orleans Pelicans",
-      "teamDisplay": "New Orleans Pelicans (9)",
-      "winPct": 0.3,
-      "record": "18-42",
-      "streak": "W3",
-      "last10": "5-5",
-      "totalRemainingVsBottom12": 9,
-      "opponents": [
-        {
-          "opponentTeamId": "6",
-          "opponentTeam": "Dallas Mavericks",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "12",
-          "opponentTeam": "LA Clippers",
-          "gamesRemaining": 3
-        },
-        {
-          "opponentTeamId": "22",
-          "opponentTeam": "Portland Trail Blazers",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "23",
-          "opponentTeam": "Sacramento Kings",
-          "gamesRemaining": 2
-        },
-        {
-          "opponentTeamId": "26",
-          "opponentTeam": "Utah Jazz",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "27",
-          "opponentTeam": "Washington Wizards",
-          "gamesRemaining": 1
-        }
-      ],
-      "opponentsText": "Dallas Mavericks (1), LA Clippers (3), Portland Trail Blazers (1), Sacramento Kings (2), Utah Jazz (1), Washington Wizards (1)",
-      "notableTankGames": [
-        "Mar 5: at Sacramento Kings",
-        "Mar 8: vs. Washington Wizards",
-        "Mar 16: vs. Dallas Mavericks",
-        "Apr 3: at Sacramento Kings",
-        "Apr 7: vs. Utah Jazz"
-      ]
-    },
-    {
-      "rank": 6,
       "teamId": "26",
       "team": "Utah Jazz",
       "teamDisplay": "Utah Jazz (8)",
-      "winPct": 0.30508474,
-      "record": "18-41",
-      "streak": "L4",
+      "winPct": 0.3,
+      "record": "18-42",
+      "streak": "L5",
       "last10": "3-7",
       "totalRemainingVsBottom12": 8,
       "opponents": [
@@ -499,6 +483,57 @@
         "Mar 25: vs. Washington Wizards",
         "Apr 7: at New Orleans Pelicans",
         "Apr 10: vs. Memphis Grizzlies"
+      ]
+    },
+    {
+      "rank": 6,
+      "teamId": "3",
+      "team": "New Orleans Pelicans",
+      "teamDisplay": "New Orleans Pelicans (9)",
+      "winPct": 0.3114754,
+      "record": "19-42",
+      "streak": "W4",
+      "last10": "6-4",
+      "totalRemainingVsBottom12": 9,
+      "opponents": [
+        {
+          "opponentTeamId": "6",
+          "opponentTeam": "Dallas Mavericks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "12",
+          "opponentTeam": "LA Clippers",
+          "gamesRemaining": 3
+        },
+        {
+          "opponentTeamId": "22",
+          "opponentTeam": "Portland Trail Blazers",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "23",
+          "opponentTeam": "Sacramento Kings",
+          "gamesRemaining": 2
+        },
+        {
+          "opponentTeamId": "26",
+          "opponentTeam": "Utah Jazz",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "27",
+          "opponentTeam": "Washington Wizards",
+          "gamesRemaining": 1
+        }
+      ],
+      "opponentsText": "Dallas Mavericks (1), LA Clippers (3), Portland Trail Blazers (1), Sacramento Kings (2), Utah Jazz (1), Washington Wizards (1)",
+      "notableTankGames": [
+        "Mar 5: at Sacramento Kings",
+        "Mar 8: vs. Washington Wizards",
+        "Mar 16: vs. Dallas Mavericks",
+        "Apr 3: at Sacramento Kings",
+        "Apr 7: vs. Utah Jazz"
       ]
     },
     {
