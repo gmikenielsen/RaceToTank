@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-03T03:30:38.156Z",
+  "generatedAt": "2026-03-03T05:33:14.075Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,52 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-03T03:30:38.156Z"
+    "attemptedAt": "2026-03-03T05:33:14.075Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-03-02",
-        "games": [
-          {
-            "gameId": "401810734",
-            "matchup": "Houston Rockets at Washington Wizards",
-            "tipoffUtc": "2026-03-03T00:00:00.000Z",
-            "trackedTeams": [
-              "Washington Wizards"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810735",
-            "matchup": "Boston Celtics at Milwaukee Bucks",
-            "tipoffUtc": "2026-03-03T00:30:00.000Z",
-            "trackedTeams": [
-              "Milwaukee Bucks"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810736",
-            "matchup": "Denver Nuggets at Utah Jazz",
-            "tipoffUtc": "2026-03-03T02:00:00.000Z",
-            "trackedTeams": [
-              "Utah Jazz"
-            ],
-            "status": "8:39 - 3rd Quarter"
-          },
-          {
-            "gameId": "401810737",
-            "matchup": "LA Clippers at Golden State Warriors",
-            "tipoffUtc": "2026-03-03T03:00:00.000Z",
-            "trackedTeams": [
-              "LA Clippers"
-            ],
-            "status": "Mon, March 2nd at 10:00 PM EST"
-          }
-        ]
-      },
       {
         "dateEt": "2026-03-03",
         "games": [
@@ -173,6 +132,58 @@
               "LA Clippers"
             ],
             "status": "Wed, March 4th at 10:30 PM EST"
+          }
+        ]
+      },
+      {
+        "dateEt": "2026-03-05",
+        "games": [
+          {
+            "gameId": "401810755",
+            "matchup": "Utah Jazz at Washington Wizards",
+            "tipoffUtc": "2026-03-06T00:00:00.000Z",
+            "trackedTeams": [
+              "Utah Jazz",
+              "Washington Wizards"
+            ],
+            "status": "Thu, March 5th at 7:00 PM EST"
+          },
+          {
+            "gameId": "401810754",
+            "matchup": "Dallas Mavericks at Orlando Magic",
+            "tipoffUtc": "2026-03-06T00:00:00.000Z",
+            "trackedTeams": [
+              "Dallas Mavericks"
+            ],
+            "status": "Thu, March 5th at 7:00 PM EST"
+          },
+          {
+            "gameId": "401810756",
+            "matchup": "Brooklyn Nets at Miami Heat",
+            "tipoffUtc": "2026-03-06T00:30:00.000Z",
+            "trackedTeams": [
+              "Brooklyn Nets"
+            ],
+            "status": "Thu, March 5th at 7:30 PM EST"
+          },
+          {
+            "gameId": "401810760",
+            "matchup": "Chicago Bulls at Phoenix Suns",
+            "tipoffUtc": "2026-03-06T02:00:00.000Z",
+            "trackedTeams": [
+              "Chicago Bulls"
+            ],
+            "status": "Thu, March 5th at 9:00 PM EST"
+          },
+          {
+            "gameId": "401810762",
+            "matchup": "New Orleans Pelicans at Sacramento Kings",
+            "tipoffUtc": "2026-03-06T03:00:00.000Z",
+            "trackedTeams": [
+              "New Orleans Pelicans",
+              "Sacramento Kings"
+            ],
+            "status": "Thu, March 5th at 10:00 PM EST"
           }
         ]
       }
@@ -414,10 +425,10 @@
       "teamId": "26",
       "team": "Utah Jazz",
       "teamDisplay": "Utah Jazz (8)",
-      "winPct": 0.3,
-      "record": "18-42",
-      "streak": "L5",
-      "last10": "3-7",
+      "winPct": 0.29508197,
+      "record": "18-43",
+      "streak": "L6",
+      "last10": "2-8",
       "totalRemainingVsBottom12": 8,
       "opponents": [
         {
