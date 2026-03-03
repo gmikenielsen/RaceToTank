@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-02T12:33:20.006Z",
+  "generatedAt": "2026-03-03T03:30:38.156Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-02T12:33:20.006Z"
+    "attemptedAt": "2026-03-03T03:30:38.156Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -23,7 +23,7 @@
             "trackedTeams": [
               "Washington Wizards"
             ],
-            "status": "Mon, March 2nd at 7:00 PM EST"
+            "status": "Final"
           },
           {
             "gameId": "401810735",
@@ -32,7 +32,7 @@
             "trackedTeams": [
               "Milwaukee Bucks"
             ],
-            "status": "Mon, March 2nd at 7:30 PM EST"
+            "status": "Final"
           },
           {
             "gameId": "401810736",
@@ -41,7 +41,7 @@
             "trackedTeams": [
               "Utah Jazz"
             ],
-            "status": "Mon, March 2nd at 9:00 PM EST"
+            "status": "8:39 - 3rd Quarter"
           },
           {
             "gameId": "401810737",
@@ -367,10 +367,10 @@
       "teamId": "27",
       "team": "Washington Wizards",
       "teamDisplay": "Washington Wizards (7)",
-      "winPct": 0.27118644,
-      "record": "16-43",
-      "streak": "L4",
-      "last10": "3-7",
+      "winPct": 0.26666668,
+      "record": "16-44",
+      "streak": "L5",
+      "last10": "2-8",
       "totalRemainingVsBottom12": 7,
       "opponents": [
         {
@@ -694,10 +694,10 @@
       "teamId": "15",
       "team": "Milwaukee Bucks",
       "teamDisplay": "Milwaukee Bucks (12)",
-      "winPct": 0.44067797,
-      "record": "26-33",
-      "streak": "L2",
-      "last10": "6-4",
+      "winPct": 0.43333334,
+      "record": "26-34",
+      "streak": "L3",
+      "last10": "5-5",
       "totalRemainingVsBottom12": 12,
       "opponents": [
         {
