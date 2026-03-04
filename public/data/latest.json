@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-04T05:30:23.487Z",
+  "generatedAt": "2026-03-04T12:31:42.968Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-04T05:30:23.487Z"
+    "attemptedAt": "2026-03-04T12:31:42.968Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -185,9 +185,9 @@
       "teamId": "23",
       "team": "Sacramento Kings",
       "teamDisplay": "Sacramento Kings (13)",
-      "winPct": 0.22580644,
-      "record": "14-48",
-      "streak": "L1",
+      "winPct": 0.22222222,
+      "record": "14-49",
+      "streak": "L2",
       "last10": "2-8",
       "totalRemainingVsBottom12": 13,
       "opponents": [
@@ -466,9 +466,9 @@
       "teamId": "3",
       "team": "New Orleans Pelicans",
       "teamDisplay": "New Orleans Pelicans (8)",
-      "winPct": 0.30645162,
-      "record": "19-43",
-      "streak": "L1",
+      "winPct": 0.3015873,
+      "record": "19-44",
+      "streak": "L2",
       "last10": "6-4",
       "totalRemainingVsBottom12": 8,
       "opponents": [
