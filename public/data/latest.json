@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-04T12:31:42.968Z",
+  "generatedAt": "2026-03-05T03:26:03.095Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-04T12:31:42.968Z"
+    "attemptedAt": "2026-03-05T03:26:03.095Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -23,7 +23,7 @@
             "trackedTeams": [
               "Utah Jazz"
             ],
-            "status": "Wed, March 4th at 7:30 PM EST"
+            "status": "Final"
           },
           {
             "gameId": "401810749",
@@ -32,7 +32,7 @@
             "trackedTeams": [
               "Charlotte Hornets"
             ],
-            "status": "Wed, March 4th at 7:30 PM EST"
+            "status": "Final"
           },
           {
             "gameId": "401810751",
@@ -42,7 +42,7 @@
               "Portland Trail Blazers",
               "Memphis Grizzlies"
             ],
-            "status": "Wed, March 4th at 8:00 PM EST"
+            "status": "5:04 - 4th Quarter"
           },
           {
             "gameId": "401810752",
@@ -52,7 +52,7 @@
               "Atlanta Hawks",
               "Milwaukee Bucks"
             ],
-            "status": "Wed, March 4th at 9:30 PM EST"
+            "status": "10:08 - 2nd Quarter"
           },
           {
             "gameId": "401810753",
@@ -415,9 +415,9 @@
       "teamId": "26",
       "team": "Utah Jazz",
       "teamDisplay": "Utah Jazz (8)",
-      "winPct": 0.29508197,
-      "record": "18-43",
-      "streak": "L6",
+      "winPct": 0.29032257,
+      "record": "18-44",
+      "streak": "L7",
       "last10": "2-8",
       "totalRemainingVsBottom12": 8,
       "opponents": [
@@ -570,12 +570,12 @@
       "rank": 8,
       "teamId": "29",
       "team": "Memphis Grizzlies",
-      "teamDisplay": "Memphis Grizzlies (10)",
+      "teamDisplay": "Memphis Grizzlies (9)",
       "winPct": 0.38333333,
       "record": "23-37",
       "streak": "L1",
       "last10": "3-7",
-      "totalRemainingVsBottom12": 10,
+      "totalRemainingVsBottom12": 9,
       "opponents": [
         {
           "opponentTeamId": "1",
@@ -613,17 +613,12 @@
           "gamesRemaining": 1
         },
         {
-          "opponentTeamId": "22",
-          "opponentTeam": "Portland Trail Blazers",
-          "gamesRemaining": 1
-        },
-        {
           "opponentTeamId": "26",
           "opponentTeam": "Utah Jazz",
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (2), Dallas Mavericks (1), LA Clippers (1), Milwaukee Bucks (1), Portland Trail Blazers (1), Utah Jazz (1)",
+      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (2), Dallas Mavericks (1), LA Clippers (1), Milwaukee Bucks (1), Utah Jazz (1)",
       "notableTankGames": [
         "Mar 9: at Brooklyn Nets",
         "Mar 12: vs. Dallas Mavericks",
@@ -689,17 +684,17 @@
       "rank": 10,
       "teamId": "15",
       "team": "Milwaukee Bucks",
-      "teamDisplay": "Milwaukee Bucks (12)",
+      "teamDisplay": "Milwaukee Bucks (11)",
       "winPct": 0.43333334,
       "record": "26-34",
       "streak": "L3",
       "last10": "5-5",
-      "totalRemainingVsBottom12": 12,
+      "totalRemainingVsBottom12": 11,
       "opponents": [
         {
           "opponentTeamId": "1",
           "opponentTeam": "Atlanta Hawks",
-          "gamesRemaining": 2
+          "gamesRemaining": 1
         },
         {
           "opponentTeamId": "17",
@@ -737,19 +732,19 @@
           "gamesRemaining": 2
         }
       ],
-      "opponentsText": "Atlanta Hawks (2), Brooklyn Nets (2), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (2), Memphis Grizzlies (1), Portland Trail Blazers (1), Utah Jazz (2)",
+      "opponentsText": "Atlanta Hawks (1), Brooklyn Nets (2), Dallas Mavericks (1), Indiana Pacers (1), LA Clippers (2), Memphis Grizzlies (1), Portland Trail Blazers (1), Utah Jazz (2)",
       "notableTankGames": []
     },
     {
       "rank": 11,
       "teamId": "22",
       "team": "Portland Trail Blazers",
-      "teamDisplay": "Portland Trail Blazers (14)",
+      "teamDisplay": "Portland Trail Blazers (13)",
       "winPct": 0.46774194,
       "record": "29-33",
       "streak": "L2",
       "last10": "5-5",
-      "totalRemainingVsBottom12": 14,
+      "totalRemainingVsBottom12": 13,
       "opponents": [
         {
           "opponentTeamId": "17",
@@ -777,11 +772,6 @@
           "gamesRemaining": 2
         },
         {
-          "opponentTeamId": "29",
-          "opponentTeam": "Memphis Grizzlies",
-          "gamesRemaining": 1
-        },
-        {
           "opponentTeamId": "15",
           "opponentTeam": "Milwaukee Bucks",
           "gamesRemaining": 1
@@ -807,7 +797,7 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Brooklyn Nets (2), Charlotte Hornets (1), Dallas Mavericks (1), Indiana Pacers (2), LA Clippers (2), Memphis Grizzlies (1), Milwaukee Bucks (1), New Orleans Pelicans (1), Sacramento Kings (1), Utah Jazz (1), Washington Wizards (1)",
+      "opponentsText": "Brooklyn Nets (2), Charlotte Hornets (1), Dallas Mavericks (1), Indiana Pacers (2), LA Clippers (2), Milwaukee Bucks (1), New Orleans Pelicans (1), Sacramento Kings (1), Utah Jazz (1), Washington Wizards (1)",
       "notableTankGames": []
     },
     {
@@ -869,12 +859,12 @@
       "rank": 13,
       "teamId": "1",
       "team": "Atlanta Hawks",
-      "teamDisplay": "Atlanta Hawks (8)",
+      "teamDisplay": "Atlanta Hawks (7)",
       "winPct": 0.5,
       "record": "31-31",
       "streak": "W4",
       "last10": "6-4",
-      "totalRemainingVsBottom12": 8,
+      "totalRemainingVsBottom12": 7,
       "opponents": [
         {
           "opponentTeamId": "17",
@@ -894,7 +884,7 @@
         {
           "opponentTeamId": "15",
           "opponentTeam": "Milwaukee Bucks",
-          "gamesRemaining": 2
+          "gamesRemaining": 1
         },
         {
           "opponentTeamId": "23",
@@ -902,7 +892,7 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Brooklyn Nets (2), Dallas Mavericks (2), Memphis Grizzlies (1), Milwaukee Bucks (2), Sacramento Kings (1)",
+      "opponentsText": "Brooklyn Nets (2), Dallas Mavericks (2), Memphis Grizzlies (1), Milwaukee Bucks (1), Sacramento Kings (1)",
       "notableTankGames": []
     },
     {
@@ -910,9 +900,9 @@
       "teamId": "30",
       "team": "Charlotte Hornets",
       "teamDisplay": "Charlotte Hornets (6)",
-      "winPct": 0.5,
-      "record": "31-31",
-      "streak": "W5",
+      "winPct": 0.50793654,
+      "record": "32-31",
+      "streak": "W6",
       "last10": "7-3",
       "totalRemainingVsBottom12": 6,
       "opponents": [
