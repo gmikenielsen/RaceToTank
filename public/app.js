@@ -1,5 +1,22 @@
 const DATA_URL = './data/latest.json';
 const NOTABLE_TEAM_COUNT = 9;
+const TEAM_ABBREVIATIONS = new Map([
+  ['Brooklyn Nets', 'BKN'],
+  ['Chicago Bulls', 'CHI'],
+  ['Charlotte Hornets', 'CHA'],
+  ['Dallas Mavericks', 'DAL'],
+  ['Golden State Warriors', 'GSW'],
+  ['Indiana Pacers', 'IND'],
+  ['LA Clippers', 'LAC'],
+  ['Memphis Grizzlies', 'MEM'],
+  ['Milwaukee Bucks', 'MIL'],
+  ['New Orleans Pelicans', 'NOP'],
+  ['Portland Trail Blazers', 'POR'],
+  ['Portland Trailblazers', 'POR'],
+  ['Sacramento Kings', 'SAC'],
+  ['Utah Jazz', 'UTA'],
+  ['Washington Wizards', 'WAS'],
+]);
 
 const statusEl = document.getElementById('status');
 const desktopBodyEl = document.getElementById('desktop-body');
@@ -80,6 +97,26 @@ function sumFromOpponentsText(opponentsText) {
   const matches = [...opponentsText.matchAll(/\((\d+)\)/g)];
   if (!matches.length) return null;
   return matches.reduce((sum, m) => sum + Number(m[1] || 0), 0);
+}
+
+function abbreviateTeamName(teamName) {
+  const normalized = String(teamName || '').trim();
+  return TEAM_ABBREVIATIONS.get(normalized) || normalized;
+}
+
+function formatOpponentsText(row) {
+  if (Array.isArray(row?.opponents) && row.opponents.length) {
+    return row.opponents
+      .map((item) => `${abbreviateTeamName(item?.opponentTeam)} (${Number(item?.gamesRemaining || 0)})`)
+      .join(', ');
+  }
+
+  const rawText = String(row?.opponentsText || '').trim();
+  if (!rawText) return 'None';
+
+  return rawText.replace(/([^,(]+)\s+\((\d+)\)/g, (_, teamName, gamesRemaining) => {
+    return `${abbreviateTeamName(teamName)} (${gamesRemaining})`;
+  });
 }
 
 function resolveTeamDisplay(row) {
@@ -350,7 +387,7 @@ function renderRows(rows, payload) {
       const rank = escapeHtml(String(index + 1));
       const teamName = escapeHtml(resolveTeamDisplay(row));
       const recordLine = buildRecordLineHtml(row);
-      const opponents = escapeHtml(row.opponentsText || 'None');
+      const opponents = escapeHtml(formatOpponentsText(row));
       const showNotable = index < NOTABLE_TEAM_COUNT;
       const notableGames = showNotable ? notableGamesByTeam.get(String(row?.team || '').trim()) || [] : [];
       const notableGamesHtml = showNotable ? buildNotableGamesHtml(notableGames) : '';
@@ -363,7 +400,7 @@ function renderRows(rows, payload) {
       const rank = escapeHtml(String(index + 1));
       const teamName = escapeHtml(resolveTeamDisplay(row));
       const recordLine = buildRecordLineHtml(row);
-      const opponents = escapeHtml(row.opponentsText || 'None');
+      const opponents = escapeHtml(formatOpponentsText(row));
       const showNotable = index < NOTABLE_TEAM_COUNT;
       const notableGames = showNotable ? notableGamesByTeam.get(String(row?.team || '').trim()) || [] : [];
       const notableGamesHtml = showNotable ? buildNotableGamesHtml(notableGames) : '';
