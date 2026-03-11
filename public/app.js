@@ -105,10 +105,16 @@ function abbreviateTeamName(teamName) {
   return TEAM_ABBREVIATIONS.get(normalized) || normalized;
 }
 
+function formatOpponentCountLabel(teamName, gamesRemaining) {
+  const normalizedGames = Number(gamesRemaining || 0);
+  const displayName = abbreviateTeamName(teamName);
+  return normalizedGames > 1 ? `${displayName} (${normalizedGames})` : displayName;
+}
+
 function formatOpponentsText(row) {
   if (Array.isArray(row?.opponents) && row.opponents.length) {
     return row.opponents
-      .map((item) => `${abbreviateTeamName(item?.opponentTeam)} (${Number(item?.gamesRemaining || 0)})`)
+      .map((item) => formatOpponentCountLabel(item?.opponentTeam, item?.gamesRemaining))
       .join(', ');
   }
 
@@ -116,7 +122,7 @@ function formatOpponentsText(row) {
   if (!rawText) return 'None';
 
   return rawText.replace(/([^,(]+)\s+\((\d+)\)/g, (_, teamName, gamesRemaining) => {
-    return `${abbreviateTeamName(teamName)} (${gamesRemaining})`;
+    return formatOpponentCountLabel(teamName, gamesRemaining);
   });
 }
 
