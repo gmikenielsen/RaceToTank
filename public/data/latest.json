@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-11T03:23:09.658Z",
+  "generatedAt": "2026-03-11T05:33:35.521Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,91 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-11T03:23:09.658Z"
+    "attemptedAt": "2026-03-11T05:33:35.521Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-03-10",
-        "games": [
-          {
-            "gameId": "401810791",
-            "matchup": "Memphis Grizzlies at Philadelphia 76ers",
-            "tipoffUtc": "2026-03-10T23:00:00.000Z",
-            "trackedTeams": [
-              "Memphis Grizzlies"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810793",
-            "matchup": "Washington Wizards at Miami Heat",
-            "tipoffUtc": "2026-03-10T23:30:00.000Z",
-            "trackedTeams": [
-              "Washington Wizards"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810792",
-            "matchup": "Detroit Pistons at Brooklyn Nets",
-            "tipoffUtc": "2026-03-10T23:30:00.000Z",
-            "trackedTeams": [
-              "Brooklyn Nets"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810794",
-            "matchup": "Dallas Mavericks at Atlanta Hawks",
-            "tipoffUtc": "2026-03-10T23:30:00.000Z",
-            "trackedTeams": [
-              "Dallas Mavericks"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810796",
-            "matchup": "Phoenix Suns at Milwaukee Bucks",
-            "tipoffUtc": "2026-03-11T00:00:00.000Z",
-            "trackedTeams": [
-              "Milwaukee Bucks"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810800",
-            "matchup": "Indiana Pacers at Sacramento Kings",
-            "tipoffUtc": "2026-03-11T02:00:00.000Z",
-            "trackedTeams": [
-              "Indiana Pacers",
-              "Sacramento Kings"
-            ],
-            "status": "3:29 - 1st Quarter"
-          },
-          {
-            "gameId": "401810798",
-            "matchup": "Chicago Bulls at Golden State Warriors",
-            "tipoffUtc": "2026-03-11T02:00:00.000Z",
-            "trackedTeams": [
-              "Chicago Bulls",
-              "Golden State Warriors"
-            ],
-            "status": "Halftime"
-          },
-          {
-            "gameId": "401810799",
-            "matchup": "Charlotte Hornets at Portland Trail Blazers",
-            "tipoffUtc": "2026-03-11T02:00:00.000Z",
-            "trackedTeams": [
-              "Charlotte Hornets",
-              "Portland Trail Blazers"
-            ],
-            "status": "4:18 - 1st Quarter"
-          }
-        ]
-      },
       {
         "dateEt": "2026-03-11",
         "games": [
@@ -194,19 +114,137 @@
             "status": "Thu, March 12th at 10:30 PM EDT"
           }
         ]
+      },
+      {
+        "dateEt": "2026-03-13",
+        "games": [
+          {
+            "gameId": "401810817",
+            "matchup": "New York Knicks at Indiana Pacers",
+            "tipoffUtc": "2026-03-13T23:30:00.000Z",
+            "trackedTeams": [
+              "Indiana Pacers"
+            ],
+            "status": "Fri, March 13th at 7:30 PM EDT"
+          },
+          {
+            "gameId": "401810820",
+            "matchup": "Cleveland Cavaliers at Dallas Mavericks",
+            "tipoffUtc": "2026-03-13T23:30:00.000Z",
+            "trackedTeams": [
+              "Dallas Mavericks"
+            ],
+            "status": "Fri, March 13th at 7:30 PM EDT"
+          },
+          {
+            "gameId": "401810816",
+            "matchup": "Memphis Grizzlies at Detroit Pistons",
+            "tipoffUtc": "2026-03-13T23:30:00.000Z",
+            "trackedTeams": [
+              "Memphis Grizzlies"
+            ],
+            "status": "Fri, March 13th at 7:30 PM EDT"
+          },
+          {
+            "gameId": "401810819",
+            "matchup": "New Orleans Pelicans at Houston Rockets",
+            "tipoffUtc": "2026-03-14T00:00:00.000Z",
+            "trackedTeams": [
+              "New Orleans Pelicans"
+            ],
+            "status": "Fri, March 13th at 8:00 PM EDT"
+          },
+          {
+            "gameId": "401810822",
+            "matchup": "Utah Jazz at Portland Trail Blazers",
+            "tipoffUtc": "2026-03-14T02:00:00.000Z",
+            "trackedTeams": [
+              "Utah Jazz",
+              "Portland Trail Blazers"
+            ],
+            "status": "Fri, March 13th at 10:00 PM EDT"
+          },
+          {
+            "gameId": "401810821",
+            "matchup": "Minnesota Timberwolves at Golden State Warriors",
+            "tipoffUtc": "2026-03-14T02:00:00.000Z",
+            "trackedTeams": [
+              "Golden State Warriors"
+            ],
+            "status": "Fri, March 13th at 10:00 PM EDT"
+          },
+          {
+            "gameId": "401810823",
+            "matchup": "Chicago Bulls at LA Clippers",
+            "tipoffUtc": "2026-03-14T02:30:00.000Z",
+            "trackedTeams": [
+              "Chicago Bulls",
+              "LA Clippers"
+            ],
+            "status": "Fri, March 13th at 10:30 PM EDT"
+          }
+        ]
       }
     ]
   },
   "rows": [
     {
       "rank": 1,
+      "teamId": "11",
+      "team": "Indiana Pacers",
+      "teamDisplay": "Indiana Pacers (6)",
+      "winPct": 0.23076923,
+      "record": "15-50",
+      "streak": "L10",
+      "last10": "0-10",
+      "totalRemainingVsBottom12": 6,
+      "opponents": [
+        {
+          "opponentTeamId": "17",
+          "opponentTeam": "Brooklyn Nets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "30",
+          "opponentTeam": "Charlotte Hornets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "4",
+          "opponentTeam": "Chicago Bulls",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "12",
+          "opponentTeam": "LA Clippers",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "15",
+          "opponentTeam": "Milwaukee Bucks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "22",
+          "opponentTeam": "Portland Trail Blazers",
+          "gamesRemaining": 1
+        }
+      ],
+      "opponentsText": "Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (1), LA Clippers (1), Milwaukee Bucks (1), Portland Trail Blazers (1)",
+      "notableTankGames": [
+        "Apr 1: at Chicago Bulls",
+        "Apr 9: at Brooklyn Nets"
+      ]
+    },
+    {
+      "rank": 2,
       "teamId": "23",
       "team": "Sacramento Kings",
       "teamDisplay": "Sacramento Kings (11)",
-      "winPct": 0.23076923,
-      "record": "15-50",
-      "streak": "W1",
-      "last10": "3-7",
+      "winPct": 0.24242425,
+      "record": "16-50",
+      "streak": "W2",
+      "last10": "4-6",
       "totalRemainingVsBottom12": 11,
       "opponents": [
         {
@@ -251,54 +289,6 @@
         "Mar 22: vs. Brooklyn Nets",
         "Mar 29: at Brooklyn Nets",
         "Apr 3: vs. New Orleans Pelicans"
-      ]
-    },
-    {
-      "rank": 2,
-      "teamId": "11",
-      "team": "Indiana Pacers",
-      "teamDisplay": "Indiana Pacers (6)",
-      "winPct": 0.234375,
-      "record": "15-49",
-      "streak": "L9",
-      "last10": "1-9",
-      "totalRemainingVsBottom12": 6,
-      "opponents": [
-        {
-          "opponentTeamId": "17",
-          "opponentTeam": "Brooklyn Nets",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "30",
-          "opponentTeam": "Charlotte Hornets",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "4",
-          "opponentTeam": "Chicago Bulls",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "12",
-          "opponentTeam": "LA Clippers",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "15",
-          "opponentTeam": "Milwaukee Bucks",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "22",
-          "opponentTeam": "Portland Trail Blazers",
-          "gamesRemaining": 1
-        }
-      ],
-      "opponentsText": "Brooklyn Nets (1), Charlotte Hornets (1), Chicago Bulls (1), LA Clippers (1), Milwaukee Bucks (1), Portland Trail Blazers (1)",
-      "notableTankGames": [
-        "Apr 1: at Chicago Bulls",
-        "Apr 9: at Brooklyn Nets"
       ]
     },
     {
@@ -599,10 +589,10 @@
       "teamId": "4",
       "team": "Chicago Bulls",
       "teamDisplay": "Chicago Bulls (7)",
-      "winPct": 0.40625,
-      "record": "26-38",
-      "streak": "L1",
-      "last10": "2-8",
+      "winPct": 0.41538462,
+      "record": "27-38",
+      "streak": "W1",
+      "last10": "3-7",
       "totalRemainingVsBottom12": 7,
       "opponents": [
         {
@@ -696,10 +686,10 @@
       "teamId": "22",
       "team": "Portland Trail Blazers",
       "teamDisplay": "Portland Trail Blazers (11)",
-      "winPct": 0.47692308,
-      "record": "31-34",
-      "streak": "W1",
-      "last10": "5-5",
+      "winPct": 0.46969697,
+      "record": "31-35",
+      "streak": "L1",
+      "last10": "4-6",
       "totalRemainingVsBottom12": 11,
       "opponents": [
         {
@@ -753,47 +743,12 @@
     },
     {
       "rank": 12,
-      "teamId": "30",
-      "team": "Charlotte Hornets",
-      "teamDisplay": "Charlotte Hornets (5)",
-      "winPct": 0.4923077,
-      "record": "32-33",
-      "streak": "L2",
-      "last10": "6-4",
-      "totalRemainingVsBottom12": 5,
-      "opponents": [
-        {
-          "opponentTeamId": "17",
-          "opponentTeam": "Brooklyn Nets",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "11",
-          "opponentTeam": "Indiana Pacers",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "29",
-          "opponentTeam": "Memphis Grizzlies",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "23",
-          "opponentTeam": "Sacramento Kings",
-          "gamesRemaining": 2
-        }
-      ],
-      "opponentsText": "Brooklyn Nets (1), Indiana Pacers (1), Memphis Grizzlies (1), Sacramento Kings (2)",
-      "notableTankGames": []
-    },
-    {
-      "rank": 13,
       "teamId": "9",
       "team": "Golden State Warriors",
       "teamDisplay": "Golden State Warriors (7)",
-      "winPct": 0.5,
-      "record": "32-32",
-      "streak": "L2",
+      "winPct": 0.4923077,
+      "record": "32-33",
+      "streak": "L3",
       "last10": "3-7",
       "totalRemainingVsBottom12": 7,
       "opponents": [
@@ -824,6 +779,41 @@
         }
       ],
       "opponentsText": "Brooklyn Nets (1), Dallas Mavericks (1), LA Clippers (1), Sacramento Kings (2), Washington Wizards (2)",
+      "notableTankGames": []
+    },
+    {
+      "rank": 13,
+      "teamId": "30",
+      "team": "Charlotte Hornets",
+      "teamDisplay": "Charlotte Hornets (5)",
+      "winPct": 0.5,
+      "record": "33-33",
+      "streak": "W1",
+      "last10": "7-3",
+      "totalRemainingVsBottom12": 5,
+      "opponents": [
+        {
+          "opponentTeamId": "17",
+          "opponentTeam": "Brooklyn Nets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "11",
+          "opponentTeam": "Indiana Pacers",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "29",
+          "opponentTeam": "Memphis Grizzlies",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "23",
+          "opponentTeam": "Sacramento Kings",
+          "gamesRemaining": 2
+        }
+      ],
+      "opponentsText": "Brooklyn Nets (1), Indiana Pacers (1), Memphis Grizzlies (1), Sacramento Kings (2)",
       "notableTankGames": []
     },
     {
