@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-12T03:29:25.201Z",
+  "generatedAt": "2026-03-12T05:35:13.474Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,53 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-12T03:29:25.201Z"
+    "attemptedAt": "2026-03-12T05:35:13.474Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-03-11",
-        "games": [
-          {
-            "gameId": "401810803",
-            "matchup": "Toronto Raptors at New Orleans Pelicans",
-            "tipoffUtc": "2026-03-12T00:00:00.000Z",
-            "trackedTeams": [
-              "New Orleans Pelicans"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810804",
-            "matchup": "New York Knicks at Utah Jazz",
-            "tipoffUtc": "2026-03-12T01:00:00.000Z",
-            "trackedTeams": [
-              "Utah Jazz"
-            ],
-            "status": "9:35 - 4th Quarter"
-          },
-          {
-            "gameId": "401810806",
-            "matchup": "Charlotte Hornets at Sacramento Kings",
-            "tipoffUtc": "2026-03-12T02:00:00.000Z",
-            "trackedTeams": [
-              "Charlotte Hornets",
-              "Sacramento Kings"
-            ],
-            "status": "Halftime"
-          },
-          {
-            "gameId": "401810807",
-            "matchup": "Minnesota Timberwolves at LA Clippers",
-            "tipoffUtc": "2026-03-12T02:30:00.000Z",
-            "trackedTeams": [
-              "LA Clippers"
-            ],
-            "status": "End of 1st Quarter"
-          }
-        ]
-      },
       {
         "dateEt": "2026-03-12",
         "games": [
@@ -184,6 +142,57 @@
             "status": "Fri, March 13th at 10:30 PM EDT"
           }
         ]
+      },
+      {
+        "dateEt": "2026-03-14",
+        "games": [
+          {
+            "gameId": "401810824",
+            "matchup": "Brooklyn Nets at Philadelphia 76ers",
+            "tipoffUtc": "2026-03-14T17:00:00.000Z",
+            "trackedTeams": [
+              "Brooklyn Nets"
+            ],
+            "status": "Sat, March 14th at 1:00 PM EDT"
+          },
+          {
+            "gameId": "401810825",
+            "matchup": "Milwaukee Bucks at Atlanta Hawks",
+            "tipoffUtc": "2026-03-14T19:00:00.000Z",
+            "trackedTeams": [
+              "Milwaukee Bucks"
+            ],
+            "status": "Sat, March 14th at 3:00 PM EDT"
+          },
+          {
+            "gameId": "401810828",
+            "matchup": "Charlotte Hornets at San Antonio Spurs",
+            "tipoffUtc": "2026-03-14T19:30:00.000Z",
+            "trackedTeams": [
+              "Charlotte Hornets"
+            ],
+            "status": "Sat, March 14th at 3:30 PM EDT"
+          },
+          {
+            "gameId": "401810826",
+            "matchup": "Washington Wizards at Boston Celtics",
+            "tipoffUtc": "2026-03-14T22:00:00.000Z",
+            "trackedTeams": [
+              "Washington Wizards"
+            ],
+            "status": "Sat, March 14th at 6:00 PM EDT"
+          },
+          {
+            "gameId": "401810830",
+            "matchup": "Sacramento Kings at LA Clippers",
+            "tipoffUtc": "2026-03-15T02:30:00.000Z",
+            "trackedTeams": [
+              "Sacramento Kings",
+              "LA Clippers"
+            ],
+            "status": "Sat, March 14th at 10:30 PM EDT"
+          }
+        ]
       }
     ]
   },
@@ -241,9 +250,9 @@
       "teamId": "23",
       "team": "Sacramento Kings",
       "teamDisplay": "Sacramento Kings (10)",
-      "winPct": 0.24242425,
-      "record": "16-50",
-      "streak": "W2",
+      "winPct": 0.23880596,
+      "record": "16-51",
+      "streak": "L1",
       "last10": "4-6",
       "totalRemainingVsBottom12": 10,
       "opponents": [
@@ -396,9 +405,9 @@
       "teamId": "26",
       "team": "Utah Jazz",
       "teamDisplay": "Utah Jazz (6)",
-      "winPct": 0.30769232,
-      "record": "20-45",
-      "streak": "W1",
+      "winPct": 0.3030303,
+      "record": "20-46",
+      "streak": "L1",
       "last10": "2-8",
       "totalRemainingVsBottom12": 6,
       "opponents": [
@@ -786,10 +795,10 @@
       "teamId": "30",
       "team": "Charlotte Hornets",
       "teamDisplay": "Charlotte Hornets (4)",
-      "winPct": 0.5,
-      "record": "33-33",
-      "streak": "W1",
-      "last10": "7-3",
+      "winPct": 0.5074627,
+      "record": "34-33",
+      "streak": "W2",
+      "last10": "8-2",
       "totalRemainingVsBottom12": 4,
       "opponents": [
         {
@@ -821,9 +830,9 @@
       "teamId": "12",
       "team": "LA Clippers",
       "teamDisplay": "LA Clippers (13)",
-      "winPct": 0.5,
-      "record": "32-32",
-      "streak": "W2",
+      "winPct": 0.50769234,
+      "record": "33-32",
+      "streak": "W3",
       "last10": "6-4",
       "totalRemainingVsBottom12": 13,
       "opponents": [
