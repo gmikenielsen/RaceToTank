@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-20T12:33:43.132Z",
+  "generatedAt": "2026-03-21T03:17:32.523Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-20T12:33:43.132Z"
+    "attemptedAt": "2026-03-21T03:17:32.523Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -23,7 +23,7 @@
             "trackedTeams": [
               "Brooklyn Nets"
             ],
-            "status": "Fri, March 20th at 7:30 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810872",
@@ -32,7 +32,7 @@
             "trackedTeams": [
               "Golden State Warriors"
             ],
-            "status": "Fri, March 20th at 7:30 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810874",
@@ -41,7 +41,7 @@
             "trackedTeams": [
               "Memphis Grizzlies"
             ],
-            "status": "Fri, March 20th at 8:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810875",
@@ -50,7 +50,7 @@
             "trackedTeams": [
               "Portland Trail Blazers"
             ],
-            "status": "Fri, March 20th at 8:00 PM EDT"
+            "status": "Final"
           }
         ]
       },
@@ -67,21 +67,21 @@
             "status": "Sat, March 21st at 5:00 PM EDT"
           },
           {
-            "gameId": "401810880",
-            "matchup": "Cleveland Cavaliers at New Orleans Pelicans",
-            "tipoffUtc": "2026-03-21T23:00:00.000Z",
-            "trackedTeams": [
-              "New Orleans Pelicans"
-            ],
-            "status": "Sat, March 21st at 7:00 PM EDT"
-          },
-          {
             "gameId": "401810878",
             "matchup": "Memphis Grizzlies at Charlotte Hornets",
             "tipoffUtc": "2026-03-21T23:00:00.000Z",
             "trackedTeams": [
               "Memphis Grizzlies",
               "Charlotte Hornets"
+            ],
+            "status": "Sat, March 21st at 7:00 PM EDT"
+          },
+          {
+            "gameId": "401810880",
+            "matchup": "Cleveland Cavaliers at New Orleans Pelicans",
+            "tipoffUtc": "2026-03-21T23:00:00.000Z",
+            "trackedTeams": [
+              "New Orleans Pelicans"
             ],
             "status": "Sat, March 21st at 7:00 PM EDT"
           },
@@ -257,9 +257,9 @@
       "teamId": "17",
       "team": "Brooklyn Nets",
       "teamDisplay": "Brooklyn Nets (9)",
-      "winPct": 0.24637681,
-      "record": "17-52",
-      "streak": "L5",
+      "winPct": 0.24285714,
+      "record": "17-53",
+      "streak": "L6",
       "last10": "2-8",
       "totalRemainingVsBottom12": 9,
       "opponents": [
@@ -434,6 +434,44 @@
     },
     {
       "rank": 7,
+      "teamId": "29",
+      "team": "Memphis Grizzlies",
+      "teamDisplay": "Memphis Grizzlies (4)",
+      "winPct": 0.3478261,
+      "record": "24-45",
+      "streak": "L1",
+      "last10": "1-9",
+      "totalRemainingVsBottom12": 4,
+      "opponents": [
+        {
+          "opponentTeamId": "30",
+          "opponentTeam": "Charlotte Hornets",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "4",
+          "opponentTeam": "Chicago Bulls",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "15",
+          "opponentTeam": "Milwaukee Bucks",
+          "gamesRemaining": 1
+        },
+        {
+          "opponentTeamId": "26",
+          "opponentTeam": "Utah Jazz",
+          "gamesRemaining": 1
+        }
+      ],
+      "opponentsText": "Charlotte Hornets (1), Chicago Bulls (1), Milwaukee Bucks (1), Utah Jazz (1)",
+      "notableTankGames": [
+        "Mar 28: vs. Chicago Bulls",
+        "Apr 10: at Utah Jazz"
+      ]
+    },
+    {
+      "rank": 8,
       "teamId": "3",
       "team": "New Orleans Pelicans",
       "teamDisplay": "New Orleans Pelicans (3)",
@@ -463,44 +501,6 @@
       "notableTankGames": [
         "Apr 3: at Sacramento Kings",
         "Apr 7: vs. Utah Jazz"
-      ]
-    },
-    {
-      "rank": 8,
-      "teamId": "29",
-      "team": "Memphis Grizzlies",
-      "teamDisplay": "Memphis Grizzlies (4)",
-      "winPct": 0.3529412,
-      "record": "24-44",
-      "streak": "W1",
-      "last10": "2-8",
-      "totalRemainingVsBottom12": 4,
-      "opponents": [
-        {
-          "opponentTeamId": "30",
-          "opponentTeam": "Charlotte Hornets",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "4",
-          "opponentTeam": "Chicago Bulls",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "15",
-          "opponentTeam": "Milwaukee Bucks",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "26",
-          "opponentTeam": "Utah Jazz",
-          "gamesRemaining": 1
-        }
-      ],
-      "opponentsText": "Charlotte Hornets (1), Chicago Bulls (1), Milwaukee Bucks (1), Utah Jazz (1)",
-      "notableTankGames": [
-        "Mar 28: vs. Chicago Bulls",
-        "Apr 10: at Utah Jazz"
       ]
     },
     {
@@ -589,9 +589,9 @@
       "teamId": "9",
       "team": "Golden State Warriors",
       "teamDisplay": "Golden State Warriors (6)",
-      "winPct": 0.47826087,
-      "record": "33-36",
-      "streak": "L1",
+      "winPct": 0.47142857,
+      "record": "33-37",
+      "streak": "L2",
       "last10": "2-8",
       "totalRemainingVsBottom12": 6,
       "opponents": [
@@ -674,10 +674,10 @@
       "teamId": "22",
       "team": "Portland Trail Blazers",
       "teamDisplay": "Portland Trail Blazers (8)",
-      "winPct": 0.4857143,
-      "record": "34-36",
-      "streak": "W2",
-      "last10": "5-5",
+      "winPct": 0.49295774,
+      "record": "35-36",
+      "streak": "W3",
+      "last10": "6-4",
       "totalRemainingVsBottom12": 8,
       "opponents": [
         {
