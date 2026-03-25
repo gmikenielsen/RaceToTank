@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-25T03:34:37.145Z",
+  "generatedAt": "2026-03-25T05:43:32.020Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,35 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-25T03:34:37.145Z"
+    "attemptedAt": "2026-03-25T05:43:32.020Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-03-24",
-        "games": [
-          {
-            "gameId": "401810902",
-            "matchup": "Sacramento Kings at Charlotte Hornets",
-            "tipoffUtc": "2026-03-24T23:00:00.000Z",
-            "trackedTeams": [
-              "Sacramento Kings",
-              "Charlotte Hornets"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810903",
-            "matchup": "New Orleans Pelicans at New York Knicks",
-            "tipoffUtc": "2026-03-24T23:30:00.000Z",
-            "trackedTeams": [
-              "New Orleans Pelicans"
-            ],
-            "status": "Final"
-          }
-        ]
-      },
       {
         "dateEt": "2026-03-25",
         "games": [
@@ -146,6 +122,86 @@
               "Charlotte Hornets"
             ],
             "status": "Thu, March 26th at 7:00 PM EDT"
+          }
+        ]
+      },
+      {
+        "dateEt": "2026-03-27",
+        "games": [
+          {
+            "gameId": "401810921",
+            "matchup": "LA Clippers at Indiana Pacers",
+            "tipoffUtc": "2026-03-27T23:00:00.000Z",
+            "trackedTeams": [
+              "LA Clippers",
+              "Indiana Pacers"
+            ],
+            "status": "Fri, March 27th at 7:00 PM EDT"
+          },
+          {
+            "gameId": "401810924",
+            "matchup": "Houston Rockets at Memphis Grizzlies",
+            "tipoffUtc": "2026-03-28T00:00:00.000Z",
+            "trackedTeams": [
+              "Memphis Grizzlies"
+            ],
+            "status": "Fri, March 27th at 8:00 PM EDT"
+          },
+          {
+            "gameId": "401810925",
+            "matchup": "Chicago Bulls at Oklahoma City Thunder",
+            "tipoffUtc": "2026-03-28T00:00:00.000Z",
+            "trackedTeams": [
+              "Chicago Bulls"
+            ],
+            "status": "Fri, March 27th at 8:00 PM EDT"
+          },
+          {
+            "gameId": "401810926",
+            "matchup": "New Orleans Pelicans at Toronto Raptors",
+            "tipoffUtc": "2026-03-28T00:30:00.000Z",
+            "trackedTeams": [
+              "New Orleans Pelicans"
+            ],
+            "status": "Fri, March 27th at 8:30 PM EDT"
+          },
+          {
+            "gameId": "401810927",
+            "matchup": "Utah Jazz at Denver Nuggets",
+            "tipoffUtc": "2026-03-28T01:00:00.000Z",
+            "trackedTeams": [
+              "Utah Jazz"
+            ],
+            "status": "Fri, March 27th at 9:00 PM EDT"
+          },
+          {
+            "gameId": "401810928",
+            "matchup": "Washington Wizards at Golden State Warriors",
+            "tipoffUtc": "2026-03-28T02:00:00.000Z",
+            "trackedTeams": [
+              "Washington Wizards",
+              "Golden State Warriors"
+            ],
+            "status": "Fri, March 27th at 10:00 PM EDT"
+          },
+          {
+            "gameId": "401810929",
+            "matchup": "Dallas Mavericks at Portland Trail Blazers",
+            "tipoffUtc": "2026-03-28T02:00:00.000Z",
+            "trackedTeams": [
+              "Dallas Mavericks",
+              "Portland Trail Blazers"
+            ],
+            "status": "Fri, March 27th at 10:00 PM EDT"
+          },
+          {
+            "gameId": "401810930",
+            "matchup": "Brooklyn Nets at Los Angeles Lakers",
+            "tipoffUtc": "2026-03-28T02:30:00.000Z",
+            "trackedTeams": [
+              "Brooklyn Nets"
+            ],
+            "status": "Fri, March 27th at 10:30 PM EDT"
           }
         ]
       }
