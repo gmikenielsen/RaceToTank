@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-26T12:48:14.597Z",
+  "generatedAt": "2026-03-27T03:46:58.643Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-26T12:48:14.597Z"
+    "attemptedAt": "2026-03-27T03:46:58.643Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -23,7 +23,7 @@
             "trackedTeams": [
               "Sacramento Kings"
             ],
-            "status": "Thu, March 26th at 7:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810919",
@@ -32,7 +32,7 @@
             "trackedTeams": [
               "New Orleans Pelicans"
             ],
-            "status": "Thu, March 26th at 7:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810918",
@@ -41,7 +41,7 @@
             "trackedTeams": [
               "Charlotte Hornets"
             ],
-            "status": "Thu, March 26th at 7:00 PM EDT"
+            "status": "Final"
           }
         ]
       },
@@ -305,9 +305,9 @@
       "teamId": "23",
       "team": "Sacramento Kings",
       "teamDisplay": "Sacramento Kings (6)",
-      "winPct": 0.26027396,
-      "record": "19-54",
-      "streak": "L1",
+      "winPct": 0.25675675,
+      "record": "19-55",
+      "streak": "L2",
       "last10": "5-5",
       "totalRemainingVsBottom12": 6,
       "opponents": [
@@ -446,10 +446,10 @@
       "teamId": "3",
       "team": "New Orleans Pelicans",
       "teamDisplay": "New Orleans Pelicans (3)",
-      "winPct": 0.34246576,
-      "record": "25-48",
-      "streak": "L2",
-      "last10": "6-4",
+      "winPct": 0.33783785,
+      "record": "25-49",
+      "streak": "L3",
+      "last10": "5-5",
       "totalRemainingVsBottom12": 3,
       "opponents": [
         {
@@ -670,9 +670,9 @@
       "teamId": "30",
       "team": "Charlotte Hornets",
       "teamDisplay": "Charlotte Hornets (2)",
-      "winPct": 0.5277778,
-      "record": "38-34",
-      "streak": "W4",
+      "winPct": 0.53424656,
+      "record": "39-34",
+      "streak": "W5",
       "last10": "7-3",
       "totalRemainingVsBottom12": 2,
       "opponents": [
