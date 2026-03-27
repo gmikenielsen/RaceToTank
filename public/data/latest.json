@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-27T03:46:58.643Z",
+  "generatedAt": "2026-03-27T05:56:34.696Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,43 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-27T03:46:58.643Z"
+    "attemptedAt": "2026-03-27T05:56:34.696Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-03-26",
-        "games": [
-          {
-            "gameId": "401810920",
-            "matchup": "Sacramento Kings at Orlando Magic",
-            "tipoffUtc": "2026-03-26T23:00:00.000Z",
-            "trackedTeams": [
-              "Sacramento Kings"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810919",
-            "matchup": "New Orleans Pelicans at Detroit Pistons",
-            "tipoffUtc": "2026-03-26T23:00:00.000Z",
-            "trackedTeams": [
-              "New Orleans Pelicans"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810918",
-            "matchup": "New York Knicks at Charlotte Hornets",
-            "tipoffUtc": "2026-03-26T23:00:00.000Z",
-            "trackedTeams": [
-              "Charlotte Hornets"
-            ],
-            "status": "Final"
-          }
-        ]
-      },
       {
         "dateEt": "2026-03-27",
         "games": [
@@ -173,6 +141,77 @@
               "Utah Jazz"
             ],
             "status": "Sat, March 28th at 10:00 PM EDT"
+          }
+        ]
+      },
+      {
+        "dateEt": "2026-03-29",
+        "games": [
+          {
+            "gameId": "401810937",
+            "matchup": "LA Clippers at Milwaukee Bucks",
+            "tipoffUtc": "2026-03-29T19:30:00.000Z",
+            "trackedTeams": [
+              "LA Clippers",
+              "Milwaukee Bucks"
+            ],
+            "status": "Sun, March 29th at 3:30 PM EDT"
+          },
+          {
+            "gameId": "401810938",
+            "matchup": "Miami Heat at Indiana Pacers",
+            "tipoffUtc": "2026-03-29T21:00:00.000Z",
+            "trackedTeams": [
+              "Indiana Pacers"
+            ],
+            "status": "Sun, March 29th at 5:00 PM EDT"
+          },
+          {
+            "gameId": "401810939",
+            "matchup": "Sacramento Kings at Brooklyn Nets",
+            "tipoffUtc": "2026-03-29T22:00:00.000Z",
+            "trackedTeams": [
+              "Sacramento Kings",
+              "Brooklyn Nets"
+            ],
+            "status": "Sun, March 29th at 6:00 PM EDT"
+          },
+          {
+            "gameId": "401810942",
+            "matchup": "Washington Wizards at Portland Trail Blazers",
+            "tipoffUtc": "2026-03-29T22:00:00.000Z",
+            "trackedTeams": [
+              "Washington Wizards",
+              "Portland Trail Blazers"
+            ],
+            "status": "Sun, March 29th at 6:00 PM EDT"
+          },
+          {
+            "gameId": "401810940",
+            "matchup": "Boston Celtics at Charlotte Hornets",
+            "tipoffUtc": "2026-03-29T22:00:00.000Z",
+            "trackedTeams": [
+              "Charlotte Hornets"
+            ],
+            "status": "Sun, March 29th at 6:00 PM EDT"
+          },
+          {
+            "gameId": "401810943",
+            "matchup": "Houston Rockets at New Orleans Pelicans",
+            "tipoffUtc": "2026-03-29T23:00:00.000Z",
+            "trackedTeams": [
+              "New Orleans Pelicans"
+            ],
+            "status": "Sun, March 29th at 7:00 PM EDT"
+          },
+          {
+            "gameId": "401810945",
+            "matchup": "Golden State Warriors at Denver Nuggets",
+            "tipoffUtc": "2026-03-30T02:00:00.000Z",
+            "trackedTeams": [
+              "Golden State Warriors"
+            ],
+            "status": "Sun, March 29th at 10:00 PM EDT"
           }
         ]
       }
