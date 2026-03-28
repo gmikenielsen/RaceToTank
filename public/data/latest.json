@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-28T03:32:28.469Z",
+  "generatedAt": "2026-03-28T05:40:31.573Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,100 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-28T03:32:28.469Z"
+    "attemptedAt": "2026-03-28T05:40:31.573Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-03-27",
-        "games": [
-          {
-            "gameId": "401810921",
-            "matchup": "LA Clippers at Indiana Pacers",
-            "tipoffUtc": "2026-03-27T23:00:00.000Z",
-            "trackedTeams": [
-              "LA Clippers",
-              "Indiana Pacers"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810923",
-            "matchup": "Miami Heat at Cleveland Cavaliers",
-            "tipoffUtc": "2026-03-27T23:30:00.000Z",
-            "trackedTeams": [
-              "Miami Heat"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810924",
-            "matchup": "Houston Rockets at Memphis Grizzlies",
-            "tipoffUtc": "2026-03-28T00:00:00.000Z",
-            "trackedTeams": [
-              "Memphis Grizzlies"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810925",
-            "matchup": "Chicago Bulls at Oklahoma City Thunder",
-            "tipoffUtc": "2026-03-28T00:00:00.000Z",
-            "trackedTeams": [
-              "Chicago Bulls"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810926",
-            "matchup": "New Orleans Pelicans at Toronto Raptors",
-            "tipoffUtc": "2026-03-28T00:30:00.000Z",
-            "trackedTeams": [
-              "New Orleans Pelicans"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810927",
-            "matchup": "Utah Jazz at Denver Nuggets",
-            "tipoffUtc": "2026-03-28T01:00:00.000Z",
-            "trackedTeams": [
-              "Utah Jazz"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810928",
-            "matchup": "Washington Wizards at Golden State Warriors",
-            "tipoffUtc": "2026-03-28T02:00:00.000Z",
-            "trackedTeams": [
-              "Washington Wizards",
-              "Golden State Warriors"
-            ],
-            "status": "Halftime"
-          },
-          {
-            "gameId": "401810929",
-            "matchup": "Dallas Mavericks at Portland Trail Blazers",
-            "tipoffUtc": "2026-03-28T02:00:00.000Z",
-            "trackedTeams": [
-              "Dallas Mavericks",
-              "Portland Trail Blazers"
-            ],
-            "status": "Halftime"
-          },
-          {
-            "gameId": "401810930",
-            "matchup": "Brooklyn Nets at Los Angeles Lakers",
-            "tipoffUtc": "2026-03-28T02:30:00.000Z",
-            "trackedTeams": [
-              "Brooklyn Nets"
-            ],
-            "status": "5:51 - 2nd Quarter"
-          }
-        ]
-      },
       {
         "dateEt": "2026-03-28",
         "games": [
@@ -206,6 +117,65 @@
             "status": "Sun, March 29th at 10:00 PM EDT"
           }
         ]
+      },
+      {
+        "dateEt": "2026-03-30",
+        "games": [
+          {
+            "gameId": "401810946",
+            "matchup": "Philadelphia 76ers at Miami Heat",
+            "tipoffUtc": "2026-03-30T23:00:00.000Z",
+            "trackedTeams": [
+              "Miami Heat"
+            ],
+            "status": "Mon, March 30th at 7:00 PM EDT"
+          },
+          {
+            "gameId": "401810948",
+            "matchup": "Phoenix Suns at Memphis Grizzlies",
+            "tipoffUtc": "2026-03-31T00:00:00.000Z",
+            "trackedTeams": [
+              "Memphis Grizzlies"
+            ],
+            "status": "Mon, March 30th at 8:00 PM EDT"
+          },
+          {
+            "gameId": "401810949",
+            "matchup": "Chicago Bulls at San Antonio Spurs",
+            "tipoffUtc": "2026-03-31T00:00:00.000Z",
+            "trackedTeams": [
+              "Chicago Bulls"
+            ],
+            "status": "Mon, March 30th at 8:00 PM EDT"
+          },
+          {
+            "gameId": "401810950",
+            "matchup": "Minnesota Timberwolves at Dallas Mavericks",
+            "tipoffUtc": "2026-03-31T00:30:00.000Z",
+            "trackedTeams": [
+              "Dallas Mavericks"
+            ],
+            "status": "Mon, March 30th at 8:30 PM EDT"
+          },
+          {
+            "gameId": "401810951",
+            "matchup": "Cleveland Cavaliers at Utah Jazz",
+            "tipoffUtc": "2026-03-31T01:00:00.000Z",
+            "trackedTeams": [
+              "Utah Jazz"
+            ],
+            "status": "Mon, March 30th at 9:00 PM EDT"
+          },
+          {
+            "gameId": "401810953",
+            "matchup": "Washington Wizards at Los Angeles Lakers",
+            "tipoffUtc": "2026-03-31T02:00:00.000Z",
+            "trackedTeams": [
+              "Washington Wizards"
+            ],
+            "status": "Mon, March 30th at 10:00 PM EDT"
+          }
+        ]
       }
     ]
   },
@@ -248,10 +218,10 @@
       "teamId": "17",
       "team": "Brooklyn Nets",
       "teamDisplay": "Brooklyn Nets (5)",
-      "winPct": 0.23287672,
-      "record": "17-56",
-      "streak": "L9",
-      "last10": "1-9",
+      "winPct": 0.22972973,
+      "record": "17-57",
+      "streak": "L10",
+      "last10": "0-10",
       "totalRemainingVsBottom12": 5,
       "opponents": [
         {
@@ -287,9 +257,9 @@
       "teamId": "27",
       "team": "Washington Wizards",
       "teamDisplay": "Washington Wizards (6)",
-      "winPct": 0.2361111,
-      "record": "17-55",
-      "streak": "W1",
+      "winPct": 0.23287672,
+      "record": "17-56",
+      "streak": "L1",
       "last10": "1-9",
       "totalRemainingVsBottom12": 6,
       "opponents": [
@@ -397,10 +367,10 @@
       "teamId": "6",
       "team": "Dallas Mavericks",
       "teamDisplay": "Dallas Mavericks (3)",
-      "winPct": 0.31506848,
-      "record": "23-50",
-      "streak": "L5",
-      "last10": "2-8",
+      "winPct": 0.3243243,
+      "record": "24-50",
+      "streak": "W1",
+      "last10": "3-7",
       "totalRemainingVsBottom12": 3,
       "opponents": [
         {
@@ -571,10 +541,10 @@
       "teamId": "9",
       "team": "Golden State Warriors",
       "teamDisplay": "Golden State Warriors (3)",
-      "winPct": 0.47945204,
-      "record": "35-38",
-      "streak": "W2",
-      "last10": "3-7",
+      "winPct": 0.4864865,
+      "record": "36-38",
+      "streak": "W3",
+      "last10": "4-6",
       "totalRemainingVsBottom12": 3,
       "opponents": [
         {
@@ -596,10 +566,10 @@
       "teamId": "22",
       "team": "Portland Trail Blazers",
       "teamDisplay": "Portland Trail Blazers (5)",
-      "winPct": 0.5,
-      "record": "37-37",
-      "streak": "W2",
-      "last10": "7-3",
+      "winPct": 0.49333334,
+      "record": "37-38",
+      "streak": "L1",
+      "last10": "6-4",
       "totalRemainingVsBottom12": 5,
       "opponents": [
         {
