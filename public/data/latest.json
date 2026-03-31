@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-30T12:51:57.832Z",
+  "generatedAt": "2026-03-31T03:47:41.783Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-30T12:51:57.832Z"
+    "attemptedAt": "2026-03-31T03:47:41.783Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -23,7 +23,7 @@
             "trackedTeams": [
               "Memphis Grizzlies"
             ],
-            "status": "Mon, March 30th at 8:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810949",
@@ -32,7 +32,7 @@
             "trackedTeams": [
               "Chicago Bulls"
             ],
-            "status": "Mon, March 30th at 8:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810950",
@@ -41,7 +41,7 @@
             "trackedTeams": [
               "Dallas Mavericks"
             ],
-            "status": "Mon, March 30th at 8:30 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810951",
@@ -50,7 +50,7 @@
             "trackedTeams": [
               "Utah Jazz"
             ],
-            "status": "Mon, March 30th at 9:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810953",
@@ -59,7 +59,7 @@
             "trackedTeams": [
               "Washington Wizards"
             ],
-            "status": "Mon, March 30th at 10:00 PM EDT"
+            "status": "8:44 - 3rd Quarter"
           }
         ]
       },
@@ -312,9 +312,9 @@
       "teamId": "26",
       "team": "Utah Jazz",
       "teamDisplay": "Utah Jazz (2)",
-      "winPct": 0.28,
-      "record": "21-54",
-      "streak": "L5",
+      "winPct": 0.27631578,
+      "record": "21-55",
+      "streak": "L6",
       "last10": "1-9",
       "totalRemainingVsBottom12": 2,
       "opponents": [
@@ -340,9 +340,9 @@
       "teamId": "6",
       "team": "Dallas Mavericks",
       "teamDisplay": "Dallas Mavericks (3)",
-      "winPct": 0.3243243,
-      "record": "24-50",
-      "streak": "W1",
+      "winPct": 0.32,
+      "record": "24-51",
+      "streak": "L1",
       "last10": "3-7",
       "totalRemainingVsBottom12": 3,
       "opponents": [
@@ -405,9 +405,9 @@
       "teamId": "29",
       "team": "Memphis Grizzlies",
       "teamDisplay": "Memphis Grizzlies (2)",
-      "winPct": 0.33783785,
-      "record": "25-49",
-      "streak": "W1",
+      "winPct": 0.33333334,
+      "record": "25-50",
+      "streak": "L1",
       "last10": "2-8",
       "totalRemainingVsBottom12": 2,
       "opponents": [
@@ -432,10 +432,10 @@
       "teamId": "4",
       "team": "Chicago Bulls",
       "teamDisplay": "Chicago Bulls (4)",
-      "winPct": 0.3918919,
-      "record": "29-45",
-      "streak": "L3",
-      "last10": "3-7",
+      "winPct": 0.38666666,
+      "record": "29-46",
+      "streak": "L4",
+      "last10": "2-8",
       "totalRemainingVsBottom12": 4,
       "opponents": [
         {
