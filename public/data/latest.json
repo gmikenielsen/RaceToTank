@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-03-31T12:51:29.907Z",
+  "generatedAt": "2026-03-31T17:53:45.273Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-03-31T12:51:29.907Z"
+    "attemptedAt": "2026-03-31T17:53:45.273Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -259,7 +259,9 @@
       "opponentsText": "Charlotte Hornets (1), Indiana Pacers (1), Milwaukee Bucks (2), Washington Wizards (1)",
       "notableTankGames": [
         "Apr 5: vs. Washington Wizards",
-        "Apr 9: vs. Indiana Pacers"
+        "Apr 7: vs. Milwaukee Bucks",
+        "Apr 9: vs. Indiana Pacers",
+        "Apr 10: at Milwaukee Bucks"
       ]
     },
     {
@@ -356,6 +358,7 @@
       ],
       "opponentsText": "Chicago Bulls (1), LA Clippers (1), Milwaukee Bucks (1)",
       "notableTankGames": [
+        "Mar 31: at Milwaukee Bucks",
         "Apr 12: vs. Chicago Bulls"
       ]
     },
@@ -416,6 +419,7 @@
       ],
       "opponentsText": "Milwaukee Bucks (1), Utah Jazz (1)",
       "notableTankGames": [
+        "Apr 5: at Milwaukee Bucks",
         "Apr 10: at Utah Jazz"
       ]
     },
@@ -482,7 +486,12 @@
         }
       ],
       "opponentsText": "Brooklyn Nets (2), Dallas Mavericks (1), Memphis Grizzlies (1)",
-      "notableTankGames": []
+      "notableTankGames": [
+        "Mar 31: vs. Dallas Mavericks",
+        "Apr 5: vs. Memphis Grizzlies",
+        "Apr 7: at Brooklyn Nets",
+        "Apr 10: vs. Brooklyn Nets"
+      ]
     },
     {
       "rank": 11,

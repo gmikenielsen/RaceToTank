@@ -1,5 +1,5 @@
 const DATA_URL = './data/latest.json';
-const NOTABLE_TEAM_COUNT = 9;
+const NOTABLE_TEAM_COUNT = 10;
 const TEAM_ABBREVIATIONS = new Map([
   ['Atlanta Hawks', 'ATL'],
   ['Brooklyn Nets', 'BKN'],
