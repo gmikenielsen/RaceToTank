@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-04-02T12:45:11.453Z",
+  "generatedAt": "2026-04-03T03:42:38.025Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-04-02T12:45:11.453Z"
+    "attemptedAt": "2026-04-03T03:42:38.025Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -24,7 +24,7 @@
               "New Orleans Pelicans",
               "Portland Trail Blazers"
             ],
-            "status": "Thu, April 2nd at 10:00 PM EDT"
+            "status": "Halftime"
           },
           {
             "gameId": "401810972",
@@ -33,7 +33,7 @@
             "trackedTeams": [
               "Golden State Warriors"
             ],
-            "status": "Thu, April 2nd at 10:00 PM EDT"
+            "status": "10:05 - 3rd Quarter"
           },
           {
             "gameId": "401810974",
@@ -42,7 +42,7 @@
             "trackedTeams": [
               "LA Clippers"
             ],
-            "status": "Thu, April 2nd at 10:30 PM EDT"
+            "status": "5:07 - 2nd Quarter"
           }
         ]
       },
@@ -357,18 +357,13 @@
       "rank": 8,
       "teamId": "3",
       "team": "New Orleans Pelicans",
-      "teamDisplay": "New Orleans Pelicans (3)",
+      "teamDisplay": "New Orleans Pelicans (2)",
       "winPct": 0.32894737,
       "record": "25-51",
       "streak": "L5",
       "last10": "4-6",
-      "totalRemainingVsBottom12": 3,
+      "totalRemainingVsBottom12": 2,
       "opponents": [
-        {
-          "opponentTeamId": "22",
-          "opponentTeam": "Portland Trail Blazers",
-          "gamesRemaining": 1
-        },
         {
           "opponentTeamId": "23",
           "opponentTeam": "Sacramento Kings",
@@ -380,7 +375,7 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Portland Trail Blazers (1), Sacramento Kings (1), Utah Jazz (1)",
+      "opponentsText": "Sacramento Kings (1), Utah Jazz (1)",
       "notableTankGames": [
         "Apr 3: at Sacramento Kings",
         "Apr 7: vs. Utah Jazz"
@@ -473,21 +468,16 @@
       "rank": 12,
       "teamId": "22",
       "team": "Portland Trail Blazers",
-      "teamDisplay": "Portland Trail Blazers (3)",
+      "teamDisplay": "Portland Trail Blazers (2)",
       "winPct": 0.5064935,
       "record": "39-38",
       "streak": "W2",
       "last10": "7-3",
-      "totalRemainingVsBottom12": 3,
+      "totalRemainingVsBottom12": 2,
       "opponents": [
         {
           "opponentTeamId": "12",
           "opponentTeam": "LA Clippers",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "3",
-          "opponentTeam": "New Orleans Pelicans",
           "gamesRemaining": 1
         },
         {
@@ -496,7 +486,7 @@
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "LA Clippers (1), New Orleans Pelicans (1), Sacramento Kings (1)",
+      "opponentsText": "LA Clippers (1), Sacramento Kings (1)",
       "notableTankGames": []
     },
     {
