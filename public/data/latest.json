@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-04-03T12:37:29.425Z",
+  "generatedAt": "2026-04-04T03:29:46.203Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-04-03T12:37:29.425Z"
+    "attemptedAt": "2026-04-04T03:29:46.203Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -23,7 +23,7 @@
             "trackedTeams": [
               "Indiana Pacers"
             ],
-            "status": "Fri, April 3rd at 7:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810977",
@@ -32,7 +32,7 @@
             "trackedTeams": [
               "Brooklyn Nets"
             ],
-            "status": "Fri, April 3rd at 7:30 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810978",
@@ -41,7 +41,7 @@
             "trackedTeams": [
               "Chicago Bulls"
             ],
-            "status": "Fri, April 3rd at 7:30 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810979",
@@ -50,7 +50,7 @@
             "trackedTeams": [
               "Utah Jazz"
             ],
-            "status": "Fri, April 3rd at 8:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810980",
@@ -59,7 +59,7 @@
             "trackedTeams": [
               "Memphis Grizzlies"
             ],
-            "status": "Fri, April 3rd at 8:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810981",
@@ -68,7 +68,7 @@
             "trackedTeams": [
               "Milwaukee Bucks"
             ],
-            "status": "Fri, April 3rd at 8:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810982",
@@ -77,7 +77,7 @@
             "trackedTeams": [
               "Dallas Mavericks"
             ],
-            "status": "Fri, April 3rd at 8:30 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401810983",
@@ -87,7 +87,7 @@
               "New Orleans Pelicans",
               "Sacramento Kings"
             ],
-            "status": "Fri, April 3rd at 10:00 PM EDT"
+            "status": "10:50 - 3rd Quarter"
           }
         ]
       },
@@ -237,9 +237,9 @@
       "teamId": "17",
       "team": "Brooklyn Nets",
       "teamDisplay": "Brooklyn Nets (4)",
-      "winPct": 0.23684211,
-      "record": "18-58",
-      "streak": "L1",
+      "winPct": 0.23376623,
+      "record": "18-59",
+      "streak": "L2",
       "last10": "1-9",
       "totalRemainingVsBottom12": 4,
       "opponents": [
@@ -272,9 +272,9 @@
       "teamId": "11",
       "team": "Indiana Pacers",
       "teamDisplay": "Indiana Pacers (1)",
-      "winPct": 0.23684211,
-      "record": "18-58",
-      "streak": "W2",
+      "winPct": 0.23376623,
+      "record": "18-59",
+      "streak": "L1",
       "last10": "3-7",
       "totalRemainingVsBottom12": 1,
       "opponents": [
@@ -293,12 +293,12 @@
       "rank": 4,
       "teamId": "23",
       "team": "Sacramento Kings",
-      "teamDisplay": "Sacramento Kings (5)",
+      "teamDisplay": "Sacramento Kings (4)",
       "winPct": 0.25974026,
       "record": "20-57",
       "streak": "W1",
       "last10": "4-6",
-      "totalRemainingVsBottom12": 5,
+      "totalRemainingVsBottom12": 4,
       "opponents": [
         {
           "opponentTeamId": "9",
@@ -311,29 +311,22 @@
           "gamesRemaining": 1
         },
         {
-          "opponentTeamId": "3",
-          "opponentTeam": "New Orleans Pelicans",
-          "gamesRemaining": 1
-        },
-        {
           "opponentTeamId": "22",
           "opponentTeam": "Portland Trail Blazers",
           "gamesRemaining": 1
         }
       ],
-      "opponentsText": "Golden State Warriors (2), LA Clippers (1), New Orleans Pelicans (1), Portland Trail Blazers (1)",
-      "notableTankGames": [
-        "Apr 3: vs. New Orleans Pelicans"
-      ]
+      "opponentsText": "Golden State Warriors (2), LA Clippers (1), Portland Trail Blazers (1)",
+      "notableTankGames": []
     },
     {
       "rank": 5,
       "teamId": "26",
       "team": "Utah Jazz",
       "teamDisplay": "Utah Jazz (2)",
-      "winPct": 0.27272728,
-      "record": "21-56",
-      "streak": "L7",
+      "winPct": 0.26923078,
+      "record": "21-57",
+      "streak": "L8",
       "last10": "1-9",
       "totalRemainingVsBottom12": 2,
       "opponents": [
@@ -359,9 +352,9 @@
       "teamId": "6",
       "team": "Dallas Mavericks",
       "teamDisplay": "Dallas Mavericks (2)",
-      "winPct": 0.31578946,
-      "record": "24-52",
-      "streak": "L2",
+      "winPct": 0.3116883,
+      "record": "24-53",
+      "streak": "L3",
       "last10": "2-8",
       "totalRemainingVsBottom12": 2,
       "opponents": [
@@ -383,40 +376,12 @@
     },
     {
       "rank": 7,
-      "teamId": "3",
-      "team": "New Orleans Pelicans",
-      "teamDisplay": "New Orleans Pelicans (2)",
-      "winPct": 0.32467532,
-      "record": "25-52",
-      "streak": "L6",
-      "last10": "3-7",
-      "totalRemainingVsBottom12": 2,
-      "opponents": [
-        {
-          "opponentTeamId": "23",
-          "opponentTeam": "Sacramento Kings",
-          "gamesRemaining": 1
-        },
-        {
-          "opponentTeamId": "26",
-          "opponentTeam": "Utah Jazz",
-          "gamesRemaining": 1
-        }
-      ],
-      "opponentsText": "Sacramento Kings (1), Utah Jazz (1)",
-      "notableTankGames": [
-        "Apr 3: at Sacramento Kings",
-        "Apr 7: vs. Utah Jazz"
-      ]
-    },
-    {
-      "rank": 8,
       "teamId": "29",
       "team": "Memphis Grizzlies",
       "teamDisplay": "Memphis Grizzlies (2)",
-      "winPct": 0.32894737,
-      "record": "25-51",
-      "streak": "L2",
+      "winPct": 0.32467532,
+      "record": "25-52",
+      "streak": "L3",
       "last10": "2-8",
       "totalRemainingVsBottom12": 2,
       "opponents": [
@@ -438,13 +403,35 @@
       ]
     },
     {
+      "rank": 8,
+      "teamId": "3",
+      "team": "New Orleans Pelicans",
+      "teamDisplay": "New Orleans Pelicans (1)",
+      "winPct": 0.32467532,
+      "record": "25-52",
+      "streak": "L6",
+      "last10": "3-7",
+      "totalRemainingVsBottom12": 1,
+      "opponents": [
+        {
+          "opponentTeamId": "26",
+          "opponentTeam": "Utah Jazz",
+          "gamesRemaining": 1
+        }
+      ],
+      "opponentsText": "Utah Jazz (1)",
+      "notableTankGames": [
+        "Apr 7: vs. Utah Jazz"
+      ]
+    },
+    {
       "rank": 9,
       "teamId": "4",
       "team": "Chicago Bulls",
       "teamDisplay": "Chicago Bulls (3)",
-      "winPct": 0.38157895,
-      "record": "29-47",
-      "streak": "L5",
+      "winPct": 0.37662336,
+      "record": "29-48",
+      "streak": "L6",
       "last10": "2-8",
       "totalRemainingVsBottom12": 3,
       "opponents": [
@@ -471,10 +458,10 @@
       "teamId": "15",
       "team": "Milwaukee Bucks",
       "teamDisplay": "Milwaukee Bucks (3)",
-      "winPct": 0.39473686,
-      "record": "30-46",
-      "streak": "L1",
-      "last10": "3-7",
+      "winPct": 0.38961038,
+      "record": "30-47",
+      "streak": "L2",
+      "last10": "2-8",
       "totalRemainingVsBottom12": 3,
       "opponents": [
         {
