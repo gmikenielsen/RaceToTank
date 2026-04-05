@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-04-05T03:51:52.378Z",
+  "generatedAt": "2026-04-05T05:59:35.143Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,26 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-04-05T03:51:52.378Z"
+    "attemptedAt": "2026-04-05T05:59:35.143Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-04-04",
-        "games": [
-          {
-            "gameId": "401810984",
-            "matchup": "Washington Wizards at Miami Heat",
-            "tipoffUtc": "2026-04-04T19:00:00.000Z",
-            "trackedTeams": [
-              "Washington Wizards",
-              "Miami Heat"
-            ],
-            "status": "Final"
-          }
-        ]
-      },
       {
         "dateEt": "2026-04-05",
         "games": [
@@ -137,6 +122,79 @@
               "Portland Trail Blazers"
             ],
             "status": "Mon, April 6th at 9:00 PM EDT"
+          }
+        ]
+      },
+      {
+        "dateEt": "2026-04-07",
+        "games": [
+          {
+            "gameId": "401811003",
+            "matchup": "Chicago Bulls at Washington Wizards",
+            "tipoffUtc": "2026-04-07T23:00:00.000Z",
+            "trackedTeams": [
+              "Chicago Bulls",
+              "Washington Wizards"
+            ],
+            "status": "Tue, April 7th at 7:00 PM EDT"
+          },
+          {
+            "gameId": "401811007",
+            "matchup": "Minnesota Timberwolves at Indiana Pacers",
+            "tipoffUtc": "2026-04-07T23:00:00.000Z",
+            "trackedTeams": [
+              "Indiana Pacers"
+            ],
+            "status": "Tue, April 7th at 7:00 PM EDT"
+          },
+          {
+            "gameId": "401811005",
+            "matchup": "Milwaukee Bucks at Brooklyn Nets",
+            "tipoffUtc": "2026-04-07T23:30:00.000Z",
+            "trackedTeams": [
+              "Milwaukee Bucks",
+              "Brooklyn Nets"
+            ],
+            "status": "Tue, April 7th at 7:30 PM EDT"
+          },
+          {
+            "gameId": "401811006",
+            "matchup": "Miami Heat at Toronto Raptors",
+            "tipoffUtc": "2026-04-07T23:30:00.000Z",
+            "trackedTeams": [
+              "Miami Heat"
+            ],
+            "status": "Tue, April 7th at 7:30 PM EDT"
+          },
+          {
+            "gameId": "401811008",
+            "matchup": "Utah Jazz at New Orleans Pelicans",
+            "tipoffUtc": "2026-04-08T00:00:00.000Z",
+            "trackedTeams": [
+              "Utah Jazz",
+              "New Orleans Pelicans"
+            ],
+            "status": "Tue, April 7th at 8:00 PM EDT"
+          },
+          {
+            "gameId": "401811009",
+            "matchup": "Sacramento Kings at Golden State Warriors",
+            "tipoffUtc": "2026-04-08T02:00:00.000Z",
+            "trackedTeams": [
+              "Sacramento Kings",
+              "Golden State Warriors"
+            ],
+            "status": "Tue, April 7th at 10:00 PM EDT"
+          },
+          {
+            "gameId": "401811011",
+            "matchup": "Dallas Mavericks at LA Clippers",
+            "tipoffUtc": "2026-04-08T02:30:00.000Z",
+            "trackedTeams": [
+              "Dallas Mavericks",
+              "LA Clippers"
+            ],
+            "status": "Tue, April 7th at 10:30 PM EDT"
           }
         ]
       }
