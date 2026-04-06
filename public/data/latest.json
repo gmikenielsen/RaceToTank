@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-04-06T03:55:19.978Z",
+  "generatedAt": "2026-04-06T06:15:24.306Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,100 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-04-06T03:55:19.978Z"
+    "attemptedAt": "2026-04-06T06:15:24.306Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-04-05",
-        "games": [
-          {
-            "gameId": "401810988",
-            "matchup": "Washington Wizards at Brooklyn Nets",
-            "tipoffUtc": "2026-04-05T19:30:00.000Z",
-            "trackedTeams": [
-              "Washington Wizards",
-              "Brooklyn Nets"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810990",
-            "matchup": "Memphis Grizzlies at Milwaukee Bucks",
-            "tipoffUtc": "2026-04-05T19:30:00.000Z",
-            "trackedTeams": [
-              "Memphis Grizzlies",
-              "Milwaukee Bucks"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810989",
-            "matchup": "Phoenix Suns at Chicago Bulls",
-            "tipoffUtc": "2026-04-05T19:30:00.000Z",
-            "trackedTeams": [
-              "Chicago Bulls"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810991",
-            "matchup": "Indiana Pacers at Cleveland Cavaliers",
-            "tipoffUtc": "2026-04-05T22:00:00.000Z",
-            "trackedTeams": [
-              "Indiana Pacers"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810994",
-            "matchup": "Utah Jazz at Oklahoma City Thunder",
-            "tipoffUtc": "2026-04-05T23:00:00.000Z",
-            "trackedTeams": [
-              "Utah Jazz"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810993",
-            "matchup": "Orlando Magic at New Orleans Pelicans",
-            "tipoffUtc": "2026-04-05T23:00:00.000Z",
-            "trackedTeams": [
-              "New Orleans Pelicans"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810995",
-            "matchup": "Los Angeles Lakers at Dallas Mavericks",
-            "tipoffUtc": "2026-04-05T23:30:00.000Z",
-            "trackedTeams": [
-              "Dallas Mavericks"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810996",
-            "matchup": "LA Clippers at Sacramento Kings",
-            "tipoffUtc": "2026-04-06T01:00:00.000Z",
-            "trackedTeams": [
-              "LA Clippers",
-              "Sacramento Kings"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401810997",
-            "matchup": "Houston Rockets at Golden State Warriors",
-            "tipoffUtc": "2026-04-06T02:00:00.000Z",
-            "trackedTeams": [
-              "Golden State Warriors"
-            ],
-            "status": "8:27 - 3rd Quarter"
-          }
-        ]
-      },
       {
         "dateEt": "2026-04-06",
         "games": [
@@ -195,6 +106,56 @@
               "LA Clippers"
             ],
             "status": "Tue, April 7th at 10:30 PM EDT"
+          }
+        ]
+      },
+      {
+        "dateEt": "2026-04-08",
+        "games": [
+          {
+            "gameId": "401811015",
+            "matchup": "Milwaukee Bucks at Detroit Pistons",
+            "tipoffUtc": "2026-04-08T23:00:00.000Z",
+            "trackedTeams": [
+              "Milwaukee Bucks"
+            ],
+            "status": "Wed, April 8th at 7:00 PM EDT"
+          },
+          {
+            "gameId": "401811017",
+            "matchup": "Memphis Grizzlies at Denver Nuggets",
+            "tipoffUtc": "2026-04-09T01:00:00.000Z",
+            "trackedTeams": [
+              "Memphis Grizzlies"
+            ],
+            "status": "Wed, April 8th at 9:00 PM EDT"
+          },
+          {
+            "gameId": "401811016",
+            "matchup": "Portland Trail Blazers at San Antonio Spurs",
+            "tipoffUtc": "2026-04-09T01:30:00.000Z",
+            "trackedTeams": [
+              "Portland Trail Blazers"
+            ],
+            "status": "Wed, April 8th at 9:30 PM EDT"
+          },
+          {
+            "gameId": "401811019",
+            "matchup": "Dallas Mavericks at Phoenix Suns",
+            "tipoffUtc": "2026-04-09T02:00:00.000Z",
+            "trackedTeams": [
+              "Dallas Mavericks"
+            ],
+            "status": "Wed, April 8th at 10:00 PM EDT"
+          },
+          {
+            "gameId": "401811018",
+            "matchup": "Oklahoma City Thunder at LA Clippers",
+            "tipoffUtc": "2026-04-09T02:00:00.000Z",
+            "trackedTeams": [
+              "LA Clippers"
+            ],
+            "status": "Wed, April 8th at 10:00 PM EDT"
           }
         ]
       }
@@ -461,10 +422,10 @@
       "teamId": "9",
       "team": "Golden State Warriors",
       "teamDisplay": "Golden State Warriors (3)",
-      "winPct": 0.46753246,
-      "record": "36-41",
-      "streak": "L3",
-      "last10": "4-6",
+      "winPct": 0.46153846,
+      "record": "36-42",
+      "streak": "L4",
+      "last10": "3-7",
       "totalRemainingVsBottom12": 3,
       "opponents": [
         {
