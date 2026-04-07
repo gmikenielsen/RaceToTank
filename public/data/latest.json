@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-04-06T12:44:15.305Z",
+  "generatedAt": "2026-04-07T03:46:28.486Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-04-06T12:44:15.305Z"
+    "attemptedAt": "2026-04-07T03:46:28.486Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -23,7 +23,7 @@
             "trackedTeams": [
               "Memphis Grizzlies"
             ],
-            "status": "Mon, April 6th at 8:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401811002",
@@ -32,7 +32,7 @@
             "trackedTeams": [
               "Portland Trail Blazers"
             ],
-            "status": "Mon, April 6th at 9:00 PM EDT"
+            "status": "End of 4th Quarter"
           }
         ]
       },
@@ -296,6 +296,28 @@
     },
     {
       "rank": 6,
+      "teamId": "29",
+      "team": "Memphis Grizzlies",
+      "teamDisplay": "Memphis Grizzlies (1)",
+      "winPct": 0.3164557,
+      "record": "25-54",
+      "streak": "L5",
+      "last10": "1-9",
+      "totalRemainingVsBottom12": 1,
+      "opponents": [
+        {
+          "opponentTeamId": "26",
+          "opponentTeam": "Utah Jazz",
+          "gamesRemaining": 1
+        }
+      ],
+      "opponentsText": "Utah Jazz (1)",
+      "notableTankGames": [
+        "Apr 10: at Utah Jazz"
+      ]
+    },
+    {
+      "rank": 7,
       "teamId": "3",
       "team": "New Orleans Pelicans",
       "teamDisplay": "New Orleans Pelicans (1)",
@@ -317,7 +339,7 @@
       ]
     },
     {
-      "rank": 7,
+      "rank": 8,
       "teamId": "6",
       "team": "Dallas Mavericks",
       "teamDisplay": "Dallas Mavericks (2)",
@@ -341,28 +363,6 @@
       "opponentsText": "Chicago Bulls (1), LA Clippers (1)",
       "notableTankGames": [
         "Apr 12: vs. Chicago Bulls"
-      ]
-    },
-    {
-      "rank": 8,
-      "teamId": "29",
-      "team": "Memphis Grizzlies",
-      "teamDisplay": "Memphis Grizzlies (1)",
-      "winPct": 0.32051283,
-      "record": "25-53",
-      "streak": "L4",
-      "last10": "1-9",
-      "totalRemainingVsBottom12": 1,
-      "opponents": [
-        {
-          "opponentTeamId": "26",
-          "opponentTeam": "Utah Jazz",
-          "gamesRemaining": 1
-        }
-      ],
-      "opponentsText": "Utah Jazz (1)",
-      "notableTankGames": [
-        "Apr 10: at Utah Jazz"
       ]
     },
     {
