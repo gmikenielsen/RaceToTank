@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-04-09T03:44:17.430Z",
+  "generatedAt": "2026-04-09T06:06:33.186Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,61 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-04-09T03:44:17.430Z"
+    "attemptedAt": "2026-04-09T06:06:33.186Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-04-08",
-        "games": [
-          {
-            "gameId": "401811015",
-            "matchup": "Milwaukee Bucks at Detroit Pistons",
-            "tipoffUtc": "2026-04-08T23:00:00.000Z",
-            "trackedTeams": [
-              "Milwaukee Bucks"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401811017",
-            "matchup": "Memphis Grizzlies at Denver Nuggets",
-            "tipoffUtc": "2026-04-09T01:00:00.000Z",
-            "trackedTeams": [
-              "Memphis Grizzlies"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401811016",
-            "matchup": "Portland Trail Blazers at San Antonio Spurs",
-            "tipoffUtc": "2026-04-09T01:30:00.000Z",
-            "trackedTeams": [
-              "Portland Trail Blazers"
-            ],
-            "status": "7:00 - 4th Quarter"
-          },
-          {
-            "gameId": "401811019",
-            "matchup": "Dallas Mavericks at Phoenix Suns",
-            "tipoffUtc": "2026-04-09T02:00:00.000Z",
-            "trackedTeams": [
-              "Dallas Mavericks"
-            ],
-            "status": "4:20 - 3rd Quarter"
-          },
-          {
-            "gameId": "401811018",
-            "matchup": "Oklahoma City Thunder at LA Clippers",
-            "tipoffUtc": "2026-04-09T02:00:00.000Z",
-            "trackedTeams": [
-              "LA Clippers"
-            ],
-            "status": "7:06 - 3rd Quarter"
-          }
-        ]
-      },
       {
         "dateEt": "2026-04-09",
         "games": [
@@ -196,6 +146,10 @@
             "status": "Fri, April 10th at 10:00 PM EDT"
           }
         ]
+      },
+      {
+        "dateEt": "2026-04-11",
+        "games": []
       }
     ]
   },
@@ -326,6 +280,28 @@
     },
     {
       "rank": 6,
+      "teamId": "6",
+      "team": "Dallas Mavericks",
+      "teamDisplay": "Dallas Mavericks (1)",
+      "winPct": 0.3125,
+      "record": "25-55",
+      "streak": "L2",
+      "last10": "2-8",
+      "totalRemainingVsBottom12": 1,
+      "opponents": [
+        {
+          "opponentTeamId": "4",
+          "opponentTeam": "Chicago Bulls",
+          "gamesRemaining": 1
+        }
+      ],
+      "opponentsText": "Chicago Bulls (1)",
+      "notableTankGames": [
+        "Apr 12: vs. Chicago Bulls"
+      ]
+    },
+    {
+      "rank": 7,
       "teamId": "29",
       "team": "Memphis Grizzlies",
       "teamDisplay": "Memphis Grizzlies (1)",
@@ -344,28 +320,6 @@
       "opponentsText": "Utah Jazz (1)",
       "notableTankGames": [
         "Apr 10: at Utah Jazz"
-      ]
-    },
-    {
-      "rank": 7,
-      "teamId": "6",
-      "team": "Dallas Mavericks",
-      "teamDisplay": "Dallas Mavericks (1)",
-      "winPct": 0.3164557,
-      "record": "25-54",
-      "streak": "L1",
-      "last10": "2-8",
-      "totalRemainingVsBottom12": 1,
-      "opponents": [
-        {
-          "opponentTeamId": "4",
-          "opponentTeam": "Chicago Bulls",
-          "gamesRemaining": 1
-        }
-      ],
-      "opponentsText": "Chicago Bulls (1)",
-      "notableTankGames": [
-        "Apr 12: vs. Chicago Bulls"
       ]
     },
     {
@@ -462,10 +416,10 @@
       "teamId": "22",
       "team": "Portland Trail Blazers",
       "teamDisplay": "Portland Trail Blazers (2)",
-      "winPct": 0.5063291,
-      "record": "40-39",
-      "streak": "L1",
-      "last10": "7-3",
+      "winPct": 0.5,
+      "record": "40-40",
+      "streak": "L2",
+      "last10": "6-4",
       "totalRemainingVsBottom12": 2,
       "opponents": [
         {
@@ -487,9 +441,9 @@
       "teamId": "12",
       "team": "LA Clippers",
       "teamDisplay": "LA Clippers (2)",
-      "winPct": 0.51898736,
-      "record": "41-38",
-      "streak": "W2",
+      "winPct": 0.5125,
+      "record": "41-39",
+      "streak": "L1",
       "last10": "7-3",
       "totalRemainingVsBottom12": 2,
       "opponents": [
