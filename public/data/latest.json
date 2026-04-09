@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-04-08T12:54:47.898Z",
+  "generatedAt": "2026-04-09T03:44:17.430Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,7 +8,7 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-04-08T12:54:47.898Z"
+    "attemptedAt": "2026-04-09T03:44:17.430Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
@@ -23,7 +23,7 @@
             "trackedTeams": [
               "Milwaukee Bucks"
             ],
-            "status": "Wed, April 8th at 7:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401811017",
@@ -32,7 +32,7 @@
             "trackedTeams": [
               "Memphis Grizzlies"
             ],
-            "status": "Wed, April 8th at 9:00 PM EDT"
+            "status": "Final"
           },
           {
             "gameId": "401811016",
@@ -41,7 +41,7 @@
             "trackedTeams": [
               "Portland Trail Blazers"
             ],
-            "status": "Wed, April 8th at 9:30 PM EDT"
+            "status": "7:00 - 4th Quarter"
           },
           {
             "gameId": "401811019",
@@ -50,7 +50,7 @@
             "trackedTeams": [
               "Dallas Mavericks"
             ],
-            "status": "Wed, April 8th at 10:00 PM EDT"
+            "status": "4:20 - 3rd Quarter"
           },
           {
             "gameId": "401811018",
@@ -59,7 +59,7 @@
             "trackedTeams": [
               "LA Clippers"
             ],
-            "status": "Wed, April 8th at 10:00 PM EDT"
+            "status": "7:06 - 3rd Quarter"
           }
         ]
       },
@@ -326,6 +326,28 @@
     },
     {
       "rank": 6,
+      "teamId": "29",
+      "team": "Memphis Grizzlies",
+      "teamDisplay": "Memphis Grizzlies (1)",
+      "winPct": 0.3125,
+      "record": "25-55",
+      "streak": "L6",
+      "last10": "1-9",
+      "totalRemainingVsBottom12": 1,
+      "opponents": [
+        {
+          "opponentTeamId": "26",
+          "opponentTeam": "Utah Jazz",
+          "gamesRemaining": 1
+        }
+      ],
+      "opponentsText": "Utah Jazz (1)",
+      "notableTankGames": [
+        "Apr 10: at Utah Jazz"
+      ]
+    },
+    {
+      "rank": 7,
       "teamId": "6",
       "team": "Dallas Mavericks",
       "teamDisplay": "Dallas Mavericks (1)",
@@ -344,28 +366,6 @@
       "opponentsText": "Chicago Bulls (1)",
       "notableTankGames": [
         "Apr 12: vs. Chicago Bulls"
-      ]
-    },
-    {
-      "rank": 7,
-      "teamId": "29",
-      "team": "Memphis Grizzlies",
-      "teamDisplay": "Memphis Grizzlies (1)",
-      "winPct": 0.3164557,
-      "record": "25-54",
-      "streak": "L5",
-      "last10": "1-9",
-      "totalRemainingVsBottom12": 1,
-      "opponents": [
-        {
-          "opponentTeamId": "26",
-          "opponentTeam": "Utah Jazz",
-          "gamesRemaining": 1
-        }
-      ],
-      "opponentsText": "Utah Jazz (1)",
-      "notableTankGames": [
-        "Apr 10: at Utah Jazz"
       ]
     },
     {
@@ -415,10 +415,10 @@
       "teamId": "15",
       "team": "Milwaukee Bucks",
       "teamDisplay": "Milwaukee Bucks (1)",
-      "winPct": 0.39240506,
-      "record": "31-48",
-      "streak": "L1",
-      "last10": "3-7",
+      "winPct": 0.3875,
+      "record": "31-49",
+      "streak": "L2",
+      "last10": "2-8",
       "totalRemainingVsBottom12": 1,
       "opponents": [
         {
