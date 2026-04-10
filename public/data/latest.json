@@ -1,6 +1,6 @@
 {
   "app": "Race to the Tank",
-  "generatedAt": "2026-04-10T03:57:09.035Z",
+  "generatedAt": "2026-04-10T06:15:44.553Z",
   "dataSources": {
     "standings": "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
     "schedule": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{teamId}/schedule?seasontype=2"
@@ -8,54 +8,11 @@
   "refreshStatus": {
     "source": "live",
     "provider": "espn",
-    "attemptedAt": "2026-04-10T03:57:09.035Z"
+    "attemptedAt": "2026-04-10T06:15:44.553Z"
   },
   "todaySchedule": {
     "timeZone": "America/New_York",
     "days": [
-      {
-        "dateEt": "2026-04-09",
-        "games": [
-          {
-            "gameId": "401811021",
-            "matchup": "Chicago Bulls at Washington Wizards",
-            "tipoffUtc": "2026-04-09T23:00:00.000Z",
-            "trackedTeams": [
-              "Chicago Bulls",
-              "Washington Wizards"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401811020",
-            "matchup": "Miami Heat at Toronto Raptors",
-            "tipoffUtc": "2026-04-09T23:00:00.000Z",
-            "trackedTeams": [
-              "Miami Heat"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401811022",
-            "matchup": "Indiana Pacers at Brooklyn Nets",
-            "tipoffUtc": "2026-04-09T23:30:00.000Z",
-            "trackedTeams": [
-              "Indiana Pacers",
-              "Brooklyn Nets"
-            ],
-            "status": "Final"
-          },
-          {
-            "gameId": "401811025",
-            "matchup": "Los Angeles Lakers at Golden State Warriors",
-            "tipoffUtc": "2026-04-10T02:00:00.000Z",
-            "trackedTeams": [
-              "Golden State Warriors"
-            ],
-            "status": "3:01 - 3rd Quarter"
-          }
-        ]
-      },
       {
         "dateEt": "2026-04-10",
         "games": [
@@ -150,6 +107,113 @@
       {
         "dateEt": "2026-04-11",
         "games": []
+      },
+      {
+        "dateEt": "2026-04-12",
+        "games": [
+          {
+            "gameId": "401811042",
+            "matchup": "Washington Wizards at Cleveland Cavaliers",
+            "tipoffUtc": "2026-04-12T22:00:00.000Z",
+            "trackedTeams": [
+              "Washington Wizards"
+            ],
+            "status": "Sun, April 12th at 6:00 PM EDT"
+          },
+          {
+            "gameId": "401811043",
+            "matchup": "Detroit Pistons at Indiana Pacers",
+            "tipoffUtc": "2026-04-12T22:00:00.000Z",
+            "trackedTeams": [
+              "Indiana Pacers"
+            ],
+            "status": "Sun, April 12th at 6:00 PM EDT"
+          },
+          {
+            "gameId": "401811047",
+            "matchup": "Brooklyn Nets at Toronto Raptors",
+            "tipoffUtc": "2026-04-12T22:00:00.000Z",
+            "trackedTeams": [
+              "Brooklyn Nets"
+            ],
+            "status": "Sun, April 12th at 6:00 PM EDT"
+          },
+          {
+            "gameId": "401811046",
+            "matchup": "Milwaukee Bucks at Philadelphia 76ers",
+            "tipoffUtc": "2026-04-12T22:00:00.000Z",
+            "trackedTeams": [
+              "Milwaukee Bucks"
+            ],
+            "status": "Sun, April 12th at 6:00 PM EDT"
+          },
+          {
+            "gameId": "401811044",
+            "matchup": "Atlanta Hawks at Miami Heat",
+            "tipoffUtc": "2026-04-12T22:00:00.000Z",
+            "trackedTeams": [
+              "Miami Heat"
+            ],
+            "status": "Sun, April 12th at 6:00 PM EDT"
+          },
+          {
+            "gameId": "401811055",
+            "matchup": "Sacramento Kings at Portland Trail Blazers",
+            "tipoffUtc": "2026-04-13T00:30:00.000Z",
+            "trackedTeams": [
+              "Sacramento Kings",
+              "Portland Trail Blazers"
+            ],
+            "status": "Sun, April 12th at 8:30 PM EDT"
+          },
+          {
+            "gameId": "401811053",
+            "matchup": "Utah Jazz at Los Angeles Lakers",
+            "tipoffUtc": "2026-04-13T00:30:00.000Z",
+            "trackedTeams": [
+              "Utah Jazz"
+            ],
+            "status": "Sun, April 12th at 8:30 PM EDT"
+          },
+          {
+            "gameId": "401811048",
+            "matchup": "Chicago Bulls at Dallas Mavericks",
+            "tipoffUtc": "2026-04-13T00:30:00.000Z",
+            "trackedTeams": [
+              "Chicago Bulls",
+              "Dallas Mavericks"
+            ],
+            "status": "Sun, April 12th at 8:30 PM EDT"
+          },
+          {
+            "gameId": "401811049",
+            "matchup": "Memphis Grizzlies at Houston Rockets",
+            "tipoffUtc": "2026-04-13T00:30:00.000Z",
+            "trackedTeams": [
+              "Memphis Grizzlies"
+            ],
+            "status": "Sun, April 12th at 8:30 PM EDT"
+          },
+          {
+            "gameId": "401811050",
+            "matchup": "New Orleans Pelicans at Minnesota Timberwolves",
+            "tipoffUtc": "2026-04-13T00:30:00.000Z",
+            "trackedTeams": [
+              "New Orleans Pelicans"
+            ],
+            "status": "Sun, April 12th at 8:30 PM EDT"
+          },
+          {
+            "gameId": "401811054",
+            "matchup": "Golden State Warriors at LA Clippers",
+            "tipoffUtc": "2026-04-13T00:30:00.000Z",
+            "trackedTeams": [
+              "Golden State Warriors",
+              "LA Clippers"
+            ],
+            "status": "Sun, April 12th at 8:30 PM EDT"
+          }
+        ]
       }
     ]
   },
@@ -364,9 +428,9 @@
       "teamId": "9",
       "team": "Golden State Warriors",
       "teamDisplay": "Golden State Warriors (2)",
-      "winPct": 0.46835443,
-      "record": "37-42",
-      "streak": "W1",
+      "winPct": 0.4625,
+      "record": "37-43",
+      "streak": "L1",
       "last10": "4-6",
       "totalRemainingVsBottom12": 2,
       "opponents": [
