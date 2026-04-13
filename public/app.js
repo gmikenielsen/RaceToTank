@@ -1,4 +1,5 @@
 const DATA_URL = './data/latest.json';
+const SEASON_OVER = true;
 const NOTABLE_TEAM_COUNT = 10;
 const TEAM_ABBREVIATIONS = new Map([
   ['Atlanta Hawks', 'ATL'],
@@ -23,6 +24,8 @@ const statusEl = document.getElementById('status');
 const desktopBodyEl = document.getElementById('desktop-body');
 const mobileCardsEl = document.getElementById('mobile-cards');
 const todayListEl = document.getElementById('today-list');
+const schedulePanelEl = document.getElementById('schedule-panel');
+const opponentsHeaderEl = document.getElementById('opponents-header');
 
 function escapeHtml(value) {
   return String(value)
@@ -91,6 +94,16 @@ function formatNotableDate(dateEt, timeZone) {
 function showStatus(message, isError = false) {
   statusEl.textContent = message;
   statusEl.className = isError ? 'status error' : 'status';
+}
+
+function applySeasonOverLayout() {
+  if (schedulePanelEl) {
+    schedulePanelEl.hidden = SEASON_OVER;
+  }
+
+  if (opponentsHeaderEl) {
+    opponentsHeaderEl.hidden = SEASON_OVER;
+  }
 }
 
 function sumFromOpponentsText(opponentsText) {
@@ -328,6 +341,11 @@ function buildNotableGamesHtml(notableGames) {
 }
 
 function renderTodaySchedule(todaySchedule, rows = []) {
+  if (SEASON_OVER) {
+    todayListEl.innerHTML = '';
+    return;
+  }
+
   todayListEl.innerHTML = '';
 
   const { timeZone, days } = normalizeScheduleDays(todaySchedule);
@@ -395,9 +413,14 @@ function renderRows(rows, payload) {
       const teamName = escapeHtml(resolveTeamDisplay(row));
       const recordLine = buildRecordLineHtml(row);
       const opponents = escapeHtml(formatOpponentsText(row));
-      const showNotable = index < NOTABLE_TEAM_COUNT;
+      const showNotable = !SEASON_OVER && index < NOTABLE_TEAM_COUNT;
       const notableGames = showNotable ? notableGamesByTeam.get(String(row?.team || '').trim()) || [] : [];
       const notableGamesHtml = showNotable ? buildNotableGamesHtml(notableGames) : '';
+
+      if (SEASON_OVER) {
+        return `<tr><td class="team"><div class="team-main"><span class="team-rank">${rank}.</span><div class="team-copy"><span class="team-name">${teamName}</span><div class="team-record">${recordLine}</div></div></div></td></tr>`;
+      }
+
       return `<tr><td class="team"><div class="team-main"><span class="team-rank">${rank}.</span><div class="team-copy"><span class="team-name">${teamName}</span><div class="team-record">${recordLine}</div></div></div></td><td class="opponents"><div class="opponents-text">${opponents}</div>${notableGamesHtml}</td></tr>`;
     })
     .join('');
@@ -408,9 +431,14 @@ function renderRows(rows, payload) {
       const teamName = escapeHtml(resolveTeamDisplay(row));
       const recordLine = buildRecordLineHtml(row);
       const opponents = escapeHtml(formatOpponentsText(row));
-      const showNotable = index < NOTABLE_TEAM_COUNT;
+      const showNotable = !SEASON_OVER && index < NOTABLE_TEAM_COUNT;
       const notableGames = showNotable ? notableGamesByTeam.get(String(row?.team || '').trim()) || [] : [];
       const notableGamesHtml = showNotable ? buildNotableGamesHtml(notableGames) : '';
+
+      if (SEASON_OVER) {
+        return `<article class="card"><div class="team"><div class="team-main"><span class="team-rank">${rank}.</span><div class="team-copy"><span class="team-name">${teamName}</span><div class="team-record">${recordLine}</div></div></div></div></article>`;
+      }
+
       return `<article class="card"><div class="team"><div class="team-main"><span class="team-rank">${rank}.</span><div class="team-copy"><span class="team-name">${teamName}</span><div class="team-record">${recordLine}</div><div class="opponents"><div class="opponents-text">${opponents}</div>${notableGamesHtml}</div></div></div></div></article>`;
     })
     .join('');
@@ -444,11 +472,12 @@ async function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
 
   try {
-    await navigator.serviceWorker.register('./sw.js?v=10', { scope: './' });
+    await navigator.serviceWorker.register('./sw.js?v=11', { scope: './' });
   } catch (error) {
     console.warn('Service worker registration failed', error);
   }
 }
 
+applySeasonOverLayout();
 registerServiceWorker();
 loadData();
