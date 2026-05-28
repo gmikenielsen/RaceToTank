@@ -114,6 +114,7 @@ function formatNotableDate(dateEt, timeZone) {
 function showStatus(message, isError = false) {
   statusEl.textContent = message;
   statusEl.className = isError ? 'status error' : 'status';
+  statusEl.hidden = SEASON_OVER && !isError;
 }
 
 function applySeasonOverLayout() {
@@ -225,6 +226,10 @@ function resolveLast10Text(row) {
 
 function buildRecordLineHtml(row) {
   const record = escapeHtml(resolveRecordText(row));
+  if (SEASON_OVER) {
+    return `<span class="record-item record-main">Record: ${record}</span>`;
+  }
+
   const streak = resolveStreakText(row);
   const last10 = resolveLast10Text(row);
 
@@ -242,6 +247,10 @@ function buildRecordLineHtml(row) {
 }
 
 function formatLoadStatus(rowsCount, generatedAt, refreshStatus) {
+  if (SEASON_OVER) {
+    return '';
+  }
+
   let message = `Last updated: ${formatTimestamp(generatedAt)}.`;
 
   if (refreshStatus && refreshStatus.source === 'cached') {
