@@ -192,6 +192,7 @@ function formatOpponentsText(row) {
 
 function resolveTeamDisplay(row) {
   const baseTeam = row.team || row.teamDisplay || 'Unknown Team';
+  if (SEASON_OVER) return baseTeam;
 
   const directTotal = Number(row.totalRemainingVsBottom12);
   if (Number.isFinite(directTotal)) return `${baseTeam} (${directTotal})`;
