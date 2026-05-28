@@ -1,6 +1,24 @@
 const DATA_URL = './data/latest.json';
 const SEASON_OVER = true;
 const NOTABLE_TEAM_COUNT = 10;
+const OFFSEASON_SUBTITLE = '2026 NBA Draft order after the lottery';
+const OFFSEASON_TEAM_HEADER = 'Draft Order Team';
+const OFFSEASON_DRAFT_ORDER = [
+  { team: 'Washington Wizards', record: '17-65', streak: 'L4', last10: '1-9' },
+  { team: 'Utah Jazz', record: '22-60', streak: 'W1', last10: '2-8' },
+  { team: 'Memphis Grizzlies', record: '25-57', streak: 'L5', last10: '2-8' },
+  { team: 'Chicago Bulls', record: '31-51', streak: 'W1', last10: '3-7' },
+  { team: 'LA Clippers', record: '42-40', streak: 'W1', last10: '6-4' },
+  { team: 'Brooklyn Nets', record: '20-62', streak: 'L1', last10: '2-8' },
+  { team: 'Sacramento Kings', record: '22-60', streak: 'W2', last10: '4-6' },
+  { team: 'Atlanta Hawks', record: '46-36', streak: 'L1', last10: '6-4' },
+  { team: 'Dallas Mavericks', record: '26-56', streak: 'L8', last10: '2-8' },
+  { team: 'Milwaukee Bucks', record: '32-50', streak: 'L2', last10: '3-7' },
+  { team: 'Golden State Warriors', record: '37-45', streak: 'L3', last10: '3-7' },
+  { team: 'Oklahoma City Thunder', record: '64-18', streak: 'L2', last10: '7-3' },
+  { team: 'Miami Heat', record: '43-39', streak: 'W2', last10: '5-5' },
+  { team: 'Charlotte Hornets', record: '44-38', streak: 'W1', last10: '6-4' },
+];
 const TEAM_ABBREVIATIONS = new Map([
   ['Atlanta Hawks', 'ATL'],
   ['Brooklyn Nets', 'BKN'],
@@ -25,6 +43,8 @@ const desktopBodyEl = document.getElementById('desktop-body');
 const mobileCardsEl = document.getElementById('mobile-cards');
 const todayListEl = document.getElementById('today-list');
 const schedulePanelEl = document.getElementById('schedule-panel');
+const subtitleEl = document.getElementById('subtitle-text');
+const teamHeaderEl = document.getElementById('team-header');
 const opponentsHeaderEl = document.getElementById('opponents-header');
 
 function escapeHtml(value) {
@@ -97,6 +117,14 @@ function showStatus(message, isError = false) {
 }
 
 function applySeasonOverLayout() {
+  if (subtitleEl) {
+    subtitleEl.innerHTML = SEASON_OVER ? OFFSEASON_SUBTITLE : 'Bottom 14 NBA teams<br class="mobile-sub-break" /> with remaining head-to-head games';
+  }
+
+  if (teamHeaderEl) {
+    teamHeaderEl.textContent = SEASON_OVER ? OFFSEASON_TEAM_HEADER : 'Team (Total vs Bottom 14)';
+  }
+
   if (schedulePanelEl) {
     schedulePanelEl.hidden = SEASON_OVER;
   }
@@ -104,6 +132,28 @@ function applySeasonOverLayout() {
   if (opponentsHeaderEl) {
     opponentsHeaderEl.hidden = SEASON_OVER;
   }
+}
+
+function buildSeasonOverRows(rows) {
+  const rowsByTeam = new Map(rows.map((row) => [String(row?.team || '').trim(), row]));
+
+  return OFFSEASON_DRAFT_ORDER.map((draftRow, index) => {
+    const existingRow = rowsByTeam.get(draftRow.team) || {};
+
+    return {
+      ...existingRow,
+      rank: index + 1,
+      team: draftRow.team,
+      teamDisplay: draftRow.team,
+      record: draftRow.record,
+      streak: draftRow.streak,
+      last10: draftRow.last10,
+      totalRemainingVsBottom12: null,
+      opponents: [],
+      opponentsText: '',
+      notableTankGames: [],
+    };
+  });
 }
 
 function sumFromOpponentsText(opponentsText) {
@@ -392,7 +442,9 @@ function renderRows(rows, payload) {
     return;
   }
 
-  const orderedRows = [...rows].sort((a, b) => {
+  const orderedRows = SEASON_OVER
+    ? buildSeasonOverRows(rows)
+    : [...rows].sort((a, b) => {
     const aRank = Number(a?.rank);
     const bRank = Number(b?.rank);
 
@@ -472,7 +524,7 @@ async function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
 
   try {
-    await navigator.serviceWorker.register('./sw.js?v=11', { scope: './' });
+    await navigator.serviceWorker.register('./sw.js?v=12', { scope: './' });
   } catch (error) {
     console.warn('Service worker registration failed', error);
   }
